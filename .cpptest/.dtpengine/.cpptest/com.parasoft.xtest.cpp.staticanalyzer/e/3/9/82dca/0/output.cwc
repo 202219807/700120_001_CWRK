@@ -1,0 +1,80 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureList' returns handles to member data: 'm_texture'
+<l>51
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureList' is not inlined
+<l>50
+<k>51
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>54
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.h
+<c>CODSTA-MCPP-23
+<b>Class 'Texture' should be final
+<l>11
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureList' returns handles to member data: 'm_texture'
+<l>51
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureList' is not inlined
+<l>50
+<k>51
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>54
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.h
+<c>CODSTA-MCPP-23
+<b>Class 'ResourceManager' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0

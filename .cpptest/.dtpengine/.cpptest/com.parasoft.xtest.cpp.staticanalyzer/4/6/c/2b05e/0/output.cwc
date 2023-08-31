@@ -1,0 +1,330 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-02
+<b>Local variable 'numberOfElements' declared but not used
+<l>7
+<k>21
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>301
+<k>14
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetVertexBufferResourceCount' is not inlined
+<l>305
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetHullBufferResourceCount' is not inlined
+<l>309
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetDomainBufferResourceCount' is not inlined
+<l>313
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetPixelBufferResourceCount' is not inlined
+<l>317
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetVertexShaderBuffer' is not inlined
+<l>337
+<k>21
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMatrixBuffer' is not inlined
+<l>342
+<k>23
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetCameraBuffer' is not inlined
+<l>347
+<k>23
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMappedSubResource' returns handles to member data: 'm_mappedResource'
+<l>353
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMappedSubResource' is not inlined
+<l>351
+<k>41
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'SetInitializationState' is not inlined
+<l>395
+<k>14
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'SetVertexShaderBuffer' is not inlined
+<l>400
+<k>14
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_cameraBuffer, m_displacementBuffer, m_domainShader, m_hullShader, m_matrixBuffer, m_pixelShader, m_renderModeBuffer, m_tessellationBuffer, m_vertexShader, m_vertexShaderBuffer' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_mappedResource' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-02
+<b>Local variable 'numberOfElements' declared but not used
+<l>7
+<k>21
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>301
+<k>14
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetVertexBufferResourceCount' is not inlined
+<l>305
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetHullBufferResourceCount' is not inlined
+<l>309
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetDomainBufferResourceCount' is not inlined
+<l>313
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetPixelBufferResourceCount' is not inlined
+<l>317
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetVertexShaderBuffer' is not inlined
+<l>337
+<k>21
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMatrixBuffer' is not inlined
+<l>342
+<k>23
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetCameraBuffer' is not inlined
+<l>347
+<k>23
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMappedSubResource' returns handles to member data: 'm_mappedResource'
+<l>353
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMappedSubResource' is not inlined
+<l>351
+<k>41
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'SetInitializationState' is not inlined
+<l>395
+<k>14
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.cpp
+<c>OPT-23
+<b>Getter/setter method 'SetVertexShaderBuffer' is not inlined
+<l>400
+<k>14
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'DisplacementBuffer' are declared in suboptimal order for memory layout
+<l>78
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'RenderModeBufferType' are declared in suboptimal order for memory layout
+<l>94
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-13
+<b>Members 'm_ambientColour, m_diffuseColour, m_lightDirection, m_lightOrbitDirection, m_lightPointPosition, m_lightPosition, m_lightProjectionMatrix, m_lightRotation, m_lightViewMatrix, m_specularColour' of class 'Light' are declared in suboptimal order for memory layout
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightViewMatrix' is passed by value
+<l>50
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightProjectionMatrix' is passed by value
+<l>51
+<k>17
+<s>false
+<N>
+<f>
+<L>0

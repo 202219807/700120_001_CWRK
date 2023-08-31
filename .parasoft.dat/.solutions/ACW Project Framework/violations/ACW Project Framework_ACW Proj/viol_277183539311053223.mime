@@ -1,0 +1,11 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary=SRY5k3kJVBu29O67qQU522v5P8q5aRZ5KhtdSUq
+StorageVersion: v1
+
+--SRY5k3kJVBu29O67qQU522v5P8q5aRZ5KhtdSUq
+
+<?xml version='1.0' encoding='UTF-8'?><ResultsList path="ACW Project Framework/ACW Project Framework/Header Files/Components/Rotation.h"><VersionInfos><StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="IExecutionViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="InsureViolation" ver="3"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.scope" resultId="IScopeProjectInfo" ver="3"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricsViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IDupCodeViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricEstimationInfo" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IFlowAnalysisViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="ICodingStandardsViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationInfo" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationProjectInfo" ver="2"/></VersionInfos></ResultsList>
+--SRY5k3kJVBu29O67qQU522v5P8q5aRZ5KhtdSUq
+
+<?xml version='1.0' encoding='UTF-8'?><ResultInfo resultId="ICodingStandardsViolation" ownerId="com.parasoft.xtest.checkers.api.standards" violKeys="null;null"><StdViol msg="Class 'Rotation' should be final" ln="10" sev="3" auth="ronni" rule="CODSTA-MCPP-23" tool="c++test" cat="CODSTA-MCPP" lang="cpp" locType="sr" config="1" hash="1034688677" locStartln="10" locStartPos="6" locEndLn="10" locEndPos="7" locFile="ACW Project Framework/ACW Project Framework/Header Files/Components/Rotation.h"/><StdViol msg="The 'Rotation' function should be defined with =default" ln="13" sev="3" auth="ronni" rule="CODSTA-CPP-105" tool="c++test" cat="CODSTA-CPP" lang="cpp" locType="sr" config="1" hash="1034688677" locStartln="13" locStartPos="1" locEndLn="13" locEndPos="2" locFile="ACW Project Framework/ACW Project Framework/Header Files/Components/Rotation.h"/></ResultInfo>
+--SRY5k3kJVBu29O67qQU522v5P8q5aRZ5KhtdSUq

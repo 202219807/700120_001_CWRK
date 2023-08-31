@@ -1,0 +1,140 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>CODSTA-CPP-105
+<b>The 'Position' function should be defined with =default
+<l>3
+<k>11
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetPositions' returns handles to member data: 'm_positions'
+<l>32
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetPositions' is not inlined
+<l>30
+<k>35
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-24
+<b>Function 'GetPositionAt' is not inlined
+<l>35
+<k>27
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-24
+<b>Function 'AddPositionBack' is not inlined
+<l>39
+<k>16
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-24
+<b>Function 'RemovePositionBack' is not inlined
+<l>59
+<k>16
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.h
+<c>CODSTA-MCPP-23
+<b>Class 'Position' should be final
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Position' found. Use constructor initialization list instead
+<l>17
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.h
+<c>CODSTA-CPP-105
+<b>The 'Position' function should be defined with =default
+<l>12
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetPositions' returns handles to member data: 'm_positions'
+<l>32
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetPositions' is not inlined
+<l>30
+<k>35
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-24
+<b>Function 'GetPositionAt' is not inlined
+<l>35
+<k>27
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-24
+<b>Function 'AddPositionBack' is not inlined
+<l>39
+<k>16
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.cpp
+<c>OPT-24
+<b>Function 'RemovePositionBack' is not inlined
+<l>59
+<k>16
+<s>false
+<N>
+<f>
+<L>0

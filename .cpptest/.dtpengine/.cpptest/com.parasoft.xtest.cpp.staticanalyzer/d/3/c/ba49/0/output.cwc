@@ -1,0 +1,100 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ColourShader.cpp
+<c>STL-37
+<b>The 'polygonLayout' array should not be used
+<l>5
+<k>27
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ColourShader.cpp
+<c>OPT-26
+<b>'numberOfElements' initialized with a dummy value
+<l>7
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ColourShader.cpp
+<c>OPT-26
+<b>'numberOfElements' initialized with a dummy value
+<l>7
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_cameraBuffer, m_displacementBuffer, m_domainShader, m_hullShader, m_matrixBuffer, m_pixelShader, m_renderModeBuffer, m_tessellationBuffer, m_vertexShader, m_vertexShaderBuffer' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_mappedResource' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'DisplacementBuffer' are declared in suboptimal order for memory layout
+<l>78
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'RenderModeBufferType' are declared in suboptimal order for memory layout
+<l>94
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-13
+<b>Members 'm_ambientColour, m_diffuseColour, m_lightDirection, m_lightOrbitDirection, m_lightPointPosition, m_lightPosition, m_lightProjectionMatrix, m_lightRotation, m_lightViewMatrix, m_specularColour' of class 'Light' are declared in suboptimal order for memory layout
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightViewMatrix' is passed by value
+<l>50
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightProjectionMatrix' is passed by value
+<l>51
+<k>17
+<s>false
+<N>
+<f>
+<L>0

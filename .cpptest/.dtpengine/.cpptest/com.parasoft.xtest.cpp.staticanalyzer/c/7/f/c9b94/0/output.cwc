@@ -1,0 +1,320 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.cpp
+<c>CODSTA-CPP-105
+<b>The '~ParticleSystemManager' function should be defined with =default
+<l>11
+<k>24
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'ExplosionExists' is not inlined
+<l>19
+<k>35
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLights' returns handles to member data: 'm_explosionLights'
+<l>26
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLights' is not inlined
+<l>24
+<k>57
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.h
+<c>CODSTA-MCPP-23
+<b>Class 'ParticleSystemManager' should be final
+<l>8
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.h
+<c>OPT-13
+<b>Members 'm_explosionLights, m_fireJetParticleSystems, m_smokeParticleSystems' of class 'ParticleSystemManager' are declared in suboptimal order for memory layout
+<l>8
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.h
+<c>CODSTA-CPP-105
+<b>The '~ParticleSystemManager' function should be defined with =default
+<l>14
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'ExplosionExists' is not inlined
+<l>19
+<k>35
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLights' returns handles to member data: 'm_explosionLights'
+<l>26
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystemManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLights' is not inlined
+<l>24
+<k>57
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\SmokeParticleSystem.h
+<c>OOP-14
+<b>Consider use composition instead of private inheritance for 'SmokeParticleSystem' class
+<l>4
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\SmokeParticleSystem.h
+<c>OOP-37
+<b>Do not overuse inheritance
+<l>4
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleSystem.h
+<c>OOP-37
+<b>Do not overuse inheritance
+<l>7
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.h
+<c>OPT-13
+<b>Members 'm_model, m_parentObject, m_position, m_rigidBody, m_rotation, m_scale, m_shader, m_texture' of class 'GameObject' are declared in suboptimal order for memory layout
+<l>27
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>CODSTA-MCPP-23
+<b>Class 'Model' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>OPT-13
+<b>Members 'm_indexBuffer, m_instanceBuffer, m_instances, m_vertexBuffer' of class 'Model' are declared in suboptimal order for memory layout
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>OPT-13
+<b>Members 'm_instanceBufferDescription, m_instanceData' of class 'Model' are declared in suboptimal order for memory layout
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.h
+<c>CODSTA-MCPP-23
+<b>Class 'Texture' should be final
+<l>11
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.h
+<c>CODSTA-MCPP-23
+<b>Class 'ResourceManager' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.h
+<c>CODSTA-MCPP-23
+<b>Class 'Position' should be final
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Rotation.h
+<c>CODSTA-MCPP-23
+<b>Class 'Rotation' should be final
+<l>10
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Scale.h
+<c>CODSTA-MCPP-23
+<b>Class 'Scale' should be final
+<l>10
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\RigidBody.h
+<c>CODSTA-MCPP-23
+<b>Class 'RigidBody' should be final
+<l>2
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_cameraBuffer, m_displacementBuffer, m_domainShader, m_hullShader, m_matrixBuffer, m_pixelShader, m_renderModeBuffer, m_tessellationBuffer, m_vertexShader, m_vertexShaderBuffer' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_mappedResource' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'DisplacementBuffer' are declared in suboptimal order for memory layout
+<l>78
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'RenderModeBufferType' are declared in suboptimal order for memory layout
+<l>94
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-13
+<b>Members 'm_ambientColour, m_diffuseColour, m_lightDirection, m_lightOrbitDirection, m_lightPointPosition, m_lightPosition, m_lightProjectionMatrix, m_lightRotation, m_lightViewMatrix, m_specularColour' of class 'Light' are declared in suboptimal order for memory layout
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightViewMatrix' is passed by value
+<l>50
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightProjectionMatrix' is passed by value
+<l>51
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ParticleShader.h
+<c>OPT-13
+<b>Members 'm_colourTint' of class 'ParticleShader' are declared in suboptimal order for memory layout
+<l>12
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\FireJetParticleSystem.h
+<c>OOP-37
+<b>Do not overuse inheritance
+<l>4
+<k>7
+<s>false
+<N>
+<f>
+<L>0

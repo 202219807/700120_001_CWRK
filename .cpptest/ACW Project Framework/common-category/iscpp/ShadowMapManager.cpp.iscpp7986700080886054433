@@ -1,0 +1,6 @@
+fileName=C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShadowMapManager.cpp
+isCpp=
+compilerOpts=-I"C:\Program Files (x86)\Parasoft\C++test for Visual Studio\10.6\engine\runtime\include" /ZI /W3 /Od /EHsc /RTC1 /MDd /fp:precise /Gd /GS /sdl /I"C:\Users\ronni\Desktop\RealTimeGraphics-master\packages\AntTweakBar.1.16.4\build\native\include\\" /I"C:\Users\ronni\Desktop\RealTimeGraphics-master\packages\directxtk_desktop_2015.2018.11.20.1\build\native\..\..\include" /I"SDK Path\Include" /Gm- /D"HAS_ANTTWEAK_BAR" /D"HAS_DIRECTXTK" /D"_MBCS" /Zc:wchar_t /Zc:forScope /Zc:inline /WX- /nologo /FC /permissive- /diagnostics:column -DPARASOFT_CPPTEST -I.
+compilerId=vc_14_2-64
+workingDir=C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\
+advancedOptionsHash=0

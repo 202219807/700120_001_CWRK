@@ -1,0 +1,510 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-105
+<b>The '~GameObject' function should be defined with =default
+<l>13
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'SetShaderComponent' is not inlined
+<l>213
+<k>18
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-24
+<b>Function 'SetShaderComponent' is not inlined
+<l>213
+<k>18
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetPositionComponent' returns handles to member data: 'm_position'
+<l>242
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetPositionComponent' is not inlined
+<l>241
+<k>41
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRotationComponent' returns handles to member data: 'm_rotation'
+<l>250
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRotationComponent' is not inlined
+<l>249
+<k>41
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetScaleComponent' returns handles to member data: 'm_scale'
+<l>258
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetScaleComponent' is not inlined
+<l>257
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRigidBodyComponent' returns handles to member data: 'm_rigidBody'
+<l>266
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRigidBodyComponent' is not inlined
+<l>265
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetModelComponent' returns handles to member data: 'm_model'
+<l>271
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetModelComponent' is not inlined
+<l>269
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetShaderComponent' returns handles to member data: 'm_shader'
+<l>276
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetShaderComponent' is not inlined
+<l>274
+<k>39
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>287
+<k>18
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-02
+<b>Local variable 'scale' declared but not used
+<l>308
+<k>16
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.h
+<c>OPT-13
+<b>Members 'm_model, m_parentObject, m_position, m_rigidBody, m_rotation, m_scale, m_shader, m_texture' of class 'GameObject' are declared in suboptimal order for memory layout
+<l>27
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.h
+<c>CODSTA-CPP-105
+<b>The '~GameObject' function should be defined with =default
+<l>36
+<k>10
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'SetShaderComponent' is not inlined
+<l>213
+<k>18
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-24
+<b>Function 'SetShaderComponent' is not inlined
+<l>213
+<k>18
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetPositionComponent' returns handles to member data: 'm_position'
+<l>242
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetPositionComponent' is not inlined
+<l>241
+<k>41
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRotationComponent' returns handles to member data: 'm_rotation'
+<l>250
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRotationComponent' is not inlined
+<l>249
+<k>41
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetScaleComponent' returns handles to member data: 'm_scale'
+<l>258
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetScaleComponent' is not inlined
+<l>257
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRigidBodyComponent' returns handles to member data: 'm_rigidBody'
+<l>266
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRigidBodyComponent' is not inlined
+<l>265
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetModelComponent' returns handles to member data: 'm_model'
+<l>271
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetModelComponent' is not inlined
+<l>269
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetShaderComponent' returns handles to member data: 'm_shader'
+<l>276
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetShaderComponent' is not inlined
+<l>274
+<k>39
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>287
+<k>18
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\GameObject.cpp
+<c>OPT-02
+<b>Local variable 'scale' declared but not used
+<l>308
+<k>16
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>CODSTA-MCPP-23
+<b>Class 'Model' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>OPT-13
+<b>Members 'm_indexBuffer, m_instanceBuffer, m_instances, m_vertexBuffer' of class 'Model' are declared in suboptimal order for memory layout
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>OPT-13
+<b>Members 'm_instanceBufferDescription, m_instanceData' of class 'Model' are declared in suboptimal order for memory layout
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.h
+<c>CODSTA-MCPP-23
+<b>Class 'Texture' should be final
+<l>11
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.h
+<c>CODSTA-MCPP-23
+<b>Class 'ResourceManager' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Position.h
+<c>CODSTA-MCPP-23
+<b>Class 'Position' should be final
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Rotation.h
+<c>CODSTA-MCPP-23
+<b>Class 'Rotation' should be final
+<l>10
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Scale.h
+<c>CODSTA-MCPP-23
+<b>Class 'Scale' should be final
+<l>10
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\RigidBody.h
+<c>CODSTA-MCPP-23
+<b>Class 'RigidBody' should be final
+<l>2
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_cameraBuffer, m_displacementBuffer, m_domainShader, m_hullShader, m_matrixBuffer, m_pixelShader, m_renderModeBuffer, m_tessellationBuffer, m_vertexShader, m_vertexShaderBuffer' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_mappedResource' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'DisplacementBuffer' are declared in suboptimal order for memory layout
+<l>78
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'RenderModeBufferType' are declared in suboptimal order for memory layout
+<l>94
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-13
+<b>Members 'm_ambientColour, m_diffuseColour, m_lightDirection, m_lightOrbitDirection, m_lightPointPosition, m_lightPosition, m_lightProjectionMatrix, m_lightRotation, m_lightViewMatrix, m_specularColour' of class 'Light' are declared in suboptimal order for memory layout
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightViewMatrix' is passed by value
+<l>50
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightProjectionMatrix' is passed by value
+<l>51
+<k>17
+<s>false
+<N>
+<f>
+<L>0

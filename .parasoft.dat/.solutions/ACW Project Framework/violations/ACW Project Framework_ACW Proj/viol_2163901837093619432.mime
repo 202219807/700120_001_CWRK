@@ -1,0 +1,11 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary=m2lhPoaMtu716dlbrtWdJ1zPmYou1p4nBEP6sL
+StorageVersion: v1
+
+--m2lhPoaMtu716dlbrtWdJ1zPmYou1p4nBEP6sL
+
+<?xml version='1.0' encoding='UTF-8'?><ResultsList path="ACW Project Framework/ACW Project Framework/Source Files/Lights/PointLight.cpp"><VersionInfos><StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="IExecutionViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="InsureViolation" ver="3"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.scope" resultId="IScopeProjectInfo" ver="3"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricsViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IDupCodeViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricEstimationInfo" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IFlowAnalysisViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="ICodingStandardsViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationInfo" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationProjectInfo" ver="2"/></VersionInfos></ResultsList>
+--m2lhPoaMtu716dlbrtWdJ1zPmYou1p4nBEP6sL
+
+<?xml version='1.0' encoding='UTF-8'?><ResultInfo resultId="ICodingStandardsViolation" ownerId="com.parasoft.xtest.checkers.api.standards" violKeys="null;null"><StdViol msg="The '~PointLight' function should be defined with =default" ln="10" sev="3" auth="ronni" rule="CODSTA-CPP-105" tool="c++test" cat="CODSTA-CPP" lang="cpp" locType="sr" config="1" hash="-2011762043" locStartln="10" locStartPos="12" locEndLn="10" locEndPos="13" locFile="ACW Project Framework/ACW Project Framework/Source Files/Lights/PointLight.cpp"/><StdViol msg="The 'PointLight' function should be defined with =default" ln="5" sev="3" auth="ronni" rule="CODSTA-CPP-105" tool="c++test" cat="CODSTA-CPP" lang="cpp" locType="sr" config="1" hash="-2011762043" locStartln="5" locStartPos="12" locEndLn="5" locEndPos="13" locFile="ACW Project Framework/ACW Project Framework/Source Files/Lights/PointLight.cpp"/></ResultInfo>
+--m2lhPoaMtu716dlbrtWdJ1zPmYou1p4nBEP6sL

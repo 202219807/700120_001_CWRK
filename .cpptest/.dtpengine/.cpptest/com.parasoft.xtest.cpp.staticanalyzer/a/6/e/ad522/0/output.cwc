@@ -1,0 +1,70 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.cpp
+<c>STL-37
+<b>The 'cmd' array should not be used
+<l>107
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.cpp
+<c>STL-37
+<b>The 'tempVertexFace' array should not be used
+<l>166
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.cpp
+<c>CODSTA-CPP-105
+<b>The 'ResourceManager' function should be defined with =default
+<l>3
+<k>18
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.cpp
+<c>OPT-24
+<b>Function 'GetIndexCount' is not inlined
+<l>83
+<k>22
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.h
+<c>CODSTA-MCPP-23
+<b>Class 'ResourceManager' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.h
+<c>CODSTA-CPP-105
+<b>The 'ResourceManager' function should be defined with =default
+<l>17
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.cpp
+<c>OPT-24
+<b>Function 'GetIndexCount' is not inlined
+<l>83
+<k>22
+<s>false
+<N>
+<f>
+<L>0

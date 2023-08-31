@@ -1,0 +1,60 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\InputManager.h
+<c>STL-37
+<b>The 'm_keys' array should not be used
+<l>25
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\InputManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'DoOnce' is not inlined
+<l>39
+<k>20
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\InputManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'ToggleDoOnce' is not inlined
+<l>44
+<k>20
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\InputManager.h
+<c>OPT-13
+<b>Members 'm_keys' of class 'InputManager' are declared in suboptimal order for memory layout
+<l>3
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\InputManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'DoOnce' is not inlined
+<l>39
+<k>20
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\InputManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'ToggleDoOnce' is not inlined
+<l>44
+<k>20
+<s>false
+<N>
+<f>
+<L>0

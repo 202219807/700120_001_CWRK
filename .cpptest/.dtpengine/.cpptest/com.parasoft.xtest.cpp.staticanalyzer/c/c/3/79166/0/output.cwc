@@ -1,0 +1,210 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>STL-37
+<b>The 'strides' array should not be used
+<l>200
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>STL-37
+<b>The 'offsets' array should not be used
+<l>201
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>STL-37
+<b>The 'bufferPointers' array should not be used
+<l>202
+<k>16
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetIndexCount' is not inlined
+<l>226
+<k>12
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInstanceCount' is not inlined
+<l>230
+<k>12
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>235
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>CODSTA-MCPP-23
+<b>Class 'Model' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Model' found. Use constructor initialization list instead
+<l>20
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Model' found. Use constructor initialization list instead
+<l>22
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Model' found. Use constructor initialization list instead
+<l>27
+<k>3
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Model' found. Use constructor initialization list instead
+<l>29
+<k>3
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Model' found. Use constructor initialization list instead
+<l>49
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Model' found. Use constructor initialization list instead
+<l>67
+<k>3
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>INIT-14
+<b>Assignment in constructor 'Model' found. Use constructor initialization list instead
+<l>69
+<k>3
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>OPT-13
+<b>Members 'm_indexBuffer, m_instanceBuffer, m_instances, m_vertexBuffer' of class 'Model' are declared in suboptimal order for memory layout
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.h
+<c>OPT-13
+<b>Members 'm_instanceBufferDescription, m_instanceData' of class 'Model' are declared in suboptimal order for memory layout
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetIndexCount' is not inlined
+<l>226
+<k>12
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInstanceCount' is not inlined
+<l>230
+<k>12
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Model.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>235
+<k>13
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Texture.h
+<c>CODSTA-MCPP-23
+<b>Class 'Texture' should be final
+<l>11
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ResourceManager.h
+<c>CODSTA-MCPP-23
+<b>Class 'ResourceManager' should be final
+<l>14
+<k>7
+<s>false
+<N>
+<f>
+<L>0

@@ -1,0 +1,341 @@
+/ACW Project Framework/Source Files/Camera.cpp
+1=/ACW Project Framework/Header Files/Camera.h
+/ACW Project Framework/Source Files/ConfigurationFileLoader.cpp
+2=/ACW Project Framework/Header Files/ConfigurationFileLoader.h
+/ACW Project Framework/Source Files/D3DContainer.cpp
+3=/ACW Project Framework/Header Files/D3DContainer.h
+/ACW Project Framework/Source Files/GraphicsRenderer.cpp
+4=/ACW Project Framework/Header Files/GameObjects/Rocket.h
+5=/ACW Project Framework/Header Files/Managers/ResourceManager.h
+6=/ACW Project Framework/Header Files/Components/Rotation.h
+7=/ACW Project Framework/Header Files/Lights/PointLight.h
+8=/ACW Project Framework/Header Files/Managers/ShadowMapManager.h
+9=/ACW Project Framework/Header Files/ParticleSystems/FireJetParticleSystem.h
+10=/ACW Project Framework/Header Files/ParticleSystems/SmokeParticleSystem.h
+2
+11=/ACW Project Framework/Header Files/Components/Shader.h
+12=/ACW Project Framework/Header Files/GameObjects/GameObject.h
+13=/ACW Project Framework/Header Files/Components/RigidBody.h
+14=/ACW Project Framework/Header Files/Shader Headers/TextureNormalMappingShader.h
+15=/ACW Project Framework/Header Files/Shader Headers/DepthShader.h
+16=/ACW Project Framework/Header Files/Lights/Light.h
+1
+17=/ACW Project Framework/Header Files/Components/Texture.h
+18=/ACW Project Framework/Header Files/Components/ParticleSystem.h
+3
+19=/ACW Project Framework/Header Files/Components/Model.h
+20=/ACW Project Framework/Header Files/Shader Headers/ReflectionShader.h
+21=/ACW Project Framework/Header Files/Shader Headers/Texture2DShader.h
+22=/ACW Project Framework/Header Files/GameObjects/Terrain.h
+23=/ACW Project Framework/Header Files/Shader Headers/TextureDisplacement.h
+24=/ACW Project Framework/Header Files/Shader Headers/TextureNormalSpecularShader.h
+25=/ACW Project Framework/Header Files/RenderToTexture.h
+26=/ACW Project Framework/Header Files/Shader Headers/ParticleShader.h
+27=/ACW Project Framework/Header Files/Managers/ParticleSystemManager.h
+28=/ACW Project Framework/Header Files/Components/Position.h
+29=/ACW Project Framework/Header Files/Shader Headers/TextureCubeShader.h
+30=/ACW Project Framework/Header Files/Components/Scale.h
+31=/ACW Project Framework/Header Files/Shader Headers/LightShader.h
+32=/ACW Project Framework/Header Files/Managers/LightManager.h
+33=/ACW Project Framework/Header Files/GraphicsRenderer.h
+34=/ACW Project Framework/Header Files/Lights/DirectionalLight.h
+35=/ACW Project Framework/Header Files/Shader Headers/ColourShader.h
+36=/ACW Project Framework/Header Files/Managers/ShaderManager.h
+/ACW Project Framework/Source Files/RenderToTexture.cpp
+28
+5
+30
+16
+6
+11
+12
+17
+13
+19
+25
+/ACW Project Framework/Source Files/System.cpp
+4
+5
+6
+7
+8
+9
+10
+2
+11
+12
+13
+14
+37=/ACW Project Framework/Header Files/System.h
+38=/ACW Project Framework/Header Files/Managers/InputManager.h
+15
+16
+1
+17
+18
+3
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+/ACW Project Framework/Source Files/WinMain.cpp
+4
+5
+6
+7
+8
+9
+10
+2
+11
+12
+13
+14
+37
+38
+15
+16
+1
+17
+18
+3
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+/ACW Project Framework/Source Files/Shader Classes/ColourShader.cpp
+16
+35
+11
+/ACW Project Framework/Source Files/Shader Classes/DepthShader.cpp
+15
+16
+11
+/ACW Project Framework/Source Files/Shader Classes/LightShader.cpp
+16
+31
+11
+/ACW Project Framework/Source Files/Shader Classes/ParticleShader.cpp
+26
+16
+11
+/ACW Project Framework/Source Files/Shader Classes/ReflectionShader.cpp
+20
+16
+11
+/ACW Project Framework/Source Files/Shader Classes/TextureCubeShader.cpp
+29
+16
+11
+/ACW Project Framework/Source Files/Shader Classes/TextureDisplacement.cpp
+16
+11
+23
+/ACW Project Framework/Source Files/Shader Classes/TextureNormalMappingShader.cpp
+16
+11
+14
+/ACW Project Framework/Source Files/Shader Classes/TextureNormalSpecularShader.cpp
+16
+11
+24
+/ACW Project Framework/Source Files/Shader Classes/Texture2DShader.cpp
+16
+21
+11
+/ACW Project Framework/Source Files/Managers/InputManager.cpp
+38
+/ACW Project Framework/Source Files/Managers/LightManager.cpp
+16
+7
+32
+34
+/ACW Project Framework/Source Files/Managers/ParticleSystemManager.cpp
+5
+6
+9
+10
+11
+12
+13
+26
+27
+28
+30
+16
+17
+18
+19
+/ACW Project Framework/Source Files/Managers/ResourceManager.cpp
+5
+/ACW Project Framework/Source Files/Managers/ShaderManager.cpp
+20
+15
+29
+16
+31
+21
+35
+11
+23
+36
+24
+14
+/ACW Project Framework/Source Files/Managers/ShadowMapManager.cpp
+28
+5
+30
+16
+6
+8
+11
+12
+17
+13
+19
+25
+/ACW Project Framework/Source Files/Components/Model.cpp
+5
+17
+19
+/ACW Project Framework/Source Files/Components/ParticleSystem.cpp
+26
+28
+5
+30
+16
+6
+11
+12
+17
+18
+13
+19
+/ACW Project Framework/Source Files/Components/Position.cpp
+28
+/ACW Project Framework/Source Files/Components/RigidBody.cpp
+13
+/ACW Project Framework/Source Files/Components/Rotation.cpp
+6
+/ACW Project Framework/Source Files/Components/Scale.cpp
+30
+/ACW Project Framework/Source Files/Components/Shader.cpp
+16
+11
+/ACW Project Framework/Source Files/Components/Texture.cpp
+5
+17
+/ACW Project Framework/Source Files/ParticleSystems/FireJetParticleSystem.cpp
+5
+6
+9
+11
+12
+13
+26
+28
+30
+16
+17
+18
+19
+/ACW Project Framework/Source Files/ParticleSystems/SmokeParticleSystem.cpp
+5
+6
+10
+11
+12
+13
+26
+28
+30
+16
+17
+18
+19
+/ACW Project Framework/Source Files/GameObjects/GameObject.cpp
+28
+5
+30
+16
+6
+11
+12
+17
+13
+19
+/ACW Project Framework/Source Files/GameObjects/Rocket.cpp
+4
+5
+6
+9
+11
+12
+13
+14
+15
+16
+17
+18
+3
+19
+20
+21
+22
+23
+24
+26
+28
+29
+30
+31
+35
+36
+/ACW Project Framework/Source Files/GameObjects/Terrain.cpp
+28
+5
+30
+16
+6
+22
+11
+12
+17
+13
+19
+/ACW Project Framework/Source Files/Lights/DirectionalLight.cpp
+16
+34
+/ACW Project Framework/Source Files/Lights/Light.cpp
+16
+/ACW Project Framework/Source Files/Lights/PointLight.cpp
+16
+7

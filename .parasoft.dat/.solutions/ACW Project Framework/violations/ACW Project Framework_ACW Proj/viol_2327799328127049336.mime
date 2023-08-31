@@ -1,0 +1,11 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary=mGrAs5QXpDtOymwJTCIVKtVxZokjGbf9RrPm1Nja
+StorageVersion: v1
+
+--mGrAs5QXpDtOymwJTCIVKtVxZokjGbf9RrPm1Nja
+
+<?xml version='1.0' encoding='UTF-8'?><ResultsList path="ACW Project Framework/ACW Project Framework/Header Files/Components/ParticleSystem.h"><VersionInfos><StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="IExecutionViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="InsureViolation" ver="3"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.scope" resultId="IScopeProjectInfo" ver="3"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricsViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IDupCodeViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricEstimationInfo" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IFlowAnalysisViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="ICodingStandardsViolation" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationInfo" ver="2"/><StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationProjectInfo" ver="2"/></VersionInfos></ResultsList>
+--mGrAs5QXpDtOymwJTCIVKtVxZokjGbf9RrPm1Nja
+
+<?xml version='1.0' encoding='UTF-8'?><ResultInfo resultId="ICodingStandardsViolation" ownerId="com.parasoft.xtest.checkers.api.standards" violKeys="null;null"><StdViol msg="The '~ParticleSystem' function should be defined with =default" ln="16" sev="3" auth="ronni" rule="CODSTA-CPP-105" tool="c++test" cat="CODSTA-CPP" lang="cpp" locType="sr" config="1" hash="-1551190191" locStartln="16" locStartPos="9" locEndLn="16" locEndPos="10" locFile="ACW Project Framework/ACW Project Framework/Header Files/Components/ParticleSystem.h"/><StdViol msg="Do not overuse inheritance" ln="7" sev="5" auth="ronni" rule="OOP-37" tool="c++test" cat="OOP" lang="cpp" locType="sr" config="1" hash="-1551190191" locStartln="7" locStartPos="6" locEndLn="7" locEndPos="7" locFile="ACW Project Framework/ACW Project Framework/Header Files/Components/ParticleSystem.h"/></ResultInfo>
+--mGrAs5QXpDtOymwJTCIVKtVxZokjGbf9RrPm1Nja

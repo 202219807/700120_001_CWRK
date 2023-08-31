@@ -1,0 +1,650 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\LightShader.h
+<c>STL-37
+<b>The 'lights' array should not be used
+<l>37
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureDisplacement.h
+<c>STL-37
+<b>The 'lights' array should not be used
+<l>33
+<k>20
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureDisplacement.h
+<c>STL-37
+<b>The 'lights' array should not be used
+<l>51
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureNormalMappingShader.h
+<c>STL-37
+<b>The 'lights' array should not be used
+<l>37
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureNormalSpecularShader.h
+<c>STL-37
+<b>The 'lights' array should not be used
+<l>38
+<k>20
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureNormalSpecularShader.h
+<c>STL-37
+<b>The 'lights' array should not be used
+<l>56
+<k>15
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-105
+<b>The '~ShaderManager' function should be defined with =default
+<l>94
+<k>16
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetColourShader' returns handles to member data: 'm_colourShader'
+<l>104
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetColourShader' is not inlined
+<l>103
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLightShader' returns handles to member data: 'm_lightShader'
+<l>108
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLightShader' is not inlined
+<l>107
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetReflectionShader' returns handles to member data: 'm_reflectionShader'
+<l>113
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetReflectionShader' is not inlined
+<l>111
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTexture2DShader' returns handles to member data: 'm_texture2DShader'
+<l>117
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTexture2DShader' is not inlined
+<l>116
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureCubeShader' returns handles to member data: 'm_textureCubeShader'
+<l>122
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureCubeShader' is not inlined
+<l>120
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureNormalShader' returns handles to member data: 'm_textureNormalShader'
+<l>127
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureNormalShader' is not inlined
+<l>125
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureNormalSpecularShader' returns handles to member data: 'm_textureNormalSpecularShader'
+<l>132
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureNormalSpecularShader' is not inlined
+<l>130
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureDisplacementShader' returns handles to member data: 'm_textureDisplacementShader'
+<l>137
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureDisplacementShader' is not inlined
+<l>135
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetDepthShader' returns handles to member data: 'm_depthShader'
+<l>142
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetDepthShader' is not inlined
+<l>140
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>145
+<k>21
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.h
+<c>CODSTA-MCPP-23
+<b>Class 'ShaderManager' should be final
+<l>17
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>INIT-14
+<b>Assignment in constructor 'ShaderManager' found. Use constructor initialization list instead
+<l>71
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>INIT-14
+<b>Assignment in constructor 'ShaderManager' found. Use constructor initialization list instead
+<l>80
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.h
+<c>OPT-13
+<b>Members 'm_colourShader, m_depthShader, m_lightShader, m_reflectionShader, m_texture2DShader, m_textureCubeShader, m_textureDisplacementShader, m_textureNormalShader, m_textureNormalSpecularShader' of class 'ShaderManager' are declared in suboptimal order for memory layout
+<l>17
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.h
+<c>CODSTA-CPP-105
+<b>The '~ShaderManager' function should be defined with =default
+<l>24
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetColourShader' returns handles to member data: 'm_colourShader'
+<l>104
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetColourShader' is not inlined
+<l>103
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLightShader' returns handles to member data: 'm_lightShader'
+<l>108
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLightShader' is not inlined
+<l>107
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetReflectionShader' returns handles to member data: 'm_reflectionShader'
+<l>113
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetReflectionShader' is not inlined
+<l>111
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTexture2DShader' returns handles to member data: 'm_texture2DShader'
+<l>117
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTexture2DShader' is not inlined
+<l>116
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureCubeShader' returns handles to member data: 'm_textureCubeShader'
+<l>122
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureCubeShader' is not inlined
+<l>120
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureNormalShader' returns handles to member data: 'm_textureNormalShader'
+<l>127
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureNormalShader' is not inlined
+<l>125
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureNormalSpecularShader' returns handles to member data: 'm_textureNormalSpecularShader'
+<l>132
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureNormalSpecularShader' is not inlined
+<l>130
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTextureDisplacementShader' returns handles to member data: 'm_textureDisplacementShader'
+<l>137
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTextureDisplacementShader' is not inlined
+<l>135
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetDepthShader' returns handles to member data: 'm_depthShader'
+<l>142
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetDepthShader' is not inlined
+<l>140
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ShaderManager.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetInitializationState' is not inlined
+<l>145
+<k>21
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_cameraBuffer, m_displacementBuffer, m_domainShader, m_hullShader, m_matrixBuffer, m_pixelShader, m_renderModeBuffer, m_tessellationBuffer, m_vertexShader, m_vertexShaderBuffer' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'm_mappedResource' of class 'Shader' are declared in suboptimal order for memory layout
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'DisplacementBuffer' are declared in suboptimal order for memory layout
+<l>78
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Shader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'RenderModeBufferType' are declared in suboptimal order for memory layout
+<l>94
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-13
+<b>Members 'm_ambientColour, m_diffuseColour, m_lightDirection, m_lightOrbitDirection, m_lightPointPosition, m_lightPosition, m_lightProjectionMatrix, m_lightRotation, m_lightViewMatrix, m_specularColour' of class 'Light' are declared in suboptimal order for memory layout
+<l>9
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightViewMatrix' is passed by value
+<l>50
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\Light.h
+<c>OPT-33
+<b>Returned value from function 'GetLightProjectionMatrix' is passed by value
+<l>51
+<k>17
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\LightShader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'LightBufferType' are declared in suboptimal order for memory layout
+<l>36
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureDisplacement.h
+<c>OPT-13
+<b>Members 'padding' of structure 'LightMatrixBufferType' are declared in suboptimal order for memory layout
+<l>31
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureDisplacement.h
+<c>OPT-13
+<b>Members 'padding' of structure 'PointLights' are declared in suboptimal order for memory layout
+<l>39
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureDisplacement.h
+<c>OPT-13
+<b>Members 'padding' of structure 'LightBufferType' are declared in suboptimal order for memory layout
+<l>50
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureNormalMappingShader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'LightBufferType' are declared in suboptimal order for memory layout
+<l>36
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureNormalSpecularShader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'LightMatrixBufferType' are declared in suboptimal order for memory layout
+<l>36
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureNormalSpecularShader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'PointLights' are declared in suboptimal order for memory layout
+<l>44
+<k>9
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\TextureNormalSpecularShader.h
+<c>OPT-13
+<b>Members 'padding' of structure 'LightBufferType' are declared in suboptimal order for memory layout
+<l>55
+<k>9
+<s>false
+<N>
+<f>
+<L>0

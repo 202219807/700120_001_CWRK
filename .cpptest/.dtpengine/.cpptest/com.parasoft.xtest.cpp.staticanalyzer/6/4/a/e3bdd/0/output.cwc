@@ -1,0 +1,670 @@
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>STL-37
+<b>The 'cmd' array should not be used
+<l>16
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetCameraPosition' returns handles to member data: 'm_cameraPosition'
+<l>140
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetCameraPosition' is not inlined
+<l>138
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTerrainDimensions' returns handles to member data: 'm_terrainDimensions'
+<l>145
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTerrainDimensions' is not inlined
+<l>143
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTerrainScale' returns handles to member data: 'm_terrainScale'
+<l>150
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTerrainScale' is not inlined
+<l>148
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRocketPosition' returns handles to member data: 'm_rocketPosition'
+<l>155
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRocketPosition' is not inlined
+<l>153
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRocketRotation' returns handles to member data: 'm_rocketRotation'
+<l>160
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRocketRotation' is not inlined
+<l>158
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRocketScale' returns handles to member data: 'm_rocketScale'
+<l>165
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRocketScale' is not inlined
+<l>163
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetSunAmbient' returns handles to member data: 'm_sunAmbient'
+<l>170
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunAmbient' is not inlined
+<l>168
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetSunDiffuse' returns handles to member data: 'm_sunDiffuse'
+<l>175
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunDiffuse' is not inlined
+<l>173
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetSunSpecular' returns handles to member data: 'm_sunSpecular'
+<l>180
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunSpecular' is not inlined
+<l>178
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunSpecularPower' is not inlined
+<l>183
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMoonAmbient' returns handles to member data: 'm_moonAmbient'
+<l>190
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonAmbient' is not inlined
+<l>188
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMoonDiffuse' returns handles to member data: 'm_moonDiffuse'
+<l>195
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonDiffuse' is not inlined
+<l>193
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMoonSpecular' returns handles to member data: 'm_moonSpecular'
+<l>200
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonSpecular' is not inlined
+<l>198
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonSpecularPower' is not inlined
+<l>203
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLaunchPadScale' returns handles to member data: 'm_launchPadScale'
+<l>210
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLaunchPadScale' is not inlined
+<l>208
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLaunchPadTessellationValues' returns handles to member data: 'm_launchPadTessellationValues'
+<l>215
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLaunchPadTessellationValues' is not inlined
+<l>213
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLaunchPadDisplacementValues' returns handles to member data: 'm_launchPadDisplacementValues'
+<l>220
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLaunchPadDisplacementValues' is not inlined
+<l>218
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.h
+<c>CODSTA-MCPP-23
+<b>Class 'ConfigurationFileLoader' should be final
+<l>10
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.h
+<c>OPT-13
+<b>Members 'm_launchPadDisplacementValues, m_launchPadScale, m_launchPadTessellationValues, m_moonAmbient, m_moonDiffuse, m_moonSpecular' of class 'ConfigurationFileLoader' are declared in suboptimal order for memory layout
+<l>10
+<k>7
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetCameraPosition' returns handles to member data: 'm_cameraPosition'
+<l>140
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetCameraPosition' is not inlined
+<l>138
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTerrainDimensions' returns handles to member data: 'm_terrainDimensions'
+<l>145
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTerrainDimensions' is not inlined
+<l>143
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetTerrainScale' returns handles to member data: 'm_terrainScale'
+<l>150
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetTerrainScale' is not inlined
+<l>148
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRocketPosition' returns handles to member data: 'm_rocketPosition'
+<l>155
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRocketPosition' is not inlined
+<l>153
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRocketRotation' returns handles to member data: 'm_rocketRotation'
+<l>160
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRocketRotation' is not inlined
+<l>158
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetRocketScale' returns handles to member data: 'm_rocketScale'
+<l>165
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetRocketScale' is not inlined
+<l>163
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetSunAmbient' returns handles to member data: 'm_sunAmbient'
+<l>170
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunAmbient' is not inlined
+<l>168
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetSunDiffuse' returns handles to member data: 'm_sunDiffuse'
+<l>175
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunDiffuse' is not inlined
+<l>173
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetSunSpecular' returns handles to member data: 'm_sunSpecular'
+<l>180
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunSpecular' is not inlined
+<l>178
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetSunSpecularPower' is not inlined
+<l>183
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMoonAmbient' returns handles to member data: 'm_moonAmbient'
+<l>190
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonAmbient' is not inlined
+<l>188
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMoonDiffuse' returns handles to member data: 'm_moonDiffuse'
+<l>195
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonDiffuse' is not inlined
+<l>193
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetMoonSpecular' returns handles to member data: 'm_moonSpecular'
+<l>200
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonSpecular' is not inlined
+<l>198
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetMoonSpecularPower' is not inlined
+<l>203
+<k>38
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLaunchPadScale' returns handles to member data: 'm_launchPadScale'
+<l>210
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLaunchPadScale' is not inlined
+<l>208
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLaunchPadTessellationValues' returns handles to member data: 'm_launchPadTessellationValues'
+<l>215
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLaunchPadTessellationValues' is not inlined
+<l>213
+<k>42
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>CODSTA-CPP-06
+<b>Member function 'GetLaunchPadDisplacementValues' returns handles to member data: 'm_launchPadDisplacementValues'
+<l>220
+<k>2
+<s>false
+<N>
+<f>
+<L>0
+<->
+<F>C:\Users\ronni\Desktop\RealTimeGraphics-master\ACW Project Framework\ConfigurationFileLoader.cpp
+<c>OPT-23
+<b>Getter/setter method 'GetLaunchPadDisplacementValues' is not inlined
+<l>218
+<k>42
+<s>false
+<N>
+<f>
+<L>0

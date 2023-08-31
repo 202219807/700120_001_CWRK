@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ACW Project Framework.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ColourVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ColourPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ColourHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ColourDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\DepthDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\DepthHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\DepthPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\DepthVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\LightDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\LightHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\LightPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\LightVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ParticleDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ParticleHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ParticlePixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ParticleVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ReflectionDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ReflectionHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ReflectionPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\ReflectionVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureCubeDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureCubeHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureCubePixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureCubeVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureDisplacementDS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureDisplacementHS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureDisplacementPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureDisplacementVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\Texture2DDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\Texture2DHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalDomainShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalHullShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalSpecularDS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalSpecularHS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalSpecularPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalSpecularVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\TextureNormalVertexShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\Texture2DPixelShader.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ronni\Desktop\Game Development\ACW RT Graphics Adv\x64\Debug\Texture2DVertexShader.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
