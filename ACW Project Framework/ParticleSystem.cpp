@@ -52,10 +52,6 @@ ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, cons
 	SetShaderComponent(particleShader);
 }
 
-//ParticleSystem::ParticleSystem(const ParticleSystem& other) = default;
-
-//ParticleSystem::ParticleSystem(ParticleSystem&& other) noexcept = default;
-
 ParticleSystem::~ParticleSystem()
 {
 }
@@ -126,5 +122,3 @@ bool ParticleSystem::RenderParticles(ID3D11DeviceContext* const deviceContext, c
 {
 	return Render(deviceContext, viewMatrix, projectionMatrix, {}, {}, cameraPosition);
 }
-
-

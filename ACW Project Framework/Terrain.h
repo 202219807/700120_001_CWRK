@@ -9,12 +9,12 @@ class Terrain : public GameObject
 {
 public:
 	Terrain(ID3D11Device* const device, const XMFLOAT3& voxelArea, const XMFLOAT3& cubeScale, const shared_ptr<Shader>& shader, const shared_ptr<ResourceManager>& resourceManager);
-	//Terrain(const Terrain& other);
-	//Terrain(Terrain&& other) noexcept;
 	~Terrain();
 
-	//Terrain& operator = (const Terrain& other);
-	//Terrain& operator = (Terrain&& other) noexcept;
+	Terrain(const Terrain& other) = default;
+	Terrain(Terrain&& other) noexcept = default;
+	Terrain& operator = (const Terrain& other) = default;
+	Terrain& operator = (Terrain&& other) noexcept = default;
 
 	void ResetTerrainState();
 

@@ -132,26 +132,14 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	m_particleSystemLight->GenerateLightProjectionMatrix(45.0f, 45.0f, 0.1f, 1000.0f);
 	m_particleSystemLight->UpdateLightVariables(0.0f);
 
-	m_fireJetParticleSystem = make_shared<FireJetParticleSystem>(device, nullptr, ModelType::Quad, XMFLOAT3(0.0f, -(3.0f * scale.y), 0.0f), XMFLOAT3(1.5f, 1.5f, 1.5f), XMFLOAT3(0.4f, 0.4f, 0.4f), 0.5f, 5.0f, 5.6f, 60, resourceManager);
+	m_fireJetParticleSystem = make_shared<Fire>(device, nullptr, ModelType::Quad, XMFLOAT3(0.0f, -(3.0f * scale.y), 0.0f), XMFLOAT3(1.5f, 1.5f, 1.5f), XMFLOAT3(0.4f, 0.4f, 0.4f), 0.5f, 5.0f, 5.6f, 60, resourceManager);
 	m_fireJetParticleSystem->AddParentGameObject(m_rocketBody);
 
-	m_coneFlameParticleSystem = make_shared<FireJetParticleSystem>(device, nullptr, ModelType::SphereInverted, XMFLOAT3(0.0f, (4.0f * scale.y), 0.0f), XMFLOAT3(1.5f, 1.5f, 1.5f), XMFLOAT3(1.0f, 1.0f, 1.0f), 0.8f, 5.0f, 4.0f, 10, resourceManager);
+	m_coneFlameParticleSystem = make_shared<Fire>(device, nullptr, ModelType::SphereInverted, XMFLOAT3(0.0f, (4.0f * scale.y), 0.0f), XMFLOAT3(1.5f, 1.5f, 1.5f), XMFLOAT3(1.0f, 1.0f, 1.0f), 0.8f, 5.0f, 4.0f, 10, resourceManager);
 	m_coneFlameParticleSystem->AddParentGameObject(m_rocketBody);
 
 	m_rocketLauncher->Update();
 }
-
-//Rocket::Rocket(const Rocket& other) = default;
-
-//Rocket::Rocket(Rocket&& other) noexcept = default;
-
-Rocket::~Rocket()
-{
-}
-
-//Rocket& Rocket::operator=(const Rocket& other) = default;
-
-//Rocket& Rocket::operator=(Rocket&& other) noexcept = default;
 
 void Rocket::AdjustRotationLeft() const
 {

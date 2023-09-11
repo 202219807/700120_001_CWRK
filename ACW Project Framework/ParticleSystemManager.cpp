@@ -35,10 +35,10 @@ void ParticleSystemManager::GenerateExplosion(ID3D11Device* const device, const 
 {
 	if (blastRadius > 0.0f)
 	{
-		m_fireJetParticleSystems.insert(m_fireJetParticleSystems.begin(), make_shared<FireJetParticleSystem>(device, nullptr, ModelType::Quad, explosionPosition, XMFLOAT3(blastRadius * 4, blastRadius * 4, blastRadius * 4), XMFLOAT3(0.2f, 0.2f, 0.2f), 0.5f, 4.0f, 5.6f, 40.0f, resourceManager));
-		m_smokeParticleSystems.insert(m_smokeParticleSystems.begin(), make_shared<SmokeParticleSystem>(device, nullptr, explosionPosition, XMFLOAT3(1.0f, 1.0f, 1.0f), XMFLOAT3(-0.8f, -0.8f, -0.8f), XMFLOAT3(14.0f, 14.0f, 14.0f), 0.2f, 1.0f, 1.5f, resourceManager));
-		m_explosionLights.emplace_back(make_shared<Light>());
+		m_explosion = true;
+		m_explosionRenderCount++;
 
+		m_explosionLights.emplace_back(make_shared<Light>());
 		m_explosionLights.back()->SetLightOrbit(false);
 		m_explosionLights.back()->SetLightPosition(explosionPosition);
 		m_explosionLights.back()->SetLightPointPosition(0.0f, 0.0f, 0.0f);
@@ -49,9 +49,10 @@ void ParticleSystemManager::GenerateExplosion(ID3D11Device* const device, const 
 		m_explosionLights.back()->GenerateLightProjectionMatrix(45.0f, 45.0f, 1.0f, 1000.0f);
 		m_explosionLights.back()->UpdateLightVariables(0.0f);
 
+		m_fireJetParticleSystems.insert(m_fireJetParticleSystems.begin(), make_shared<Fire>(device, nullptr, ModelType::Quad, explosionPosition, XMFLOAT3(blastRadius * 4, blastRadius * 4, blastRadius * 4), XMFLOAT3(0.2f, 0.2f, 0.2f), 0.5f, 4.0f, 5.6f, 40.0f, resourceManager));
+		
+		m_smokeParticleSystems.insert(m_smokeParticleSystems.begin(), make_shared<Smoke>(device, nullptr, explosionPosition, XMFLOAT3(1.0f, 1.0f, 1.0f), XMFLOAT3(-0.8f, -0.8f, -0.8f), XMFLOAT3(14.0f, 14.0f, 14.0f), 0.2f, 1.0f, 1.5f, resourceManager));
 		m_smokeRenderCount++;
-		m_explosionRenderCount++;
-		m_explosion = true;
 	}
 }
 
@@ -63,7 +64,7 @@ void ParticleSystemManager::Update(const float dt)
 
 		if (m_timeSinceExplosion > 1.0f)
 		{
-			//Destroy firejetparticleat
+			//Destroy firejetparticle at
 			//m_fireJetParticleSystems.erase(m_fireJetParticleSystems.begin());
 			//m_explosionLights.erase(m_explosionLights.begin());
 

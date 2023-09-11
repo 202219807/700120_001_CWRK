@@ -121,13 +121,13 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ColourShader.cpp" />
-    <ClCompile Include="ConfigurationFileLoader.cpp" />
+    <ClCompile Include="ConfigurationManager.cpp" />
     <ClCompile Include="D3DContainer.cpp" />
     <ClCompile Include="DepthShader.cpp" />
     <ClCompile Include="DirectionalLight.cpp" />
-    <ClCompile Include="FireJetParticleSystem.cpp" />
+    <ClCompile Include="Fire.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GraphicsRenderer.cpp" />
+    <ClCompile Include="D3DApplication.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="LightManager.cpp" />
@@ -148,8 +148,8 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="ShadowMapManager.cpp" />
-    <ClCompile Include="SmokeParticleSystem.cpp" />
-    <ClCompile Include="System.cpp" />
+    <ClCompile Include="Smoke.cpp" />
+    <ClCompile Include="D3DSystem.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureCubeShader.cpp" />
@@ -162,13 +162,13 @@
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ColourShader.h" />
-    <ClInclude Include="ConfigurationFileLoader.h" />
+    <ClInclude Include="ConfigurationManager.h" />
     <ClInclude Include="D3DContainer.h" />
     <ClInclude Include="DepthShader.h" />
     <ClInclude Include="DirectionalLight.h" />
-    <ClInclude Include="FireJetParticleSystem.h" />
+    <ClInclude Include="Fire.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GraphicsRenderer.h" />
+    <ClInclude Include="D3DApplication.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="LightManager.h" />
@@ -189,8 +189,8 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="ShadowMapManager.h" />
-    <ClInclude Include="SmokeParticleSystem.h" />
-    <ClInclude Include="System.h" />
+    <ClInclude Include="Smoke.h" />
+    <ClInclude Include="D3DSystem.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureCubeShader.h" />
@@ -840,7 +840,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

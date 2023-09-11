@@ -55,12 +55,6 @@
     <Filter Include="Header Files\ParticleSystems">
       <UniqueIdentifier>{d061fce1-6423-4895-b752-544a0bda7ce5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameObjects">
-      <UniqueIdentifier>{6f966321-48ca-419c-9077-d6069d58659d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\GameObjects">
-      <UniqueIdentifier>{aa752513-619b-4df6-b5cb-41b9558f3485}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Lights">
       <UniqueIdentifier>{c75692e5-e1dc-4f76-90b8-5de7ae84236d}</UniqueIdentifier>
     </Filter>
@@ -69,6 +63,12 @@
     </Filter>
     <Filter Include="Models">
       <UniqueIdentifier>{7b775e7e-c4cf-42ff-bd84-fff4f79c0626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Entities">
+      <UniqueIdentifier>{aa752513-619b-4df6-b5cb-41b9558f3485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game Entities">
+      <UniqueIdentifier>{6f966321-48ca-419c-9077-d6069d58659d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,13 +84,10 @@
     <ClCompile Include="LightShader.cpp">
       <Filter>Source Files\Shader Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="D3DApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GraphicsRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="System.cpp">
+    <ClCompile Include="D3DSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
@@ -135,9 +132,6 @@
     <ClCompile Include="LightManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="RenderToTexture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DepthShader.cpp">
       <Filter>Source Files\Shader Classes</Filter>
     </ClCompile>
@@ -147,10 +141,10 @@
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="SmokeParticleSystem.cpp">
+    <ClCompile Include="Smoke.cpp">
       <Filter>Source Files\ParticleSystems</Filter>
     </ClCompile>
-    <ClCompile Include="FireJetParticleSystem.cpp">
+    <ClCompile Include="Fire.cpp">
       <Filter>Source Files\ParticleSystems</Filter>
     </ClCompile>
     <ClCompile Include="ParticleShader.cpp">
@@ -169,13 +163,13 @@
       <Filter>Source Files\Shader Classes</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files\GameObjects</Filter>
+      <Filter>Source Files\Game Entities</Filter>
     </ClCompile>
     <ClCompile Include="Terrain.cpp">
-      <Filter>Source Files\GameObjects</Filter>
+      <Filter>Source Files\Game Entities</Filter>
     </ClCompile>
     <ClCompile Include="Rocket.cpp">
-      <Filter>Source Files\GameObjects</Filter>
+      <Filter>Source Files\Game Entities</Filter>
     </ClCompile>
     <ClCompile Include="Light.cpp">
       <Filter>Source Files\Lights</Filter>
@@ -186,21 +180,24 @@
     <ClCompile Include="DirectionalLight.cpp">
       <Filter>Source Files\Lights</Filter>
     </ClCompile>
-    <ClCompile Include="ConfigurationFileLoader.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="RenderToTexture.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Game Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationManager.cpp">
+      <Filter>Source Files\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="D3DContainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GraphicsRenderer.h">
+    <ClInclude Include="D3DApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="System.h">
+    <ClInclude Include="D3DSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ColourShader.h">
@@ -251,9 +248,6 @@
     <ClInclude Include="LightManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="RenderToTexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DepthShader.h">
       <Filter>Header Files\Shader Headers</Filter>
     </ClInclude>
@@ -263,10 +257,10 @@
     <ClInclude Include="ParticleSystem.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
-    <ClInclude Include="FireJetParticleSystem.h">
+    <ClInclude Include="Fire.h">
       <Filter>Header Files\ParticleSystems</Filter>
     </ClInclude>
-    <ClInclude Include="SmokeParticleSystem.h">
+    <ClInclude Include="Smoke.h">
       <Filter>Header Files\ParticleSystems</Filter>
     </ClInclude>
     <ClInclude Include="ParticleShader.h">
@@ -285,13 +279,13 @@
       <Filter>Header Files\Shader Headers</Filter>
     </ClInclude>
     <ClInclude Include="Terrain.h">
-      <Filter>Header Files\GameObjects</Filter>
+      <Filter>Header Files\Game Entities</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Header Files\GameObjects</Filter>
+      <Filter>Header Files\Game Entities</Filter>
     </ClInclude>
     <ClInclude Include="Rocket.h">
-      <Filter>Header Files\GameObjects</Filter>
+      <Filter>Header Files\Game Entities</Filter>
     </ClInclude>
     <ClInclude Include="Light.h">
       <Filter>Header Files\Lights</Filter>
@@ -302,8 +296,14 @@
     <ClInclude Include="PointLight.h">
       <Filter>Header Files\Lights</Filter>
     </ClInclude>
-    <ClInclude Include="ConfigurationFileLoader.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="RenderToTexture.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Game Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigurationManager.h">
+      <Filter>Header Files\Managers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -585,7 +585,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Configuration.txt" />

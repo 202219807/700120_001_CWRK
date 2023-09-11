@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
-#include "SmokeParticleSystem.h"
-#include "FireJetParticleSystem.h"
+#include "Smoke.h"
+#include "Fire.h"
 
 using namespace std;
 
@@ -26,13 +26,14 @@ public:
 	bool Render(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const XMFLOAT3& cameraPosition) const;
 
 private:
-	bool m_explosion;
-	float m_timeSinceExplosion;
-	unsigned int m_smokeRenderCount;
-	unsigned int m_explosionRenderCount;
+	bool			          m_explosion;
+	float			          m_timeSinceExplosion;
 
-	vector<shared_ptr<SmokeParticleSystem>> m_smokeParticleSystems;
-	vector<shared_ptr<FireJetParticleSystem>> m_fireJetParticleSystems;
+	unsigned int	          m_smokeRenderCount;
+	unsigned int			  m_explosionRenderCount;
+
 	vector<shared_ptr<Light>> m_explosionLights;
+	vector<shared_ptr<Smoke>> m_smokeParticleSystems;
+	vector<shared_ptr<Fire>>  m_fireJetParticleSystems;
 };
 
