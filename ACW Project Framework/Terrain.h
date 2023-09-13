@@ -17,7 +17,6 @@ public:
 	Terrain& operator = (Terrain&& other) noexcept = default;
 
 	void ResetTerrainState();
-
 	void UpdateTerrain();
 	bool RenderTerrain(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) const;
 

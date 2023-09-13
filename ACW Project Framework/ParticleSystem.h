@@ -3,7 +3,6 @@
 #include "ParticleShader.h"
 
 //GameObject contains all the components types we need for the particle system
-
 class ParticleSystem : public GameObject
 {
 public:

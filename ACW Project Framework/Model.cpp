@@ -1,6 +1,18 @@
 #include "Model.h"
 
-Model::Model(ID3D11Device* const device, const char* const modelFileName, const shared_ptr<ResourceManager>& resourceManager) : m_initializationFailed(false), m_bufferDescriptionSizeChange(false), m_updateInstanceBuffer(false), m_sizeOfVertexType(0), m_indexCount(0), m_instanceCount(0), m_vertexBuffer(nullptr), m_indexBuffer(nullptr), m_instanceBuffer(nullptr), m_instances(nullptr), m_instanceBufferDescription(nullptr), m_instanceData(nullptr)
+Model::Model(ID3D11Device* const device, const char* const modelFileName, const shared_ptr<ResourceManager>& resourceManager) : 
+	m_initializationFailed(false), 
+	m_bufferDescriptionSizeChange(false), 
+	m_updateInstanceBuffer(false), 
+	m_sizeOfVertexType(0), 
+	m_indexCount(0), 
+	m_instanceCount(0), 
+	m_vertexBuffer(nullptr), 
+	m_indexBuffer(nullptr), 
+	m_instanceBuffer(nullptr), 
+	m_instances(nullptr), 
+	m_instanceBufferDescription(nullptr), 
+	m_instanceData(nullptr)
 {
 	const auto result = resourceManager->GetModel(device, modelFileName, m_vertexBuffer, m_indexBuffer);
 
@@ -14,7 +26,8 @@ Model::Model(ID3D11Device* const device, const char* const modelFileName, const 
 	m_indexCount = resourceManager->GetIndexCount(modelFileName);
 }
 
-Model::Model(ID3D11Device* const device, const char* const modelFileName, const shared_ptr<ResourceManager>& resourceManager, const vector<XMFLOAT3> &scales, const vector<XMFLOAT3> &rotations, const vector<XMFLOAT3> &positions) : Model(device, modelFileName, resourceManager)
+Model::Model(ID3D11Device* const device, const char* const modelFileName, const shared_ptr<ResourceManager>& resourceManager, const vector<XMFLOAT3> &scales, const vector<XMFLOAT3> &rotations, const vector<XMFLOAT3> &positions) : 
+	Model(device, modelFileName, resourceManager)
 {
 	//Set the number of instances we have
 	m_instanceCount = positions.size();

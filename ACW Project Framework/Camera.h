@@ -8,13 +8,13 @@ using namespace DirectX;
 class Camera
 {
 public:
-	Camera(); // Default Constructor
-	Camera(const Camera& other); // Copy Constructor
-	Camera(Camera && other); // Move Constructor
+	Camera();
 	~Camera();
 
-	Camera& operator = (const Camera& other); // Copy Assignment Operator
-	//CameraClass& operator = (CameraClass && other) noexcept; // Move Assignment Operator
+	Camera(const Camera& other) = default;
+	Camera(Camera && other) = default;
+	Camera& operator= (const Camera& other) = default;
+	Camera& operator= (Camera&& other) noexcept = default;
 
 	XMFLOAT3 GetPosition() const;
 	XMFLOAT3 GetRotation() const;
@@ -36,6 +36,8 @@ public:
 	void Render();
 
 private:
+	XMFLOAT4X4 m_viewMatrix;
+	
 	float m_positionX;
 	float m_positionY;
 	float m_positionZ;
@@ -43,6 +45,4 @@ private:
 	float m_rotationX;
 	float m_rotationY;
 	float m_rotationZ;
-
-	XMFLOAT4X4 m_viewMatrix;
 };

@@ -196,12 +196,6 @@ bool D3DSystem::Frame() {
 		m_input->ToggleDoOnce(false);
 	}
 
-	if (m_input->IsKeyDown(VK_F7) && m_input->DoOnce())
-	{
-		m_graphics->ToggleOptionalGameObjects();
-		m_input->ToggleDoOnce(false);
-	}
-
 	//Camera Controls
 	if (m_input->IsKeyDown(VK_CONTROL))
 	{
@@ -412,6 +406,10 @@ void D3DSystem::ShutdownWindows() {
 //We intercept this by giving this prototype function to the window procedure when we defined the window class structure for our window class (WNDCLASSEX), this way we hook into the messaging functionality and intercept messages
 LRESULT CALLBACK WndProc(HWND const hwnd, UINT const umsg, WPARAM const wparam, LPARAM const lparam) {
 	
+	// Send event message to AntTweakBar
+	if (TwEventWin(hwnd, umsg, wparam, lparam))
+		return 0; // Event has been handled by AntTweakBar
+
 	switch(umsg)
 	{
 		//Check if the window is being destroyed

@@ -21,8 +21,8 @@ public:
 
 	void AdjustRotationLeft() const;
 	void AdjustRotationRight() const;
-
 	void LaunchRocket();
+
 	const bool RocketLaunched() const;
 	const bool ParticleSystemActive() const;
 
@@ -34,18 +34,21 @@ public:
 	const shared_ptr<GameObject> GetRocketCone() const;
 	const shared_ptr<GameObject> GetRocketCap() const;
 	const shared_ptr<GameObject> GetRocketLauncher() const;
-	
 	const shared_ptr<Light>& GetParticleSystemLight() const;
 
-	bool CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOAT3& outCollisionPosition, float& outBlastRadius);
-
-	void ResetRocketState();
-
-	void UpdateRocket(const float dt);
+	bool CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOAT3& outCollisionPosition, float& outBlastRadius);	
 	bool RenderRocket(const shared_ptr<D3DContainer>& d3dContainer, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) const;
+	void ResetRocketState();
+	void UpdateRocket(const float dt);
+	void UpdateLightPosition() const;
 
 private:
-	void UpdateLightPosition() const;
+	shared_ptr<GameObject>	m_rocketCone;
+	shared_ptr<GameObject>	m_rocketBody;
+	shared_ptr<GameObject>	m_rocketCap;
+	shared_ptr<GameObject>	m_rocketLauncher;
+	shared_ptr<Light>		m_rocketLight;
+	shared_ptr<Fire>		m_rocketEngine;
 
 	bool m_initializationFailed;
 	bool m_rocketLaunched;
@@ -63,12 +66,4 @@ private:
 	XMFLOAT3 m_initialLauncherRotation;
 	XMFLOAT3 m_lookAtRocketPosition;
 	XMFLOAT3 m_lookAtRocketConePosition;
-
-	shared_ptr<GameObject> m_rocketCone;
-	shared_ptr<GameObject> m_rocketBody;
-	shared_ptr<GameObject> m_rocketCap;
-	shared_ptr<GameObject> m_rocketLauncher;
-	shared_ptr<Light> m_particleSystemLight;
-	shared_ptr<Fire> m_fireJetParticleSystem;
-	shared_ptr<Fire> m_coneFlameParticleSystem;
 };

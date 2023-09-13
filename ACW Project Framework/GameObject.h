@@ -5,9 +5,9 @@
 #include "Position.h"
 #include "Rotation.h"
 #include "Scale.h"
-#include "RigidBody.h"
 #include "Shader.h"
 #include "Light.h"
+#include "Physics.h"
 
 using namespace std;
 using namespace DirectX;
@@ -42,7 +42,7 @@ public:
 	void AddModelComponent(ID3D11Device* const device, const ModelType modelType, const shared_ptr<ResourceManager>& resourceManager);
 	void AddTextureComponent(ID3D11Device* const device, const vector<const WCHAR*>& textureFileNames, const shared_ptr<ResourceManager>& resourceManager);
 	void AddShaderComponent(const shared_ptr<Shader>& shader);
-	void AddRigidBodyComponent(const bool useGravity, const float mass, const float drag, const float angularDrag);
+	void AddPhysicsComponent(const bool useGravity, const float mass, const float drag, const float angularDrag);
 
 	void AddPositionComponent();
 	void AddPositionComponent(const XMFLOAT3& position);
@@ -83,7 +83,7 @@ public:
 	const shared_ptr<Rotation>&					GetRotationComponent()		const;
 	const shared_ptr<Scale>&					GetScaleComponent()			const;
 	const shared_ptr<Shader>&					GetShaderComponent()		const;
-	const shared_ptr<RigidBody>&				GetRigidBodyComponent()		const;
+	const shared_ptr<Physics>&					GetPhysicsComponent()		const;
 
 	const vector<ID3D11ShaderResourceView*>&	GetTextureList()			const;
 
@@ -102,7 +102,7 @@ private:
 	shared_ptr<Scale>		m_scale;
 	shared_ptr<Shader>		m_shader;
 	shared_ptr<Texture>		m_texture;
-	shared_ptr<RigidBody>	m_rigidBody;
+	shared_ptr<Physics>		m_physics;
 
 	bool					m_initializationFailed;
 	bool					m_updateInstanceData;

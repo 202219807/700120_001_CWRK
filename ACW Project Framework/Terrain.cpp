@@ -1,7 +1,5 @@
 #include "Terrain.h"
 
-
-
 Terrain::Terrain(ID3D11Device* const device, const XMFLOAT3& voxelArea, const XMFLOAT3& cubeScale, const shared_ptr<Shader>& shader, const shared_ptr<ResourceManager>& resourceManager) : m_initializationFailed(false)
 {
 	const auto x = static_cast<int>(voxelArea.x / 2);
@@ -34,7 +32,7 @@ Terrain::Terrain(ID3D11Device* const device, const XMFLOAT3& voxelArea, const XM
 	AddScaleComponent(cubeScale);
 	AddPositionComponent(m_initialTerrainPositions);
 	AddRotationComponent(0.0f, 0.0f, 0.0f);
-	AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
+	AddPhysicsComponent(true, 1.0f, 0.0f, 0.0f);
 	AddModelComponent(device, ModelType::LowPolyCube, resourceManager);
 	AddTextureComponent(device, textureNames, resourceManager);
 	AddShaderComponent(shader);
@@ -48,17 +46,9 @@ Terrain::Terrain(ID3D11Device* const device, const XMFLOAT3& voxelArea, const XM
 	}
 }
 
-//Terrain::Terrain(const Terrain& other) = default;
-
-//Terrain::Terrain(Terrain&& other) noexcept = default;
-
 Terrain::~Terrain()
 {
 }
-
-//Terrain& Terrain::operator=(const Terrain& other) = default;
-
-//Terrain& Terrain::operator=(Terrain&& other) noexcept = default;
 
 void Terrain::ResetTerrainState()
 {

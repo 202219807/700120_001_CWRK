@@ -76,7 +76,6 @@ private:
 
 	bool								m_initializationFailed;
 	bool								m_updateCamera;
-	bool								m_renderOptionalGameObjects;
 	
 	int									m_renderToggle;
 	int									m_cameraMode;
@@ -96,7 +95,6 @@ public:
 	
 	// Rendering
 	void ToggleRenderOption();
-	void ToggleOptionalGameObjects();
 
 	// Adjust Timescale
 	void AddTimeScale(const int number);

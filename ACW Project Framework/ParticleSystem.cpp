@@ -12,7 +12,6 @@ ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, cons
 
 		auto particleScale = XMFLOAT3(initialScale.x - ((initialScale.x - finalScale.x) / particleDensity) * i, initialScale.y - ((initialScale.y - finalScale.y) / particleDensity) * i, initialScale.z - ((initialScale.z - finalScale.z) / particleDensity) * i);
 
-		//scales.emplace_back(initialScale - ((initialScale - finalScale) / particleDensity) * i);
 		scales.emplace_back(particleScale);
 	}
 
@@ -89,7 +88,6 @@ void ParticleSystem::UpdateParticles(const float dt)
 		for (unsigned int i = 0; i < positions.size(); i++)
 		{
 			positions[i].y = positions[i].y + abs(m_velocity * dt);
-			//scales[i] = scales[i] - (XMFLOAT3(m_scaleReduction.x * dt, m_scaleReduction.y * dt, m_scaleReduction.z * dt));
 			scales[i] = XMFLOAT3(scales[i].x - m_scaleReduction.x * dt, scales[i].y - m_scaleReduction.y * dt, scales[i].z - m_scaleReduction.z * dt);
 		}
 

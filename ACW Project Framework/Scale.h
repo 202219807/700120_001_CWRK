@@ -9,7 +9,6 @@ using namespace std;
 
 class Scale
 {
-
 public:
 	Scale(); // Default Constructor
 	explicit Scale(const XMFLOAT3& scale);

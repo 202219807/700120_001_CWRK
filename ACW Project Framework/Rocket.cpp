@@ -1,11 +1,31 @@
 #include "Rocket.h"
 
-Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLOAT3& rotation, const XMFLOAT3& scale, const shared_ptr<ShaderManager>& shaderManager, const shared_ptr<ResourceManager>& resourceManager) : m_initializationFailed(false), m_rocketLaunched(false), m_changedParticleSystem(false), m_particleSystemActive(false), m_blastRadius(4.0f), m_initialVelocity(25.0f), m_gravity(-9.81f), m_velocity(XMFLOAT2()), m_angularVelocity(XMFLOAT2()), m_initialLauncherPosition(XMFLOAT3()), m_initialLauncherRotation(XMFLOAT3()), m_lookAtRocketPosition(XMFLOAT3()), m_lookAtRocketConePosition(XMFLOAT3()), m_rocketCone(nullptr), m_rocketBody(nullptr), m_rocketCap(nullptr), m_rocketLauncher(nullptr), m_particleSystemLight(nullptr), m_fireJetParticleSystem(nullptr), m_coneFlameParticleSystem(nullptr)
+Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLOAT3& rotation, const XMFLOAT3& scale, const shared_ptr<ShaderManager>& shaderManager, const shared_ptr<ResourceManager>& resourceManager) : 
+	m_initializationFailed(false), 
+	m_rocketLaunched(false), 
+	m_changedParticleSystem(false), 
+	m_particleSystemActive(false), 
+	m_blastRadius(4.0f), 
+	m_initialVelocity(25.0f), 
+	m_gravity(-9.81f), 
+	m_velocity(XMFLOAT2()), 
+	m_angularVelocity(XMFLOAT2()), 
+	m_initialLauncherPosition(XMFLOAT3()), 
+	m_initialLauncherRotation(XMFLOAT3()), 
+	m_lookAtRocketPosition(XMFLOAT3()), 
+	m_lookAtRocketConePosition(XMFLOAT3()), 
+	m_rocketCone(nullptr), 
+	m_rocketBody(nullptr), 
+	m_rocketCap(nullptr), 
+	m_rocketLauncher(nullptr), 
+	m_rocketLight(nullptr), 
+	m_rocketEngine(nullptr)
 {
 	m_initialLauncherPosition = position;
 	m_initialLauncherRotation = rotation;
 
 	vector<const WCHAR*> textureNames;
+
 	textureNames.push_back(L"MetalMeshColour.dds");
 	textureNames.push_back(L"MetalMeshNormal.dds");
 	textureNames.push_back(L"MetalMeshSpecular.dds");
@@ -29,13 +49,13 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	}
 
 	m_rocketCap = make_shared<GameObject>();
+	m_rocketCap->AddParentGameObject(m_rocketBody);
 	m_rocketCap->AddPositionComponent(0.0f, -(3.0f * scale.y), 0.0f);
 	m_rocketCap->AddRotationComponent(0.0f, 0.0f, 0.0f);
 	m_rocketCap->AddScaleComponent(0.92f, 0.1f, 0.92f);
 	m_rocketCap->AddModelComponent(device, ModelType::Sphere, resourceManager);
 	m_rocketCap->AddTextureComponent(device, textureNames, resourceManager);
 	m_rocketCap->AddShaderComponent(shaderManager->GetTextureDisplacementShader());
-	m_rocketCap->AddParentGameObject(m_rocketBody);
 
 	if (m_rocketCap->GetInitializationState())
 	{
@@ -51,6 +71,7 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	textureNames.push_back(L"RoughRockTwoDisplacement.dds");
 
 	m_rocketLauncher = make_shared<GameObject>();
+	m_rocketLauncher->AddParentGameObject(m_rocketBody);
 	m_rocketLauncher->AddPositionComponent((1.3f * scale.x), 0.0f, 0.0f);
 	m_rocketLauncher->AddRotationComponent(0.0f, 0.0f, 0.0f);
 	m_rocketLauncher->AddScaleComponent(0.3f * scale.x, 8.0f * scale.y, 0.3f * scale.z);
@@ -59,7 +80,6 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	m_rocketLauncher->AddShaderComponent(shaderManager->GetTextureDisplacementShader());
 	m_rocketLauncher->SetTessellationVariables(2.0f, 10.0f, 64.0f, 1.0f);
 	m_rocketLauncher->SetDisplacementVariables(20.0f, 0.0f, 6.0f, 0.18f);
-	m_rocketLauncher->AddParentGameObject(m_rocketBody);
 
 	if (m_rocketLauncher->GetInitializationState())
 	{
@@ -72,6 +92,7 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	textureNames.push_back(L"Skymap.dds");
 
 	m_rocketCone = make_shared<GameObject>();
+	m_rocketCone->AddParentGameObject(m_rocketBody);
  	m_rocketCone->AddPositionComponent(0.0f, (3.0f * scale.y + 1.0f), 0.0f);
 	m_rocketCone->AddRotationComponent(0.0f, 0.0f, 0.0f);
 	m_rocketCone->AddScaleComponent(1.0f, 2.0f, 1.0f);
@@ -79,7 +100,6 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	m_rocketCone->AddTextureComponent(device, textureNames, resourceManager);
 	m_rocketCone->AddShaderComponent(shaderManager->GetReflectionShader());
 	m_rocketCone->SetTessellationVariables(5.0f, 20.0f, 8.0f, 1.0f);
-	m_rocketCone->AddParentGameObject(m_rocketBody);
 
 	if (m_rocketCone->GetInitializationState())
 	{
@@ -121,22 +141,19 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	XMStoreFloat3(&lightPositionFloat, lightPosition);
 	XMStoreFloat3(&lightPointPositionFloat, lightPointPosition);
 
-	m_particleSystemLight = make_shared<Light>();
-	m_particleSystemLight->SetLightOrbit(false);
-	m_particleSystemLight->SetLightPosition(lightPositionFloat);
-	m_particleSystemLight->SetLightPointPosition(lightPointPositionFloat);
-	m_particleSystemLight->SetAmbientColour(0.15f, 0.15f, 0.15f, 1.0f);
-	m_particleSystemLight->SetDiffuseColour(0.8f, 0.3f, 0.0f, 1.0f);
-	m_particleSystemLight->SetSpecularColour(0.8f, 0.3f, 0.0f, 1.0f);
-	m_particleSystemLight->SetSpecularPower(8.0f);
-	m_particleSystemLight->GenerateLightProjectionMatrix(45.0f, 45.0f, 0.1f, 1000.0f);
-	m_particleSystemLight->UpdateLightVariables(0.0f);
+	m_rocketLight = make_shared<Light>();
+	m_rocketLight->SetLightOrbit(false);
+	m_rocketLight->SetLightPosition(lightPositionFloat);
+	m_rocketLight->SetLightPointPosition(lightPointPositionFloat);
+	m_rocketLight->SetAmbientColour(0.15f, 0.15f, 0.15f, 1.0f);
+	m_rocketLight->SetDiffuseColour(0.8f, 0.3f, 0.0f, 1.0f);
+	m_rocketLight->SetSpecularColour(0.8f, 0.3f, 0.0f, 1.0f);
+	m_rocketLight->SetSpecularPower(8.0f);
+	m_rocketLight->GenerateLightProjectionMatrix(45.0f, 45.0f, 0.1f, 1000.0f);
+	m_rocketLight->UpdateLightVariables(0.0f);
 
-	m_fireJetParticleSystem = make_shared<Fire>(device, nullptr, ModelType::Quad, XMFLOAT3(0.0f, -(3.0f * scale.y), 0.0f), XMFLOAT3(1.5f, 1.5f, 1.5f), XMFLOAT3(0.4f, 0.4f, 0.4f), 0.5f, 5.0f, 5.6f, 60, resourceManager);
-	m_fireJetParticleSystem->AddParentGameObject(m_rocketBody);
-
-	m_coneFlameParticleSystem = make_shared<Fire>(device, nullptr, ModelType::SphereInverted, XMFLOAT3(0.0f, (4.0f * scale.y), 0.0f), XMFLOAT3(1.5f, 1.5f, 1.5f), XMFLOAT3(1.0f, 1.0f, 1.0f), 0.8f, 5.0f, 4.0f, 10, resourceManager);
-	m_coneFlameParticleSystem->AddParentGameObject(m_rocketBody);
+	m_rocketEngine = make_shared<Fire>(device, nullptr, ModelType::Quad, XMFLOAT3(0.0f, -(3.0f * scale.y), 0.0f), XMFLOAT3(1.5f, 1.5f, 1.5f), XMFLOAT3(0.4f, 0.4f, 0.4f), 0.5f, 5.0f, 5.6f, 60, resourceManager);
+	m_rocketEngine->AddParentGameObject(m_rocketBody);
 
 	m_rocketLauncher->Update();
 }
@@ -182,28 +199,17 @@ void Rocket::LaunchRocket()
 	if (!m_rocketLaunched)
 	{
 		const auto launchAngle = m_rocketBody->GetRotationComponent()->GetRotationAt(0);
-
-		//Turn the rocket angle to the launch angle we need
 		const auto angle = XM_PIDIV2 + launchAngle.z;
-
+		
 		m_velocity = XMFLOAT2(m_initialVelocity * cos(angle), m_initialVelocity * sin(angle));
 		m_angularVelocity = XMFLOAT2(cos(-angle), sin(-angle));
-
-		const auto totalAngularMovement = angle + XM_PIDIV2;
-
+		
+		const auto orientation = angle + XM_PIDIV2;
 		const auto v = m_velocity.x * m_velocity.x + m_velocity.y * m_velocity.y;
-
-		auto totalTimeOfJourney = (v * sin(angle) + sqrt(((v * sin(angle)) * (v * sin(angle))) + 2.0f * (m_gravity * 3.0f))) / m_gravity;
-
-		totalTimeOfJourney *= 2.0f;
-
-		m_angularVelocity = XMFLOAT2(totalAngularMovement / totalTimeOfJourney, totalAngularMovement / totalTimeOfJourney);
-
-		//totalTimeOfJourney = totalTimeOfJourney / (v * cos(angle));
-
-		//m_angularVelocity = XMFLOAT2(totalAngularMovement / totalTimeOfJourney, totalAngularMovement / totalTimeOfJourney);
-		//m_angularVelocity = XMFLOAT2(totalTimeOfJourney / totalAngularMovement, totalTimeOfJourney / totalAngularMovement);
-
+		auto flightDuration = (v * sin(angle) + sqrt(((v * sin(angle)) * (v * sin(angle))) + 2.0f * (m_gravity * 3.0f))) / m_gravity;
+		flightDuration *= 2.0f;
+		
+		m_angularVelocity = XMFLOAT2(orientation / flightDuration, orientation / flightDuration);
 		m_rocketLaunched = true;
 		m_particleSystemActive = true;
 	}
@@ -219,8 +225,6 @@ const bool Rocket::ParticleSystemActive() const
 	return m_particleSystemActive;
 }
 
-
-
 const XMFLOAT3& Rocket::GetLauncherPosition() const
 {
 	return m_initialLauncherPosition;
@@ -230,9 +234,9 @@ const XMFLOAT3& Rocket::GetLookAtRocketPosition()
 {
 	const auto rocketBodyPosition = m_rocketBody->GetPositionComponent()->GetPositionAt(0);
 	const auto rocketBodyScale = m_rocketBody->GetScaleComponent()->GetScaleAt(0);
-
+	
 	m_lookAtRocketPosition = XMFLOAT3(rocketBodyPosition.x, rocketBodyPosition.y, rocketBodyPosition.z - rocketBodyScale.x);
-
+	
 	return m_lookAtRocketPosition;
 }
 
@@ -291,7 +295,7 @@ const shared_ptr<GameObject> Rocket::GetRocketLauncher() const
 
 const shared_ptr<Light>& Rocket::GetParticleSystemLight() const
 {
-	return m_particleSystemLight;
+	return m_rocketLight;
 }
 
 bool Rocket::CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOAT3& outCollisionPosition, float& outBlastRadius)
@@ -309,7 +313,6 @@ bool Rocket::CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOA
 	auto posMatrix = XMMatrixIdentity();
 
 	posMatrix = XMMatrixMultiply(posMatrix, XMMatrixTranslation(0.0f, 0.6f, 0.0f));
-
 	posMatrix = posMatrix * rocketMatrix;
 
 	auto rocketConeScale = XMVECTOR();
@@ -325,8 +328,7 @@ bool Rocket::CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOA
 	if (conePositionFloat.y < 0.0f)
 	{
 		//Collision true
-
-		if (conePositionFloat.y < -200.0f)
+		if (conePositionFloat.y < -150.0f)
 		{
 			//Reset if we have fallen too far
 			ResetRocketState();
@@ -339,20 +341,18 @@ bool Rocket::CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOA
 		for (unsigned int i = 0; i < terrainPositions.size(); i++)
 		{
 			auto distance = XMFLOAT3(terrainPositions[i].x - conePositionFloat.x, terrainPositions[i].y - conePositionFloat.y, terrainPositions[i].z - conePositionFloat.z);
-
 			auto size = 0.0f;
 
 			XMStoreFloat(&size, XMVector3Length(XMLoadFloat3(&distance)));
 
 			//See if we collide with a single block and don't destroy within the blast radius
-
 			auto radiusSum = XMVectorGetX(rocketConeScale) + terrainCubeRadius;
 
-			if (size*size <= radiusSum * radiusSum)
+			if (size * size <= radiusSum * radiusSum)
 			{
 				outCollisionPosition = terrainPositions[i];
 				outBlastRadius = m_blastRadius;
-
+				
 				terrain->GetPositionComponent()->TranslatePositionAt(XMFLOAT3(0.0f, -1000.0f, 0.0f), i);
 
 				terrainPositions = terrain->GetPositionComponent()->GetPositions();
@@ -360,7 +360,6 @@ bool Rocket::CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOA
 				for (unsigned int j = 0; j < terrainPositions.size(); j++)
 				{
 					distance = XMFLOAT3(terrainPositions[j].x - conePositionFloat.x, terrainPositions[j].y - conePositionFloat.y, terrainPositions[j].z - conePositionFloat.z);
-
 					size = 0.0f;
 
 					XMStoreFloat(&size, XMVector3Length(XMLoadFloat3(&distance)));
@@ -368,7 +367,7 @@ bool Rocket::CheckForTerrainCollision(const shared_ptr<Terrain>& terrain, XMFLOA
 					//Destroy all blocks in the radius
 					radiusSum = XMVectorGetX(rocketConeScale) + terrainCubeRadius + m_blastRadius;
 
-					if (size*size <= radiusSum * radiusSum)
+					if (size * size <= radiusSum * radiusSum)
 					{
 						terrain->GetPositionComponent()->TranslatePositionAt(XMFLOAT3(0.0f, -500.0f, 0.0f), j);
 					}
@@ -430,8 +429,7 @@ void Rocket::UpdateRocket(const float dt)
 	m_rocketBody->Update();
 	m_rocketCone->Update();
 	m_rocketCap->Update();
-	m_fireJetParticleSystem->UpdateParticles(dt);
-	m_coneFlameParticleSystem->UpdateParticles(dt);
+	m_rocketEngine->UpdateParticles(dt);
 
 	UpdateLightPosition();
 }
@@ -475,8 +473,8 @@ void Rocket::UpdateLightPosition() const
 	XMStoreFloat3(&lightPositionFloat, lightPosition);
 	XMStoreFloat3(&lightPointPositionFloat, lightPointPosition);
 
-	m_particleSystemLight->SetLightPosition(lightPositionFloat);
-	m_particleSystemLight->SetLightPointPosition(lightPointPositionFloat);
+	m_rocketLight->SetLightPosition(lightPositionFloat);
+	m_rocketLight->SetLightPointPosition(lightPointPositionFloat);
 }
 
 
@@ -517,22 +515,7 @@ bool Rocket::RenderRocket(const shared_ptr<D3DContainer>& d3dContainer, const XM
 		d3dContainer->DisableDepthStencil();
 		d3dContainer->EnableAlphaBlending();
 
-		result = m_fireJetParticleSystem->RenderFireJetParticleSystem(d3dContainer->GetDeviceContext(), viewMatrix, projectionMatrix, cameraPosition);
-
-		d3dContainer->EnabledDepthStencil();
-		d3dContainer->DisableAlphaBlending();
-
-		if (!result)
-		{
-			return false;
-		}
-	}
-	else if (m_rocketLaunched)
-	{
-		d3dContainer->DisableDepthStencil();
-		d3dContainer->EnableAlphaBlending();
-
-		result = m_coneFlameParticleSystem->RenderFireJetParticleSystem(d3dContainer->GetDeviceContext(), viewMatrix, projectionMatrix, cameraPosition);
+		result = m_rocketEngine->RenderFireJetParticleSystem(d3dContainer->GetDeviceContext(), viewMatrix, projectionMatrix, cameraPosition);
 
 		d3dContainer->EnabledDepthStencil();
 		d3dContainer->DisableAlphaBlending();

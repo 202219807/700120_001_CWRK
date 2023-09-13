@@ -15,7 +15,7 @@ GameObject::GameObject() :
 	m_position(nullptr), 
 	m_rotation(nullptr), 
 	m_scale(nullptr), 
-	m_rigidBody(nullptr), 
+	m_physics(nullptr), 
 	m_model(nullptr), 
 	m_texture(nullptr), 
 	m_shader(nullptr), 
@@ -101,9 +101,9 @@ void GameObject::AddShaderComponent(const shared_ptr<Shader>& shader)
 	m_shader = shader;
 }
 
-void GameObject::AddRigidBodyComponent(const bool useGravity, const float mass, const float drag, const float angularDrag) 
+void GameObject::AddPhysicsComponent(const bool useGravity, const float mass, const float drag, const float angularDrag) 
 {
-	m_rigidBody = make_shared<RigidBody>(useGravity, mass, drag, angularDrag);
+	m_physics = make_shared<Physics>(useGravity, mass, drag, angularDrag);
 }
 
 void GameObject::AddPositionComponent() 
@@ -279,9 +279,9 @@ const shared_ptr<Shader>& GameObject::GetShaderComponent() const
 	return m_shader;
 }
 
-const shared_ptr<RigidBody>& GameObject::GetRigidBodyComponent() const 
+const shared_ptr<Physics>& GameObject::GetPhysicsComponent() const 
 {
-	return m_rigidBody;
+	return m_physics;
 }
 
 const vector<ID3D11ShaderResourceView*>& GameObject::GetTextureList() const 

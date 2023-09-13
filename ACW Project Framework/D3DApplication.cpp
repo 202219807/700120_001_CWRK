@@ -1,6 +1,29 @@
 #include "D3DApplication.h"
 
-D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwnd) : m_initializationFailed(false), m_d3D(nullptr), m_antTweakBarStatistics(nullptr), m_camera(nullptr), m_lightManager(nullptr), m_terrain(nullptr), m_rocket(nullptr), m_displacedFloor(nullptr), m_skyBox(nullptr), m_gameObjects(), m_shaderManager(nullptr), m_resourceManager(nullptr), m_shadowMapManager(nullptr), m_renderToggle(0), m_renderOptionalGameObjects(false), m_timeScale(1), m_updateCamera(false), m_cameraMode(0), m_dt(0.0f), m_fps(0.0f), m_start({0}), m_end({0}), m_frequency({0}) {
+D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwnd) : 
+	m_initializationFailed(false), 
+	m_d3D(nullptr), 
+	m_antTweakBarStatistics(nullptr), 
+	m_camera(nullptr), 
+	m_lightManager(nullptr), 
+	m_terrain(nullptr), 
+	m_rocket(nullptr), 
+	m_displacedFloor(nullptr), 
+	m_skyBox(nullptr), 
+	m_gameObjects(), 
+	m_shaderManager(nullptr), 
+	m_resourceManager(nullptr), 
+	m_shadowMapManager(nullptr), 
+	m_renderToggle(0), 
+	m_timeScale(1), 
+	m_updateCamera(false), 
+	m_cameraMode(0), 
+	m_dt(0.0f), 
+	m_fps(0.0f), 
+	m_start({0}), 
+	m_end({0}), 
+	m_frequency({0}) 
+{
 	//Create D3D object
 	m_d3D = make_shared<D3DContainer>(screenWidth, screenHeight, hwnd, FULL_SCREEN, VSYNC_ENABLED, SCREEN_DEPTH, SCREEN_NEAR);
 
@@ -32,12 +55,14 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	
 	m_configuration = make_shared<ConfigurationManager>("Config.txt");
 
+	// Initialize Container
 	if (m_d3D->GetInitializationState()) {
 		m_initializationFailed = true;
 		MessageBox(hwnd, "Direct3D failed to Initialize", "Error", MB_OK);
 		return;
 	}
 
+	// Initialize Managers
 	m_shaderManager = make_shared<ShaderManager>(m_d3D->GetDevice(), hwnd);
 
 	if (m_shaderManager->GetInitializationState())
@@ -56,6 +81,16 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 		return;
 	}
 
+	m_lightManager = make_shared<LightManager>();
+
+	if (!m_lightManager)
+	{
+		m_initializationFailed = true;
+		MessageBox(hwnd, "LightManager failed to Initialize", "Error", MB_OK);
+		return;
+	}
+
+	// Initialize ParticleSystem Manager
 	m_particleSystemManager = make_shared<ParticleSystemManager>();
 
 	//Create camera
@@ -71,15 +106,7 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	//Set camera position
 	m_camera->SetPosition(m_configuration->GetCameraPosition());
 
-	m_lightManager = make_shared<LightManager>();
-
-	if (!m_lightManager)
-	{
-		m_initializationFailed = true;
-		MessageBox(hwnd, "LightManager failed to Initialize", "Error", MB_OK);
-		return;
-	}
-
+	// Set scene elements and lights
 	const auto terrainDimensions = m_configuration->GetTerrainDimensions();
 
 	auto rocketPosition = m_configuration->GetRocketPosition();
@@ -94,52 +121,8 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_shadowMapManager = make_shared<ShadowMapManager>(hwnd, m_d3D->GetDevice(), m_shaderManager->GetDepthShader(), m_lightManager->GetLightList().size(), SHADOW_MAP_WIDTH, SHADOW_MAP_HEIGHT);
 
 	vector<const WCHAR*> textureNames;
-	textureNames.push_back(L"IceColour.dds");
-	textureNames.push_back(L"IceNormal.dds");
-	textureNames.push_back(L"IceSpecular.dds");
-	textureNames.push_back(L"IceDisplacement.dds");
 
-	m_gameObjects.push_back(make_shared<GameObject>());
-	m_gameObjects.back()->AddPositionComponent(XMFLOAT3(8.0f, 0.0f, 0.0f));
-	m_gameObjects.back()->AddRotationComponent(0.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddScaleComponent(1.0f, 1.0f, 1.0f);
-	m_gameObjects.back()->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::Sphere, m_resourceManager);
-	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
-	m_gameObjects.back()->SetDisplacementVariables(20.0f, 0.0f, 6.0f, 0.15f);
-
-	if (m_gameObjects.back()->GetInitializationState())
-	{
-		m_initializationFailed = true;
-		MessageBox(hwnd, "Could not initialize the model object.", "Error", MB_OK);
-		return;
-	}
-
-	textureNames.clear();
-	textureNames.push_back(L"PebblesColour.dds");
-	textureNames.push_back(L"PebblesNormal.dds");
-	textureNames.push_back(L"PebblesSpecular.dds");
-	textureNames.push_back(L"PebblesDisplacement.dds");
-
-	m_gameObjects.push_back(make_shared<GameObject>());
-	m_gameObjects.back()->AddPositionComponent(XMFLOAT3(5.0f, 2.0f, 0.0f));
-	m_gameObjects.back()->AddRotationComponent(0.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddScaleComponent(1.0f, 6.0f, 1.0f);
-	m_gameObjects.back()->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::HighPolyCylinder, m_resourceManager);
-	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
-	m_gameObjects.back()->SetTessellationVariables(5.0f, 20.0f, 8.0f, 1.0f);
-	m_gameObjects.back()->SetDisplacementVariables(20.0f, 0.0f, 6.0f, 0.15f);
-
-	if (m_gameObjects.back()->GetInitializationState())
-	{
-		m_initializationFailed = true;
-		MessageBox(hwnd, "Could not initialize the model object.", "Error", MB_OK);
-		return;
-	}
-
+	//Launch pad
 	textureNames.clear();
 	textureNames.push_back(L"RoughRockColour.dds");
 	textureNames.push_back(L"RoughRockNormal.dds");
@@ -149,48 +132,18 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	const auto launchPadTessellationValues = m_configuration->GetLaunchPadTessellationValues();
 	const auto launchPadDisplacementValues = m_configuration->GetLaunchPadDisplacementValues();
 
-	//Launch pad
 	m_displacedFloor = make_shared<GameObject>();
 	m_displacedFloor->AddScaleComponent(m_configuration->GetLaunchPadScale());
 	m_displacedFloor->AddPositionComponent(XMFLOAT3(-terrainDimensions.z, 0.5f, 0.0f));
 	m_displacedFloor->AddRotationComponent(0.0f, 0.0f, 0.0f);
-	m_displacedFloor->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
+	m_displacedFloor->AddPhysicsComponent(true, 1.0f, 0.0f, 0.0f);
 	m_displacedFloor->AddModelComponent(m_d3D->GetDevice(), ModelType::Plane, m_resourceManager);
 	m_displacedFloor->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
 	m_displacedFloor->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
 	m_displacedFloor->SetTessellationVariables(launchPadTessellationValues.x, launchPadTessellationValues.y, launchPadTessellationValues.z, launchPadTessellationValues.w);
 	m_displacedFloor->SetDisplacementVariables(launchPadDisplacementValues.x, launchPadDisplacementValues.y, launchPadDisplacementValues.z, launchPadDisplacementValues.w);
 
-	if (m_gameObjects.back()->GetInitializationState())
-	{
-		m_initializationFailed = true;
-		MessageBox(hwnd, "Could not initialize the model object.", "Error", MB_OK);
-		return;
-	}
-
-	textureNames.clear();
-	textureNames.push_back(L"StoneFloorColour.dds");
-	textureNames.push_back(L"StoneFloorNormal.dds");
-	textureNames.push_back(L"StoneFloorSpecular.dds");
-	textureNames.push_back(L"StoneFloorDisplacement.dds");
-
-	m_gameObjects.push_back(make_shared<GameObject>());
-	m_gameObjects.back()->AddScaleComponent(1.0f, 1.0f, 1.0f);
-	m_gameObjects.back()->AddPositionComponent(XMFLOAT3(-2.0f, 0.0f, 0.0f));
-	m_gameObjects.back()->AddRotationComponent(0.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::HighPolyCube, m_resourceManager);
-	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
-	m_gameObjects.back()->SetDisplacementVariables(5.0f, 0.0f, 6.0f, 0.02f);
-
-	if (m_gameObjects.back()->GetInitializationState())
-	{
-		m_initializationFailed = true;
-		MessageBox(hwnd, "Could not initialize the model object.", "Error", MB_OK);
-		return;
-	}
-
+	// Skymap
 	textureNames.clear();
 	textureNames.push_back(L"Skymap.dds");
 
@@ -201,14 +154,6 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_skyBox->AddModelComponent(m_d3D->GetDevice(), ModelType::SphereInverted, m_resourceManager);
 	m_skyBox->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
 	m_skyBox->AddShaderComponent(m_shaderManager->GetTextureCubeShader());
-
-	m_gameObjects.push_back(make_shared<GameObject>());
-	m_gameObjects.back()->AddPositionComponent(0.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddRotationComponent(0.0f, 0.0f, 0.0f);
-	m_gameObjects.back()->AddScaleComponent(2.0f, 2.0f, 2.0f);
-	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::Sphere, m_resourceManager);
-	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetReflectionShader());
 
 	QueryPerformanceFrequency(&m_frequency);
 	QueryPerformanceCounter(&m_start);
@@ -237,15 +182,7 @@ bool D3DApplication::UpdateFrame() {
 	//Calculate fps
 	m_fps = static_cast<int>(1.0 / m_dt);
 
-	m_displacedFloor->Update();
-
-	m_skyBox->Update();
-
-	for (const auto& gameObject : m_gameObjects)
-	{
-		gameObject->Update();
-	}
-
+	// Handle collision
 	auto collisionPosition = XMFLOAT3();
 	auto blastRadius = 0.0f;
 
@@ -256,39 +193,39 @@ bool D3DApplication::UpdateFrame() {
 		m_particleSystemManager->GenerateExplosion(m_d3D->GetDevice(), collisionPosition, blastRadius, m_resourceManager);
 	}
 
+	// Update game objects, managers and camera
+	if (m_gameObjects.size() > 0)
+	{
+		for (const auto& gameObject : m_gameObjects)
+		{
+			gameObject->Update();
+		}
+	}
+	
+	m_displacedFloor->Update();
+	m_skyBox->Update();
 	m_terrain->UpdateTerrain();
 	m_rocket->UpdateRocket(m_dt);
-
-	UpdateCameraPosition();
-
+	m_particleSystemManager->Update(m_dt);
 	for (const auto& light : m_lightManager->GetLightList())
 	{
 		light->UpdateLightVariables(m_dt);
 	}
 
-	m_particleSystemManager->Update(m_dt);
-
-	//Render the graphics scene
+	UpdateCameraPosition();
+	
 	auto const result = RenderFrame();
-
 	return result;
 }
 
-bool D3DApplication::RenderFrame() {
+bool D3DApplication::RenderFrame()
+{
 
 	auto result = true;
 
 	m_camera->Render();
 
 	vector<shared_ptr<GameObject>> gameObjects;
-
-	if (m_renderOptionalGameObjects)
-	{
-		for (auto gameObject : m_gameObjects)
-		{
-			gameObjects.emplace_back(gameObject);
-		}
-	}
 
 	gameObjects.emplace_back(static_pointer_cast<GameObject>(m_terrain));
 	gameObjects.emplace_back(m_displacedFloor);
@@ -333,17 +270,11 @@ bool D3DApplication::RenderFrame() {
 	result = m_skyBox->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
 	if (!result) return false;
 
-	if (m_renderOptionalGameObjects)
-	{
-		for (const auto& gameObject : m_gameObjects)
-		{
-			result = gameObject->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
-			if (!result) return false;
-		}
-	}
-
 	result = m_terrain->RenderTerrain(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
+	if (!result) return false;
+
 	result = m_rocket->RenderRocket(m_d3D, viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
+	if (!result) return false;
 
 	m_d3D->DisableDepthStencil();
 	m_d3D->EnableAlphaBlending();
@@ -467,11 +398,6 @@ void D3DApplication::ToggleRenderOption()
 			break;
 		default: return;
 	}
-}
-
-void D3DApplication::ToggleOptionalGameObjects()
-{
-	m_renderOptionalGameObjects = !m_renderOptionalGameObjects;
 }
 
 void D3DApplication::AddTimeScale(const int number)

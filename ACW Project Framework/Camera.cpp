@@ -7,21 +7,17 @@ Camera::Camera() : m_positionX(0), m_positionY(0), m_positionZ(0), m_rotationX(0
 {
 }
 
-Camera::Camera(const Camera& other) = default;
+Camera::~Camera() 
+{
+};
 
-Camera::Camera(Camera&& other) = default;
-
-Camera::~Camera() = default;
-
-Camera& Camera::operator=(const Camera& other) = default;
-
-//CameraClass& CameraClass::operator=(CameraClass&& other) noexcept = default;
-
-XMFLOAT3 Camera::GetPosition() const {
+XMFLOAT3 Camera::GetPosition() const 
+{
 	return XMFLOAT3(m_positionX, m_positionY, m_positionZ);
 }
 
-XMFLOAT3 Camera::GetRotation() const {
+XMFLOAT3 Camera::GetRotation() const 
+{
 	return XMFLOAT3(m_rotationX, m_rotationY, m_rotationZ);
 }
 
@@ -32,14 +28,15 @@ void Camera::SetPosition(const XMFLOAT3& position)
 	m_positionZ = position.z;
 }
 
-
-void Camera::SetPosition(const float x, const float y, const float z) {
+void Camera::SetPosition(const float x, const float y, const float z) 
+{
 	m_positionX = x;
 	m_positionY = y;
 	m_positionZ = z;
 }
 
-void Camera::SetRotation(const float x, const float y, const float z) {
+void Camera::SetRotation(const float x, const float y, const float z) 
+{
 	m_rotationX = x;
 	m_rotationY = y;
 	m_rotationZ = z;
@@ -75,18 +72,17 @@ void Camera::AddRotationZ(const float z)
 	m_rotationZ += z;
 }
 
-void Camera::GetViewMatrix(XMMATRIX& viewMatrix) const {
+void Camera::GetViewMatrix(XMMATRIX& viewMatrix) const 
+{
 	viewMatrix = XMLoadFloat4x4(&m_viewMatrix);
 }
 
-void Camera::Render() {
+void Camera::Render() 
+{
 	const auto positionVector = XMVectorSet(m_positionX, m_positionY, m_positionZ, 0.0f);
-
-	//const auto yaw = XMConvertToRadians(m_rotationX);
 	const auto yaw = XMConvertToRadians(m_rotationX);
 	const auto pitch = XMConvertToRadians(m_rotationY);
 	const auto roll = XMConvertToRadians(m_rotationZ);
-
 	const auto rotationMatrix = XMMatrixRotationRollPitchYaw(pitch, yaw, roll);
 
 	//Transform the upVector and lookAtVector by our rotation matrix so the camera is rotated at the origin
@@ -97,6 +93,5 @@ void Camera::Render() {
 	lookAtVector = XMVectorAdd(positionVector, lookAtVector);
 
 	//Create view matrix
-
 	XMStoreFloat4x4(&m_viewMatrix, XMMatrixLookAtLH(positionVector, lookAtVector, upVector));
 }

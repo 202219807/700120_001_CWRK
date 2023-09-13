@@ -1,11 +1,11 @@
 #include "ConfigurationManager.h"
 
-ConfigurationManager::ConfigurationManager(const char* const configurationFileName): m_cameraPosition(XMFLOAT3()), m_terrainDimensions(XMFLOAT3()), m_terrainScale(XMFLOAT3()), m_rocketPosition(XMFLOAT3()), m_rocketRotation(XMFLOAT3()), m_rocketScale(XMFLOAT3()), m_sunAmbient(XMFLOAT4()), m_sunDiffuse(XMFLOAT4()), m_sunSpecular(XMFLOAT4()), m_sunSpecularPower(0.0f), m_moonAmbient(XMFLOAT4()), m_moonDiffuse(XMFLOAT4()), m_moonSpecular(XMFLOAT4()), m_moonSpecularPower(0.0f), m_launchPadScale(XMFLOAT3()), m_launchPadTessellationValues(XMFLOAT4()), m_launchPadDisplacementValues(XMFLOAT4()), m_antTweakBarConfigData(nullptr)
+ConfigurationManager::ConfigurationManager(const char* const configFileName): m_cameraPosition(XMFLOAT3()), m_terrainDimensions(XMFLOAT3()), m_terrainScale(XMFLOAT3()), m_rocketPosition(XMFLOAT3()), m_rocketRotation(XMFLOAT3()), m_rocketScale(XMFLOAT3()), m_sunAmbient(XMFLOAT4()), m_sunDiffuse(XMFLOAT4()), m_sunSpecular(XMFLOAT4()), m_sunSpecularPower(0.0f), m_moonAmbient(XMFLOAT4()), m_moonDiffuse(XMFLOAT4()), m_moonSpecular(XMFLOAT4()), m_moonSpecularPower(0.0f), m_launchPadScale(XMFLOAT3()), m_launchPadTessellationValues(XMFLOAT4()), m_launchPadDisplacementValues(XMFLOAT4()), m_antTweakBarConfigData(nullptr)
 {
 	ifstream fin;
 
 	//Open configuration file
-	fin.open(configurationFileName);
+	fin.open(configFileName);
 
 	if (fin.fail())
 	{
@@ -108,7 +108,7 @@ ConfigurationManager::ConfigurationManager(const char* const configurationFileNa
 	}
 
 	m_antTweakBarConfigData = TwNewBar("Configuration");
-	TwDefine(" Configuration label='Configuration File Data' position='1120 20' size='220 320'");
+	TwDefine(" Configuration label='Configuration File Data' position='1035 20' size='300 320'");
 	TwAddVarRW(m_antTweakBarConfigData, "CameraPosition: ", TW_TYPE_DIR3F, &m_cameraPosition, "");
 	TwAddVarRW(m_antTweakBarConfigData, "TerrainDim: ", TW_TYPE_DIR3F, &m_terrainDimensions, "");
 	TwAddVarRW(m_antTweakBarConfigData, "TerrainScale: ", TW_TYPE_DIR3F, &m_terrainScale, "");
