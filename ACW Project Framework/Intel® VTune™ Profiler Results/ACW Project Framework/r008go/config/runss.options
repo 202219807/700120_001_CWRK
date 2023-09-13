@@ -1,0 +1,27 @@
+-r
+C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go
+--no-stack-stitching
+--etw-config=dma,frames
+--data-limit-mb=1000
+--disk-space-limit=0
+--type=opencl_ex:stack|0:0:2.0
+--type=opencl:stack|0:0:2.0
+--type=mediasdk:stack|0:0:2.0
+--type=level_zero:stack|0:0:2.0
+--type=directx:stack|0:0:2.0
+--opencl-trace-mode=default
+--itt-config=task
+--gpu-sampling-interval=0:0:2.0|1
+--gpu-config=0:0:2.0|preset2
+--mrte-type=java,dotnet
+--stack-unwind-limit=8388608
+--gpu-kernels-to-profile=*#1#1#4294967295
+--itt-config=frame
+--stackwalk=offline
+--mrte-mode=auto
+--type=cpu:counters:nostack
+--type=cpu:stack
+--interval=10
+--app-working-dir=C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\
+--
+C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\x64\Release\ACW Project Framework.exe

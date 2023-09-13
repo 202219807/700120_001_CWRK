@@ -1,0 +1,132 @@
+125 [20104] INFO perfrun.launcher <> - Launcher main begin
+131 [20104] INFO perfrun.launcher <> - MessageCatalogInit finished
+131 [20104] INFO perfrun.launcher <> - Launcher instance created
+131 [20104] INFO perfrun.launcher <> - argc = 7; cmdline = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\amplxe-runss.exe --ui-output-format xml --ui-output-fd 1120 --option-file C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\config\runss.options 
+157 [20104] INFO perfrun.launcher <> - New signal handler callback was added
+247 [20104] INFO perfrun.launcher <> - create msngr2::ICliToolContext
+247 [20104] INFO perfrun.launcher <> - create file finder object
+248 [20104] INFO perfrun.launcher <> - create a result directory: pattern = C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go pid = 4294967295
+256 [20104] INFO perfrun.launcher <> - create data directory = C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0
+258 [20104] INFO perfrun.launcher <> - Creating the master collection flag
+266 [20104] INFO perfrun.launcher <> - Done creating the master collection flag
+267 [16256] INFO perfrun.launcher <> - plugin [remoteplug] was disabled because it doesn't support the given collection type.
+268 [16256] INFO perfrun.sdk <> - Allocating TMU :C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\systemcollector-20528-APHRODITE.sc
+269 [16256] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+273 [16256] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+273 [16256] INFO perfrun.gpu <> - Event consumer configurations: 
+287 [16256] INFO perfrun.gpu <> - DeviceInfo: address 0:0:2.0 subdevice index 0 preset 2 sampling interval 1000us
+288 [16256] INFO perfrun.launcher <> - plugin [etw.kernel] was disabled because it doesn't support the given collection type.
+288 [16256] INFO perfrun.etw <> - temporary log file name: C:\Users\ronni\AppData\Local\Temp\amplxe-tmp-ronni\perfrun1_etw_87662322480.etl
+288 [16256] INFO perfrun.launcher <> - plugin [etw.wsa] was disabled because it doesn't support the given collection type.
+288 [16256] INFO perfrun.mrte <> - system-wide mode is 0
+288 [16256] INFO perfrun.mrte <> - Getting  mrte profiling environment ...
+409 [16256] INFO perfrun.mrte <> - INTEL_MRTE_DATA_DIR=C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0
+409 [16256] INFO perfrun.mrte <> - INTEL_MRTE_HOST_NAME=APHRODITE
+409 [16256] INFO perfrun.mrte <> - JAVA_TOOL_OPTIONS=-agentlib:amplxe_tpssmrte_javaprof_1.0
+409 [16256] INFO perfrun.mrte <> - PATH=C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin32\runtime;C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\runtime;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Program Files\Microsoft MPI\Bin\;C:\msys64\mingw64\bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-15.0.2\bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\ronni\Desktop\Open Source Projects;C:\Program Files\Apache24\bin;C:\Users\ronni\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PuTTY\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git LFS;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\ronni\Desktop\Ayush\Game Engine Sample 3-20230508T203632Z-001\Game Engine Sample 3\AntTweakBar\lib\AntTweakBar.dll;C:\Users\ronni\anaconda3\Scripts;C:\Program Files\CMake\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.3.0\;C:\Users\ronni\.poetry\bin;C:\Users\ronni\AppData\Local\Microsoft\WindowsApps;C:\Users\ronni\AppData\Local\Programs\Git\cmd;C:\Users\ronni\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ronni\AppData\Local\GitHubDesktop\bin;C:\Program Files\heroku\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2021.3\bin;C:\Users\ronni\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk-14.0.1\bin;C:\Users\ronni\.dotnet\tools;C:\Users\ronni\AppData\Roaming\npm;C:\Users\ronni\Desktop\Ayush\Game Engine Sample 3-20230508T203632Z-001\Game Engine Sample 3\AntTweakBar\lib
+409 [16256] INFO perfrun.mrte <> - COR_ENABLE_PROFILING=1
+409 [16256] INFO perfrun.mrte <> - COR_PROFILER={AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+409 [16256] INFO perfrun.mrte <> - COMPLUS_ProfAPI_ProfilerCompatibilitySetting=EnableV2Profiler
+409 [16256] INFO perfrun.mrte <> - CORECLR_ENABLE_PROFILING=1
+409 [16256] INFO perfrun.mrte <> - CORECLR_PROFILER={AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+409 [16256] INFO perfrun.mrte <> - CORECLR_PROFILER_PATH=C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64/amplxe_samplingmrte_clrprof_1.0.dll
+409 [16256] INFO perfrun.mrte <> - INTEL_MRTE_PROFILER_MODE=mixed
+409 [16256] INFO perfrun.mrte <> - Data directory: C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0
+409 [16256] INFO perfrun.mrte <> - Mrte plugin is initialized
+409 [16256] INFO perfrun.launcher <> - plugin [emon] was disabled because it doesn't support the given collection type.
+410 [16256] INFO perfrun.launcher <> - plugin [cuscol] was disabled because it doesn't support the given collection type.
+410 [16256] INFO perfrun.launcher <> - plugin [stdsrc] was disabled because it doesn't support the given collection type.
+410 [16256] INFO perfrun.launcher <> - plugin [sep] was disabled because it doesn't support the given collection type.
+410 [16256] INFO perfrun.launcher <> - plugin [vtsspp] was disabled because it doesn't support the given collection type.
+410 [16256] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+411 [16256] INFO perfrun.launcher <> - plugin [aoclprofile] was disabled because it doesn't support the given collection type.
+411 [16256] INFO perfrun.tpss <> - initialize tpss controller
+412 [16256] INFO perfrun.tpss <> - configure collection mode: value = opencl_ex:stack|0:0:2.0
+412 [16256] INFO perfrun.tpss <> - configure collection mode: value = opencl:stack|0:0:2.0
+412 [16256] INFO perfrun.tpss <> - configure collection mode: value = mediasdk:stack|0:0:2.0
+412 [16256] INFO perfrun.tpss <> - configure collection mode: value = level_zero:stack|0:0:2.0
+412 [16256] INFO perfrun.tpss <> - configure collection mode: value = directx:stack|0:0:2.0
+412 [16256] INFO perfrun.tpss <> - configure collection mode: value = cpu:counters:nostack
+412 [16256] INFO perfrun.tpss <> - configure collection mode: value = cpu:stack
+412 [16256] INFO perfrun.tpss <> - default obj-size-min=1024
+412 [16256] INFO perfrun.tpss <> - default hash-table-size=0
+412 [16256] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+412 [16256] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+412 [16256] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+412 [16256] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+413 [16256] INFO perfrun.launcher <> - plugin [power] was disabled because it doesn't support the given collection type.
+413 [16256] INFO perfrun.launcher <> - plugin [hwloc] was disabled because it doesn't support the given collection type.
+413 [16256] INFO perfrun.launcher <> - plugin [ipmwatch] was disabled because it doesn't support the given collection type.
+413 [16256] INFO perfrun.launcher <> - plugin [os_counters] was disabled because it doesn't support the given collection type.
+413 [16256] INFO perfrun.launcher <> - plugin [l0_metrics] was disabled because it doesn't support the given collection type.
+413 [20104] INFO perfrun.launcher <> - set environment variable: PATH = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin32\runtime;C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\runtime;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Program Files\Microsoft MPI\Bin\;C:\msys64\mingw64\bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-15.0.2\bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\ronni\Desktop\Open Source Projects;C:\Program Files\Apache24\bin;C:\Users\ronni\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PuTTY\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git LFS;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\ronni\Desktop\Ayush\Game Engine Sample 3-20230508T203632Z-001\Game Engine Sample 3\AntTweakBar\lib\AntTweakBar.dll;C:\Users\ronni\anaconda3\Scripts;C:\Program Files\CMake\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.3.0\;C:\Users\ronni\.poetry\bin;C:\Users\ronni\AppData\Local\Microsoft\WindowsApps;C:\Users\ronni\AppData\Local\Programs\Git\cmd;C:\Users\ronni\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ronni\AppData\Local\GitHubDesktop\bin;C:\Program Files\heroku\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2021.3\bin;C:\Users\ronni\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk-14.0.1\bin;C:\Users\ronni\.dotnet\tools;C:\Users\ronni\AppData\Roaming\npm;C:\Users\ronni\Desktop\Ayush\Game Engine Sample 3-20230508T203632Z-001\Game Engine Sample 3\AntTweakBar\lib
+414 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_LIBITTNOTIFY32 = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin32\runtime\ittnotify_collector.dll
+414 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_LIBITTNOTIFY64 = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\runtime\ittnotify_collector.dll
+414 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_ITTNOTIFY_GROUPS = 
+414 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_JIT_PROFILER32 = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin32\runtime\ittnotify_collector.dll
+414 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_JIT_PROFILER64 = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\runtime\ittnotify_collector.dll
+414 [20104] INFO perfrun.launcher <> - set environment variable: ENABLE_JITPROFILING = 1
+414 [20104] INFO perfrun.launcher <> - set environment variable: CL_CONFIG_USE_VTUNE = True
+414 [20104] INFO perfrun.launcher <> - set environment variable: KMP_FORKJOIN_FRAMES = 0
+414 [20104] INFO perfrun.launcher <> - set environment variable: KMP_FORKJOIN_FRAMES_MODE = 0
+414 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_MRTE_DATA_DIR = C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0
+414 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_MRTE_HOST_NAME = APHRODITE
+414 [20104] INFO perfrun.launcher <> - set environment variable: JAVA_TOOL_OPTIONS = -agentlib:amplxe_tpssmrte_javaprof_1.0
+415 [20104] INFO perfrun.launcher <> - set environment variable: PATH = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin32\runtime;C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\runtime;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Program Files\Microsoft MPI\Bin\;C:\msys64\mingw64\bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-15.0.2\bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\ronni\Desktop\Open Source Projects;C:\Program Files\Apache24\bin;C:\Users\ronni\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PuTTY\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git LFS;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\ronni\Desktop\Ayush\Game Engine Sample 3-20230508T203632Z-001\Game Engine Sample 3\AntTweakBar\lib\AntTweakBar.dll;C:\Users\ronni\anaconda3\Scripts;C:\Program Files\CMake\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.3.0\;C:\Users\ronni\.poetry\bin;C:\Users\ronni\AppData\Local\Microsoft\WindowsApps;C:\Users\ronni\AppData\Local\Programs\Git\cmd;C:\Users\ronni\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ronni\AppData\Local\GitHubDesktop\bin;C:\Program Files\heroku\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2021.3\bin;C:\Users\ronni\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk-14.0.1\bin;C:\Users\ronni\.dotnet\tools;C:\Users\ronni\AppData\Roaming\npm;C:\Users\ronni\Desktop\Ayush\Game Engine Sample 3-20230508T203632Z-001\Game Engine Sample 3\AntTweakBar\lib
+415 [20104] INFO perfrun.launcher <> - set environment variable: COR_ENABLE_PROFILING = 1
+415 [20104] INFO perfrun.launcher <> - set environment variable: COR_PROFILER = {AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+415 [20104] INFO perfrun.launcher <> - set environment variable: COMPLUS_ProfAPI_ProfilerCompatibilitySetting = EnableV2Profiler
+415 [20104] INFO perfrun.launcher <> - set environment variable: CORECLR_ENABLE_PROFILING = 1
+415 [20104] INFO perfrun.launcher <> - set environment variable: CORECLR_PROFILER = {AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+415 [20104] INFO perfrun.launcher <> - set environment variable: CORECLR_PROFILER_PATH = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64/amplxe_samplingmrte_clrprof_1.0.dll
+415 [20104] INFO perfrun.launcher <> - set environment variable: INTEL_MRTE_PROFILER_MODE = mixed
+415 [20104] INFO perfrun.launcher <> - set environment variable: NEOReadDebugKeys = 1
+415 [20104] INFO perfrun.launcher <> - set environment variable: EnableDeviceBasedTimestamps = 0
+415 [20104] INFO perfrun.launcher <> - set environment variable: NEOReadDebugKeys = 1
+416 [20104] INFO perfrun.launcher <> - RpcServer: run RPC server to handle requests
+472 [20104] INFO perfrun.sdk <> - IProcessUtil: the given executable 'C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\x64\Release\ACW Project Framework.exe' is valid.
+472 [20104] INFO perfrun.launcher <> - Launcher: command line to start before modification = C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\x64\Release\ACW Project Framework.exe
+477 [20104] INFO perfrun.launcher <> - Launcher: command line to start after modification = C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\pin.exe -error_file C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\pinerr.tpsslog -detach_reattach -probe -follow_execv -p32 C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin32\pin.exe -p64 C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\pin.exe -t64 C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin64\tpsstool.dll -t C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0\bin32\tpsstool.dll -server_name tpss_ipc.20528 -prd_dir C:\Program Files (x86)\Intel\oneAPI\vtune\2023.2.0 -- C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\x64\Release\ACW Project Framework.exe
+477 [20104] INFO perfrun.launcher <> - ProcessCreator object was created
+486 [20104] INFO perfrun.launcher <> - Launcher: the process was started in suspend mode
+488 [16256] INFO perfrun.itt <> - start itt controller for pid #20908
+495 [16256] INFO perfrun.sdk <> - Allocating TMU :C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\gen_metrics0_0_2_0_0.0.cfg
+496 [16256] INFO perfrun.sdk <> - De-allocating TMU: C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\gen_metrics0_0_2_0_0.0.cfg
+521 [16256] INFO perfrun.gpu <> - Creating main data processing loop
+521 [15432] INFO perfrun.sdk <> - Allocating TMU :C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\gen_metrics0_0_2_0_0.0.vtss
+522 [16256] INFO perfrun.etw <> - Trace session was captured
+522 [15432] INFO perfrun.gpu <> - IO stream opening, timer period: 1000000, buffer size: 0 subDevice 0 tile 0
+528 [16256] INFO perfrun.etw <> - append event trace log: C:\Users\ronni\AppData\Local\Temp\amplxe-tmp-ronni\perfrun1_etw_87662322480.etl
+528 [16256] INFO perfrun.etw <> - is event consumer initialized: 0
+528 [16256] INFO perfrun.etw <> - Trace session was captured
+536 [15432] INFO perfrun.gpu <> - IO stream opened, timer period: 682666, buffer size: 16777216
+536 [7948] INFO perfrun.sdk <> - Allocating TMU :C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\gdata.0.edx
+575 [16256] INFO perfrun.etw <> - append event trace log: PERFRUN_DXETW_TRACE_SESSION
+575 [16256] INFO perfrun.etw <> - is event consumer initialized: 1
+576 [16256] INFO perfrun.tpss <> - start tpss controller for pid #20908
+630 [20104] INFO perfrun.launcher <> - Launcher: all plugins were started
+630 [20104] INFO perfrun.launcher <> - DirectoryMonitor object was created
+630 [20104] INFO perfrun.launcher <> - DirectoryMonitor: a callback was added
+630 [20104] INFO perfrun.launcher <> - DirectoryMonitor was started with pingTime = 1000
+630 [20104] INFO perfrun.launcher <> - DeadlineTimer is going to be constructed
+631 [20104] INFO perfrun.launcher <> - DeadlineTimer: a callback was added
+640 [20104] INFO perfrun.launcher <> - Launcher: resume the profiled application and  wait its termination or stop command
+19897 [20104] INFO perfrun.launcher <> - Launcher: the profiled application was terminated  with exit code = 0
+19948 [16256] INFO perfrun.itt <> - detach itt controller
+19948 [16256] INFO perfrun.itt <> - detach itt controller done
+19949 [16256] INFO perfrun.gpu <> - Waiting for data collection thread to finish
+20426 [15432] INFO perfrun.sdk <> - De-allocating TMU: C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\gen_metrics0_0_2_0_0.0.vtss
+20441 [15432] INFO perfrun.gpu <> - Data collection routine finished
+20443 [16256] INFO perfrun.gpu <> - Data collection thread finished, shutting down the session
+20446 [16256] INFO perfrun.etw <> - is event consumer initialized: 1
+20456 [16256] INFO perfrun.sdk <> - De-allocating TMU: C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\gdata.0.edx
+20472 [16256] INFO perfrun.tpss <> - stop tpss controller
+20479 [16256] INFO perfrun.sdk <> - De-allocating TMU: C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\systemcollector-20528-APHRODITE.sc
+20504 [16256] INFO perfrun.system <> - closed the system trace file: C:\Users\ronni\Desktop\Game Development\Double Eleven\Rocket Launch Simulation\ACW Project Framework\Intel® VTune™ Profiler Results\ACW Project Framework\r008go\data.0\systemcollector-20528-APHRODITE.sc
+20504 [20104] INFO perfrun.launcher <> - Launcher: all plugins were stopped.
+20504 [20104] INFO perfrun.launcher <> - DeadlineTimer is going to be destroyed
+20504 [20104] INFO perfrun.launcher <> - DeadlineTimer was destroyed
+20504 [20104] INFO perfrun.launcher <> - DirectoryMonitor object was destroyed
+20504 [20104] WARN perfrun.launcher <> - Stop command is ignored because it is received when collection is already stopped, at file: vcs\perfrun1\launcher\src\command_handler.cpp:226
+20507 [20104] INFO perfrun.launcher <> - Application exit code: 0
+20507 [20104] INFO perfrun.launcher <> - Exit code: 0

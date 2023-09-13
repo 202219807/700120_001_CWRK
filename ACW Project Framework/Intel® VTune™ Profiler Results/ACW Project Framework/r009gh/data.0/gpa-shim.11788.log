@@ -1,0 +1,10 @@
+[GPA] I 11788 INITIALIZE: ACW Project Framework
+[GPA] I 11788 Hooking DirectX...done
+[GPA] I 11788 Hooking D3DCompiler...done
+[GPA] I 11788 Unhooking DirectX library dxgi.dll ...done
+[GPA] I 11788 Hooking DirectX...done
+[GPA] I 11788 Unhooking DirectX library d3d11.dll ...done
+[GPA] I 11788 Hooking DirectX...done
+[GPA] I 11788 Unhooking D3DCompiler...done
+[GPA] I 11788 Hooking D3DCompiler...done
+[GPA] I 11788 D3D11 Device detected - for default device
