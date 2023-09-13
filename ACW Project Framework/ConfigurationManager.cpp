@@ -1,6 +1,5 @@
 #include "ConfigurationManager.h"
 
-
 ConfigurationManager::ConfigurationManager(const char* const configurationFileName): m_cameraPosition(XMFLOAT3()), m_terrainDimensions(XMFLOAT3()), m_terrainScale(XMFLOAT3()), m_rocketPosition(XMFLOAT3()), m_rocketRotation(XMFLOAT3()), m_rocketScale(XMFLOAT3()), m_sunAmbient(XMFLOAT4()), m_sunDiffuse(XMFLOAT4()), m_sunSpecular(XMFLOAT4()), m_sunSpecularPower(0.0f), m_moonAmbient(XMFLOAT4()), m_moonDiffuse(XMFLOAT4()), m_moonSpecular(XMFLOAT4()), m_moonSpecularPower(0.0f), m_launchPadScale(XMFLOAT3()), m_launchPadTessellationValues(XMFLOAT4()), m_launchPadDisplacementValues(XMFLOAT4()), m_antTweakBarConfigData(nullptr)
 {
 	ifstream fin;

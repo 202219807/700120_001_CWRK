@@ -16,12 +16,6 @@
     <Filter Include="DDSImages">
       <UniqueIdentifier>{b8000df3-5906-46bd-b28d-105d86e69982}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Shader Classes">
-      <UniqueIdentifier>{edad2164-868e-4e75-9b22-4e545fe4a22e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Shader Headers">
-      <UniqueIdentifier>{75995f69-ccb5-4369-a406-1d0001a524bb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shaders">
       <UniqueIdentifier>{90a586ff-d1ce-437f-a102-2465d4c79f05}</UniqueIdentifier>
     </Filter>
@@ -70,6 +64,12 @@
     <Filter Include="Header Files\Game Entities">
       <UniqueIdentifier>{6f966321-48ca-419c-9077-d6069d58659d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Shaders">
+      <UniqueIdentifier>{75995f69-ccb5-4369-a406-1d0001a524bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{edad2164-868e-4e75-9b22-4e545fe4a22e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -79,10 +79,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ColourShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="LightShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="D3DApplication.cpp">
       <Filter>Source Files</Filter>
@@ -121,19 +121,19 @@
       <Filter>Source Files\Components</Filter>
     </ClCompile>
     <ClCompile Include="TextureNormalMappingShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="TextureNormalSpecularShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="TextureDisplacement.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="LightManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
     <ClCompile Include="DepthShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="ShadowMapManager.cpp">
       <Filter>Source Files\Managers</Filter>
@@ -148,19 +148,19 @@
       <Filter>Source Files\ParticleSystems</Filter>
     </ClCompile>
     <ClCompile Include="ParticleShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="ParticleSystemManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
     <ClCompile Include="Texture2DShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="TextureCubeShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="ReflectionShader.cpp">
-      <Filter>Source Files\Shader Classes</Filter>
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files\Game Entities</Filter>
@@ -201,10 +201,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ColourShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="LightShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Header Files\Managers</Filter>
@@ -237,19 +237,19 @@
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="TextureNormalMappingShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="TextureNormalSpecularShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="TextureDisplacement.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="LightManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
     <ClInclude Include="DepthShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="ShadowMapManager.h">
       <Filter>Header Files\Managers</Filter>
@@ -264,19 +264,19 @@
       <Filter>Header Files\ParticleSystems</Filter>
     </ClInclude>
     <ClInclude Include="ParticleShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="ParticleSystemManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
     <ClInclude Include="Texture2DShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="TextureCubeShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="ReflectionShader.h">
-      <Filter>Header Files\Shader Headers</Filter>
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="Terrain.h">
       <Filter>Header Files\Game Entities</Filter>
@@ -587,7 +587,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Configuration.txt" />
+    <Text Include="Config.txt" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="cone.obj">

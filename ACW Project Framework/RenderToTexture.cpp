@@ -129,7 +129,7 @@ bool RenderToTexture::RenderObjectsToTexture(ID3D11DeviceContext* const deviceCo
 			auto mipClampMaximum = 0.0f;
 			auto displacementPower = 0.0f;
 
-			gameObject->SetShaderComponent(m_shader);
+			gameObject->AddShaderComponent(m_shader);
 
 			originalShader->GetDisplacementVariables(mipInterval, mipClampMinimum, mipClampMaximum, displacementPower);
 			m_shader->SetDisplacementVariables(mipInterval, mipClampMinimum, mipClampMaximum, displacementPower);
@@ -140,7 +140,7 @@ bool RenderToTexture::RenderObjectsToTexture(ID3D11DeviceContext* const deviceCo
 		if (m_shader)
 		{
 			//Set shader back to the original shader
-			gameObject->SetShaderComponent(originalShader);
+			gameObject->AddShaderComponent(originalShader);
 		}
 
 		if (!result)

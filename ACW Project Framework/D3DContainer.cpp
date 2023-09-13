@@ -110,10 +110,7 @@ D3DContainer::D3DContainer(
 		return;
 	}
 
-	//Initialize 
-
 	D3D11_VIEWPORT viewport;
-
 	ZeroMemory(&viewport, sizeof(viewport));
 
 	//Initialize and create our viewport
@@ -137,10 +134,6 @@ D3DContainer::D3DContainer(
 	//Initialize and create orthographic matrix
 	XMStoreFloat4x4(&m_orthographicMatrix, XMMatrixOrthographicLH(static_cast<float>(screenWidth), static_cast<float>(screenHeight), screenNear, screenDepth));
 };
-
-D3DContainer::D3DContainer(const D3DContainer& other) = default;
-
-D3DContainer::D3DContainer(D3DContainer&& other) noexcept = default;
 
 D3DContainer::~D3DContainer()
 {
@@ -229,10 +222,6 @@ D3DContainer::~D3DContainer()
 
 	}
 }
-
-D3DContainer& D3DContainer::operator=(const D3DContainer& other) = default;
-
-//D3DContainer& D3DContainer::operator=(D3DContainer&& other) noexcept = default;
 
 void D3DContainer::InitializeFactoryAdapter(unsigned int const screenWidth, unsigned int const screenHeight, unsigned int& numerator, unsigned int& denominator)
 {
@@ -604,7 +593,6 @@ void D3DContainer::BeginScene(float const red, float const green, float const bl
 	//Clear depth buffer
 	m_deviceContext->ClearDepthStencilView(m_depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 }
-
 
 void D3DContainer::EndScene()
 {

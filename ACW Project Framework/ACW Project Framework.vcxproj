@@ -843,7 +843,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Configuration.txt" />
+    <Text Include="Config.txt" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="cone.obj">

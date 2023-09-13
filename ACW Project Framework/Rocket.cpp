@@ -17,7 +17,7 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	m_rocketBody->AddScaleComponent(1.0f * scale.x, 6.0f * scale.y, 1.0f * scale.z);
 	m_rocketBody->AddModelComponent(device, ModelType::LowPolyCylinder, resourceManager);
 	m_rocketBody->AddTextureComponent(device, textureNames, resourceManager);
-	m_rocketBody->SetShaderComponent(shaderManager->GetTextureDisplacementShader());
+	m_rocketBody->AddShaderComponent(shaderManager->GetTextureDisplacementShader());
 	m_rocketBody->SetTessellationVariables(2.0f, 10.0f, 64.0f, 1.0f);
 	m_rocketBody->SetDisplacementVariables(20.0f, 0.0f, 6.0f, 0.18f);
 
@@ -34,7 +34,7 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	m_rocketCap->AddScaleComponent(0.92f, 0.1f, 0.92f);
 	m_rocketCap->AddModelComponent(device, ModelType::Sphere, resourceManager);
 	m_rocketCap->AddTextureComponent(device, textureNames, resourceManager);
-	m_rocketCap->SetShaderComponent(shaderManager->GetTextureDisplacementShader());
+	m_rocketCap->AddShaderComponent(shaderManager->GetTextureDisplacementShader());
 	m_rocketCap->AddParentGameObject(m_rocketBody);
 
 	if (m_rocketCap->GetInitializationState())
@@ -56,7 +56,7 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	m_rocketLauncher->AddScaleComponent(0.3f * scale.x, 8.0f * scale.y, 0.3f * scale.z);
 	m_rocketLauncher->AddModelComponent(device, ModelType::LowPolyCylinder, resourceManager);
 	m_rocketLauncher->AddTextureComponent(device, textureNames, resourceManager);
-	m_rocketLauncher->SetShaderComponent(shaderManager->GetTextureDisplacementShader());
+	m_rocketLauncher->AddShaderComponent(shaderManager->GetTextureDisplacementShader());
 	m_rocketLauncher->SetTessellationVariables(2.0f, 10.0f, 64.0f, 1.0f);
 	m_rocketLauncher->SetDisplacementVariables(20.0f, 0.0f, 6.0f, 0.18f);
 	m_rocketLauncher->AddParentGameObject(m_rocketBody);
@@ -77,7 +77,7 @@ Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLO
 	m_rocketCone->AddScaleComponent(1.0f, 2.0f, 1.0f);
 	m_rocketCone->AddModelComponent(device, ModelType::Cone, resourceManager);
 	m_rocketCone->AddTextureComponent(device, textureNames, resourceManager);
-	m_rocketCone->SetShaderComponent(shaderManager->GetReflectionShader());
+	m_rocketCone->AddShaderComponent(shaderManager->GetReflectionShader());
 	m_rocketCone->SetTessellationVariables(5.0f, 20.0f, 8.0f, 1.0f);
 	m_rocketCone->AddParentGameObject(m_rocketBody);
 

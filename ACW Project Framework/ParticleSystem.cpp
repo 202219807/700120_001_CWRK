@@ -30,7 +30,7 @@ ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, cons
 
 	particleShader->SetParticleParameters(colourTint, transparency);
 
-	SetShaderComponent(particleShader);
+	AddShaderComponent(particleShader);
 }
 
 ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, const XMFLOAT3& initialPosition, const XMFLOAT3& initialScale, const XMFLOAT3& scaleReduction, const XMFLOAT3& killScale, const XMFLOAT3& colourTint, const WCHAR* const textureName, const float transparency, const float spawnRate, const float velocity, const shared_ptr<ResourceManager>& resourceManager) : m_initialPosition(initialPosition), m_initialScale(initialScale), m_scaleReduction(scaleReduction), m_killScale(killScale), m_emitterType(true), m_spawnRate(spawnRate), m_elapsedTime(0.0f), m_lifeCycle(0.0f), m_velocity(velocity), m_particleSpread(0.0f)
@@ -49,7 +49,7 @@ ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, cons
 
 	particleShader->SetParticleParameters(colourTint, transparency);
 
-	SetShaderComponent(particleShader);
+	AddShaderComponent(particleShader);
 }
 
 ParticleSystem::~ParticleSystem()

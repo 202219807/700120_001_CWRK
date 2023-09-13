@@ -19,23 +19,22 @@ public:
 
 	LRESULT CALLBACK MessageHandler(HWND const hwnd, UINT umessage, WPARAM wparam, LPARAM lparam);
 	bool GetInitializationState() const;
-
 	void Run();
 
 private:
 	bool Frame();
-	bool m_initializationFailed;
-
 	void InitializeWindows(int& screenWidth, int& screenHeight);
 	void ShutdownWindows();
 
-	LPCSTR m_applicationName{};
-	HINSTANCE m_hInstance{};
-	HWND m_hwnd;
-
-	D3DApplication* m_graphics{};
-	InputManager* m_input{};
-
+	LPCSTR									m_applicationName{};
+	HINSTANCE								m_hInstance{};
+	HWND									m_hwnd;
+	
+	D3DApplication*							m_graphics{};
+	InputManager*							m_input{};
+	
+	bool									m_initializationFailed;
+	
 };
 
 static LRESULT CALLBACK WndProc(HWND const hwnd, UINT umessage, WPARAM wparam, LPARAM lparam);

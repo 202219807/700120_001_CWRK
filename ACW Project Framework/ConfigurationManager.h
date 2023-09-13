@@ -11,12 +11,12 @@ class ConfigurationManager
 {
 public:
 	explicit ConfigurationManager(const char* const configurationFileName);
-	ConfigurationManager(const ConfigurationManager& other); // Copy Constructor
-	ConfigurationManager(ConfigurationManager && other) noexcept; // Move Constructor
 	~ConfigurationManager();
 
-	ConfigurationManager& operator = (const ConfigurationManager& other) = default; // Copy Assignment Operator
-	ConfigurationManager& operator = (ConfigurationManager&& other) noexcept = default; // Move Assignment Operator
+	ConfigurationManager(const ConfigurationManager& other) = default;
+	ConfigurationManager(ConfigurationManager && other) noexcept = default;
+	ConfigurationManager& operator = (const ConfigurationManager& other) = default;
+	ConfigurationManager& operator = (ConfigurationManager&& other) noexcept = default;
 
 	const XMFLOAT3& GetCameraPosition() const;
 

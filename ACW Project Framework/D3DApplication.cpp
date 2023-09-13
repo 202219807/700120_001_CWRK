@@ -17,18 +17,20 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 
 	TwWindowSize(screenWidth, screenHeight);
 
-	m_antTweakBarStatistics = TwNewBar("Debug::");
-	TwDefine(" Statistics label='Statistics' position='20 20' size='240 160' alpha=0");
-	TwAddVarRW(m_antTweakBarStatistics, "WindowWidth: ", TW_TYPE_FLOAT, &m_windowWidth, "");
-	TwAddVarRW(m_antTweakBarStatistics, "WindowHeight: ", TW_TYPE_FLOAT, &m_windowHeight, "");
-	TwAddVarRW(m_antTweakBarStatistics, "DT: ", TW_TYPE_FLOAT, &m_dt, "");
-	TwAddVarRW(m_antTweakBarStatistics, "FPS: ", TW_TYPE_FLOAT, &m_fps, "");
-	TwAddVarRW(m_antTweakBarStatistics, "Render Mode: ", TW_TYPE_INT32, &m_renderToggle, "");
-	TwAddVarRW(m_antTweakBarStatistics, "Camera Mode: ", TW_TYPE_INT32, &m_cameraMode, "");
-	TwAddVarRW(m_antTweakBarStatistics, "TimeScale: ", TW_TYPE_INT32, &m_timeScale, "");
-	//TwAddVarRW(m_antTweakBarStatistics, "Optional GameObjects: ", TW_TYPE_BOOLCPP, &m_renderOptionalGameObjects, "");
+	m_antTweakBarStatistics = TwNewBar("Statistics");
+	TwDefine(" Statistics label='Statistics' position='20 20' size='300 180' alpha=0 valueswidth=fit");
 
-	m_configuration = make_shared<ConfigurationManager>("Configuration.txt");
+	TwAddVarRW(m_antTweakBarStatistics, "Video Card: ",				TW_TYPE_STDSTRING,	m_d3D->m_videoCardDescription, "");
+	TwAddVarRW(m_antTweakBarStatistics, "Memory: ",					TW_TYPE_INT32,		&m_d3D->m_videoCardMemory, "");
+	TwAddVarRW(m_antTweakBarStatistics, "Screen Width: ",			TW_TYPE_FLOAT,		&m_windowWidth, "");
+	TwAddVarRW(m_antTweakBarStatistics, "Screen Height: ",			TW_TYPE_FLOAT,		&m_windowHeight, "");
+	TwAddVarRW(m_antTweakBarStatistics, "DeltaTime: ",				TW_TYPE_FLOAT,		&m_dt, "");
+	TwAddVarRW(m_antTweakBarStatistics, "FPS: ",					TW_TYPE_FLOAT,		&m_fps, "");
+	TwAddVarRW(m_antTweakBarStatistics, "Render Mode: ",			TW_TYPE_INT32,		&m_renderToggle, "");
+	TwAddVarRW(m_antTweakBarStatistics, "Camera Mode: ",			TW_TYPE_INT32,		&m_cameraMode, "");
+	TwAddVarRW(m_antTweakBarStatistics, "Time Scale Factor: ",		TW_TYPE_INT32,		&m_timeScale, "");
+	
+	m_configuration = make_shared<ConfigurationManager>("Config.txt");
 
 	if (m_d3D->GetInitializationState()) {
 		m_initializationFailed = true;
@@ -104,7 +106,7 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_gameObjects.back()->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
 	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::Sphere, m_resourceManager);
 	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->SetShaderComponent(m_shaderManager->GetTextureDisplacementShader());
+	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
 	m_gameObjects.back()->SetDisplacementVariables(20.0f, 0.0f, 6.0f, 0.15f);
 
 	if (m_gameObjects.back()->GetInitializationState())
@@ -127,7 +129,7 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_gameObjects.back()->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
 	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::HighPolyCylinder, m_resourceManager);
 	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->SetShaderComponent(m_shaderManager->GetTextureDisplacementShader());
+	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
 	m_gameObjects.back()->SetTessellationVariables(5.0f, 20.0f, 8.0f, 1.0f);
 	m_gameObjects.back()->SetDisplacementVariables(20.0f, 0.0f, 6.0f, 0.15f);
 
@@ -155,7 +157,7 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_displacedFloor->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
 	m_displacedFloor->AddModelComponent(m_d3D->GetDevice(), ModelType::Plane, m_resourceManager);
 	m_displacedFloor->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_displacedFloor->SetShaderComponent(m_shaderManager->GetTextureDisplacementShader());
+	m_displacedFloor->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
 	m_displacedFloor->SetTessellationVariables(launchPadTessellationValues.x, launchPadTessellationValues.y, launchPadTessellationValues.z, launchPadTessellationValues.w);
 	m_displacedFloor->SetDisplacementVariables(launchPadDisplacementValues.x, launchPadDisplacementValues.y, launchPadDisplacementValues.z, launchPadDisplacementValues.w);
 
@@ -179,7 +181,7 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_gameObjects.back()->AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
 	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::HighPolyCube, m_resourceManager);
 	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->SetShaderComponent(m_shaderManager->GetTextureDisplacementShader());
+	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetTextureDisplacementShader());
 	m_gameObjects.back()->SetDisplacementVariables(5.0f, 0.0f, 6.0f, 0.02f);
 
 	if (m_gameObjects.back()->GetInitializationState())
@@ -198,7 +200,7 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_skyBox->AddScaleComponent(300.0f, 300.0f, 300.0f);
 	m_skyBox->AddModelComponent(m_d3D->GetDevice(), ModelType::SphereInverted, m_resourceManager);
 	m_skyBox->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_skyBox->SetShaderComponent(m_shaderManager->GetTextureCubeShader());
+	m_skyBox->AddShaderComponent(m_shaderManager->GetTextureCubeShader());
 
 	m_gameObjects.push_back(make_shared<GameObject>());
 	m_gameObjects.back()->AddPositionComponent(0.0f, 0.0f, 0.0f);
@@ -206,7 +208,7 @@ D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwn
 	m_gameObjects.back()->AddScaleComponent(2.0f, 2.0f, 2.0f);
 	m_gameObjects.back()->AddModelComponent(m_d3D->GetDevice(), ModelType::Sphere, m_resourceManager);
 	m_gameObjects.back()->AddTextureComponent(m_d3D->GetDevice(), textureNames, m_resourceManager);
-	m_gameObjects.back()->SetShaderComponent(m_shaderManager->GetReflectionShader());
+	m_gameObjects.back()->AddShaderComponent(m_shaderManager->GetReflectionShader());
 
 	QueryPerformanceFrequency(&m_frequency);
 	QueryPerformanceCounter(&m_start);
@@ -217,135 +219,9 @@ D3DApplication::~D3DApplication()
 	TwTerminate();
 }
 
-const shared_ptr<Camera>& D3DApplication::GetCamera() const
+bool D3DApplication::GetInitializationState() const 
 {
-	return m_camera;
-}
-
-void D3DApplication::ToggleRenderOption()
-{
-	m_renderToggle++;
-
-	if (m_renderToggle == 5)
-	{
-		m_renderToggle = 0;
-	}
-
-	switch (m_renderToggle)
-	{
-		case 0:
-			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 0, 0);
-			break;
-		case 1:
-			m_d3D->EnableWireFrame();
-			break;
-		case 2:
-			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(1, 0, 1);
-			m_d3D->DisableWireFrame();
-			break;
-		case 3:
-			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 1, 1);
-			break;
-		case 4:
-			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 1, 0);
-			break;
-		default: return;
-	}
-}
-
-void D3DApplication::ToggleOptionalGameObjects()
-{
-	m_renderOptionalGameObjects = !m_renderOptionalGameObjects;
-}
-
-void D3DApplication::ResetToInitialState() const
-{
-	m_rocket->ResetRocketState();
-	m_terrain->ResetTerrainState();
-	m_particleSystemManager->ResetParticleSystems();
-}
-
-void D3DApplication::AddTimeScale(const int number)
-{
-	m_timeScale += number;
-
-	if (m_timeScale < 1)
-	{
-		m_timeScale = 1;
-	}
-}
-
-void D3DApplication::RotateRocketLeft() const
-{
-	m_rocket->AdjustRotationLeft();
-}
-
-void D3DApplication::RotateRocketRight() const
-{
-	m_rocket->AdjustRotationRight();
-}
-
-void D3DApplication::LaunchRocket() const
-{
-	m_rocket->LaunchRocket();
-}
-
-void D3DApplication::ChangeCameraMode(const int cameraMode)
-{
-	m_cameraMode = cameraMode;
-
-	switch (m_cameraMode)
-	{
-	case 0:
-		const auto position = m_rocket->GetLauncherPosition();
-		m_camera->SetPosition(position.x, position.y, position.z - 10.0f);
-		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
-		m_updateCamera = false;
-		break;
-	case 1:
-		m_camera->SetPosition(0.0f, 10.0f, -30.0f);
-		m_camera->SetRotation(0.0f, 45.0f, 0.0f);
-		m_updateCamera = false;
-		break;
-	case 2:
-		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
-		m_updateCamera = true;
-		break;
-	case 3:
-		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
-		m_updateCamera = true;
-		break;
-	case 4:
-		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
-		m_updateCamera = true;
-		break;
-	default:
-		break;
-	}
-}
-
-void D3DApplication::UpdateCameraPosition() const
-{
-	if (m_updateCamera)
-	{
-		switch (m_cameraMode)
-		{
-		case 2:
-			const auto rocketPosition = m_rocket->GetLookAtRocketPosition();
-			m_camera->SetPosition(rocketPosition.x, rocketPosition.y, rocketPosition.z - 20.0f);
-			break;
-		case 3:
-			const auto rocketConePosition = m_rocket->GetLookAtRocketConePosition();
-			m_camera->SetPosition(rocketConePosition.x, rocketConePosition.y, rocketConePosition.z - 3.0f);
-			break;
-		case 4:
-			const auto rocketBodyPosition = m_rocket->GetLookAtRocketPosition();
-			m_camera->SetPosition(rocketBodyPosition.x, rocketBodyPosition.y, rocketBodyPosition.z - 3.0f);
-			break;
-		default:
-			break;
-		}
-	}
+	return m_initializationFailed;
 }
 
 bool D3DApplication::UpdateFrame() {
@@ -402,8 +278,6 @@ bool D3DApplication::RenderFrame() {
 
 	auto result = true;
 
-	//Clear the buffer and render the scene
-
 	m_camera->Render();
 
 	vector<shared_ptr<GameObject>> gameObjects;
@@ -416,7 +290,6 @@ bool D3DApplication::RenderFrame() {
 		}
 	}
 
-	//gameObjects.emplace_back(make_shared<GameObject>(*m_terrain));
 	gameObjects.emplace_back(static_pointer_cast<GameObject>(m_terrain));
 	gameObjects.emplace_back(m_displacedFloor);
 	gameObjects.emplace_back(m_skyBox);
@@ -425,21 +298,17 @@ bool D3DApplication::RenderFrame() {
 	gameObjects.emplace_back(m_rocket->GetRocketCap());
 	gameObjects.emplace_back(m_rocket->GetRocketLauncher());
 
-	//gameObjects.emplace_back(static_cast<shared_ptr<Terrain>>(m_terrain));
-
 	//Generate shadow maps
 	m_shadowMapManager->GenerateShadowMapResources(m_d3D->GetDeviceContext(), m_d3D->GetDepthStencilView(), m_lightManager->GetLightList(), gameObjects, m_camera->GetPosition());
-
-	m_d3D->SetRenderTarget();
 
 	XMMATRIX viewMatrix = {};
 	XMMATRIX projectionMatrix = {};
 
 	//Clear the buffer and render the scene
+	m_d3D->SetRenderTarget();
 	m_d3D->BeginScene(1.0f, 0.0f, 0.0f, 1.0f);
-
-	m_camera->GetViewMatrix(viewMatrix);
 	m_d3D->GetProjectionMatrix(projectionMatrix);
+	m_camera->GetViewMatrix(viewMatrix);
 
 	vector<shared_ptr<Light>> lightList = m_lightManager->GetLightList();
 
@@ -459,30 +328,17 @@ bool D3DApplication::RenderFrame() {
 	}
 
 	result = m_displacedFloor->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
-
-	if (!result)
-	{
-		return false;
-	}
+	if (!result) return false;
 
 	result = m_skyBox->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
-
-	if (!result)
-	{
-		return false;
-	}
+	if (!result) return false;
 
 	if (m_renderOptionalGameObjects)
 	{
 		for (const auto& gameObject : m_gameObjects)
 		{
 			result = gameObject->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
-			//result = gameObject->Render(m_d3D->GetDeviceContext(), m_lightManager->GetPointLightList()[0]->GetLightViewMatrix(), projectionMatrix, m_shadowMapManager->GetShadowMapResources(), m_lightManager->GetPointLightList(), m_camera->GetPosition());
-
-			if (!result)
-			{
-				return false;
-			}
+			if (!result) return false;
 		}
 	}
 
@@ -493,23 +349,133 @@ bool D3DApplication::RenderFrame() {
 	m_d3D->EnableAlphaBlending();
 
 	result = m_particleSystemManager->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_camera->GetPosition());
-
-	if (!result)
-	{
-		return false;
-	}
+	if (!result) return false;
 
 	m_d3D->EnabledDepthStencil();
 	m_d3D->DisableAlphaBlending();
 
-	// TwDraw();
+	TwDraw();
 
-	//Present the scene
 	m_d3D->EndScene();
 
 	return true;
 }
 
-bool D3DApplication::GetInitializationState() const {
-	return m_initializationFailed;
+void D3DApplication::ResetToInitialState() const
+{
+	m_rocket->ResetRocketState();
+	m_terrain->ResetTerrainState();
+	m_particleSystemManager->ResetParticleSystems();
+}
+
+void D3DApplication::LaunchRocket() const
+{
+	m_rocket->LaunchRocket();
+}
+
+void D3DApplication::RotateRocketLeft() const
+{
+	m_rocket->AdjustRotationLeft();
+}
+
+void D3DApplication::RotateRocketRight() const
+{
+	m_rocket->AdjustRotationRight();
+}
+
+void D3DApplication::ChangeCameraMode(const int cameraMode)
+{
+	m_cameraMode = cameraMode;
+
+	switch (m_cameraMode)
+	{
+	case 0:
+		const auto position = m_rocket->GetLauncherPosition();
+		m_camera->SetPosition(position.x, position.y, position.z - 10.0f);
+		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
+		m_updateCamera = false;
+		break;
+	case 1:
+		m_camera->SetPosition(0.0f, 10.0f, -60.0f);
+		m_camera->SetRotation(0.0f, 05.0f, 0.0f);
+		m_updateCamera = false;
+		break;
+	case 2:
+		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
+		m_updateCamera = true;
+		break;
+	case 3:
+		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
+		m_updateCamera = true;
+		break;
+	case 4:
+		m_camera->SetRotation(0.0f, 0.0f, 0.0f);
+		m_updateCamera = true;
+		break;
+	default:
+		break;
+	}
+}
+
+void D3DApplication::UpdateCameraPosition() const
+{
+	if (m_updateCamera)
+	{
+		switch (m_cameraMode)
+		{
+		case 2:
+			const auto rocketPosition = m_rocket->GetLookAtRocketPosition();
+			m_camera->SetPosition(rocketPosition.x, rocketPosition.y, rocketPosition.z - 20.0f);
+			break;
+		case 3:
+			const auto rocketConePosition = m_rocket->GetLookAtRocketConePosition();
+			m_camera->SetPosition(rocketConePosition.x, rocketConePosition.y, rocketConePosition.z - 3.0f);
+			break;
+		case 4:
+			const auto rocketBodyPosition = m_rocket->GetLookAtRocketPosition();
+			m_camera->SetPosition(rocketBodyPosition.x, rocketBodyPosition.y, rocketBodyPosition.z - 3.0f);
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void D3DApplication::ToggleRenderOption()
+{
+	m_renderToggle++;
+
+	if (m_renderToggle == 5) m_renderToggle = 0;
+
+	switch (m_renderToggle)
+	{
+		case 0:
+			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 0, 0);
+			break;
+		case 1:
+			m_d3D->EnableWireFrame();
+			break;
+		case 2:
+			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(1, 0, 1);
+			m_d3D->DisableWireFrame();
+			break;
+		case 3:
+			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 1, 1);
+			break;
+		case 4:
+			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 1, 0);
+			break;
+		default: return;
+	}
+}
+
+void D3DApplication::ToggleOptionalGameObjects()
+{
+	m_renderOptionalGameObjects = !m_renderOptionalGameObjects;
+}
+
+void D3DApplication::AddTimeScale(const int number)
+{
+	m_timeScale += number;
+	if (m_timeScale < 1) m_timeScale = 1;
 }

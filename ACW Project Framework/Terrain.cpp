@@ -37,7 +37,7 @@ Terrain::Terrain(ID3D11Device* const device, const XMFLOAT3& voxelArea, const XM
 	AddRigidBodyComponent(true, 1.0f, 0.0f, 0.0f);
 	AddModelComponent(device, ModelType::LowPolyCube, resourceManager);
 	AddTextureComponent(device, textureNames, resourceManager);
-	SetShaderComponent(shader);
+	AddShaderComponent(shader);
 	SetTessellationVariables(1.0f, 20.0f, 3.0f, 1.0f);
 
 	if (GetInitializationState())
