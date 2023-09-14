@@ -3,8 +3,9 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include <Windows.h>
-#include "InputManager.h"
+
 #include "D3DApplication.h"
+#include "InputManager.h"
 
 class D3DSystem
 {
@@ -18,19 +19,23 @@ public:
 	D3DSystem& operator = (D3DSystem&& other) noexcept = default;
 
 	LRESULT CALLBACK MessageHandler(HWND const hwnd, UINT umessage, WPARAM wparam, LPARAM lparam);
-	bool GetInitializationState() const;
+	
 	void Run();
+	
+	bool GetInitializationState() const;
 
 private:
-	bool Frame();
 	void InitializeWindows(int& screenWidth, int& screenHeight);
 	void ShutdownWindows();
+	
+	bool Frame();
 
 	LPCSTR									m_applicationName{};
 	HINSTANCE								m_hInstance{};
 	HWND									m_hwnd;
 	
 	D3DApplication*							m_graphics{};
+	
 	InputManager*							m_input{};
 	
 	bool									m_initializationFailed;
