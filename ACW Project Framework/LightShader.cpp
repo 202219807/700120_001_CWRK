@@ -1,6 +1,10 @@
 #include "LightShader.h"
 
-LightShader::LightShader(ID3D11Device* const device, HWND const hwnd) : Shader("LightVertexShader", "LightHullShader", "LightDomainShader", "LightPixelShader", device, hwnd), m_inputLayout(nullptr), m_sampleState(nullptr), m_lightBuffer(nullptr)
+LightShader::LightShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("LightVertexShader", "LightHullShader", "LightDomainShader", "LightPixelShader", device, hwnd), 
+	m_inputLayout(nullptr), 
+	m_sampleState(nullptr), 
+	m_lightBuffer(nullptr)
 {
 	if (GetInitializationState())
 	{
@@ -13,7 +17,6 @@ LightShader::LightShader(ID3D11Device* const device, HWND const hwnd) : Shader("
 
 	//Setup layout of buffer data in the shader
 	//Setup of the layout needs to match the struct in our Model class and the struct in the shader
-
 	polygonLayout[0].SemanticName = "POSITION";
 	polygonLayout[0].SemanticIndex = 0;
 	polygonLayout[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
@@ -130,10 +133,6 @@ LightShader::LightShader(ID3D11Device* const device, HWND const hwnd) : Shader("
 	}
 }
 
-LightShader::LightShader(const LightShader& other) = default;
-
-LightShader::LightShader(LightShader&& other) noexcept = default;
-
 LightShader::~LightShader()
 {
 	try
@@ -162,10 +161,6 @@ LightShader::~LightShader()
 		
 	}
 }
-
-LightShader& LightShader::operator=(const LightShader& other) = default;
-
-LightShader& LightShader::operator=(LightShader&& other) noexcept = default;
 
 bool LightShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) {
 	
@@ -245,6 +240,5 @@ void LightShader::RenderShader(ID3D11DeviceContext* const deviceContext, const i
 	deviceContext->PSSetSamplers(0, 1, &m_sampleState);
 
 	//Render model
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }

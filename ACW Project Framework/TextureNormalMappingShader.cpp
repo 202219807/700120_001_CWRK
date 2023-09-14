@@ -1,6 +1,10 @@
 #include "TextureNormalMappingShader.h"
 
-TextureNormalMappingShader::TextureNormalMappingShader(ID3D11Device* const device, HWND const hwnd) : Shader("TextureNormalVertexShader", "TextureNormalHullShader", "TextureNormalDomainShader", "TextureNormalPixelShader", device, hwnd), m_inputLayout(nullptr), m_sampleState(nullptr), m_lightBuffer(nullptr)
+TextureNormalMappingShader::TextureNormalMappingShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("TextureNormalVertexShader", "TextureNormalHullShader", "TextureNormalDomainShader", "TextureNormalPixelShader", device, hwnd), 
+	m_inputLayout(nullptr), 
+	m_sampleState(nullptr), 
+	m_lightBuffer(nullptr)
 {
 	if (GetInitializationState())
 	{
@@ -143,10 +147,6 @@ TextureNormalMappingShader::TextureNormalMappingShader(ID3D11Device* const devic
 	}
 }
 
-TextureNormalMappingShader::TextureNormalMappingShader(const TextureNormalMappingShader& other) = default;
-
-TextureNormalMappingShader::TextureNormalMappingShader(TextureNormalMappingShader&& other) noexcept = default;
-
 TextureNormalMappingShader::~TextureNormalMappingShader()
 {
 	try
@@ -175,10 +175,6 @@ TextureNormalMappingShader::~TextureNormalMappingShader()
 
 	}
 }
-
-TextureNormalMappingShader& TextureNormalMappingShader::operator=(const TextureNormalMappingShader& other) = default;
-
-TextureNormalMappingShader& TextureNormalMappingShader::operator=(TextureNormalMappingShader&& other) noexcept = default;
 
 bool TextureNormalMappingShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition)
 {
@@ -260,6 +256,5 @@ void TextureNormalMappingShader::RenderShader(ID3D11DeviceContext* const deviceC
 	deviceContext->PSSetSamplers(0, 1, &m_sampleState);
 
 	//Render model
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }

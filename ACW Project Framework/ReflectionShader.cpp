@@ -1,6 +1,9 @@
 #include "ReflectionShader.h"
 
-ReflectionShader::ReflectionShader(ID3D11Device* const device, HWND const hwnd) : Shader("ReflectionVertexShader", "ReflectionHullShader", "ReflectionDomainShader", "ReflectionPixelShader", device, hwnd), m_inputLayout(nullptr), m_sampleState(nullptr)
+ReflectionShader::ReflectionShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("ReflectionVertexShader", "ReflectionHullShader", "ReflectionDomainShader", "ReflectionPixelShader", device, hwnd), 
+	m_inputLayout(nullptr), 
+	m_sampleState(nullptr)
 {
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[7];
 
@@ -8,7 +11,6 @@ ReflectionShader::ReflectionShader(ID3D11Device* const device, HWND const hwnd) 
 
 	//Setup layout of buffer data in the shader
 	//Setup of the layout needs to match the struct in our Model class and the struct in the shader
-
 	polygonLayout[0].SemanticName = "POSITION";
 	polygonLayout[0].SemanticIndex = 0;
 	polygonLayout[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
@@ -107,10 +109,6 @@ ReflectionShader::ReflectionShader(ID3D11Device* const device, HWND const hwnd) 
 	}
 }
 
-ReflectionShader::ReflectionShader(const ReflectionShader& other) = default;
-
-ReflectionShader::ReflectionShader(ReflectionShader&& other) noexcept = default;
-
 ReflectionShader::~ReflectionShader()
 {
 	try
@@ -133,10 +131,6 @@ ReflectionShader::~ReflectionShader()
 
 	}
 }
-
-ReflectionShader& ReflectionShader::operator=(const ReflectionShader& other) = default;
-
-ReflectionShader& ReflectionShader::operator=(ReflectionShader&& other) noexcept = default;
 
 bool ReflectionShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition)
 {
@@ -190,6 +184,5 @@ void ReflectionShader::RenderShader(ID3D11DeviceContext* const deviceContext, co
 	deviceContext->PSSetSamplers(0, 1, &m_sampleState);
 
 	//Render triangle
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }

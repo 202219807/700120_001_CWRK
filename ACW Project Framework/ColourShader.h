@@ -13,13 +13,13 @@ class ColourShader : public Shader
 {
 public:
 
-	ColourShader(ID3D11Device* const device, HWND const hwnd); // Default Constructor
-	ColourShader(const ColourShader& other); // Copy Constructor
-	ColourShader(ColourShader && other) noexcept; // Move Constructor
+	ColourShader(ID3D11Device* const device, HWND const hwnd);
 	~ColourShader() override;
 
-	ColourShader& operator = (const ColourShader& other); // Copy Assignment Operator
-	ColourShader& operator = (ColourShader && other) noexcept; // Move Assignment Operator
+	ColourShader(const ColourShader& other) = default;
+	ColourShader(ColourShader && other) noexcept = default;
+	ColourShader& operator= (const ColourShader& other) = default;
+	ColourShader& operator= (ColourShader && other) noexcept = default;
 
 	bool Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) override;
 

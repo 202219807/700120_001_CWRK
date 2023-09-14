@@ -12,13 +12,13 @@ using namespace std;
 class TextureNormalMappingShader : public Shader
 {
 public:
-	TextureNormalMappingShader(ID3D11Device* const device, HWND const hwnd); // Default Constructor
-	TextureNormalMappingShader(const TextureNormalMappingShader& other); // Copy Constructor
-	TextureNormalMappingShader(TextureNormalMappingShader&& other) noexcept; // Move Constructor
-	~TextureNormalMappingShader() override; // Destructor
+	TextureNormalMappingShader(ID3D11Device* const device, HWND const hwnd);
+	~TextureNormalMappingShader() override;
 
-	TextureNormalMappingShader& operator = (const TextureNormalMappingShader& other); // Copy Assignment Operator
-	TextureNormalMappingShader& operator = (TextureNormalMappingShader&& other) noexcept; // Move Assignment Operator
+	TextureNormalMappingShader(const TextureNormalMappingShader& other) = default;
+	TextureNormalMappingShader(TextureNormalMappingShader&& other) noexcept = default;
+	TextureNormalMappingShader& operator= (const TextureNormalMappingShader& other) = default;
+	TextureNormalMappingShader& operator= (TextureNormalMappingShader&& other) noexcept = default;
 
 	bool Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) override;
 
@@ -28,19 +28,20 @@ private:
 
 	struct PointLights
 	{
-		XMFLOAT4 ambientColour;
-		XMFLOAT4 diffuseColour;
-		XMFLOAT4 lightPositions;
+		XMFLOAT4		ambientColour;
+		XMFLOAT4		diffuseColour;
+		XMFLOAT4		lightPositions;
 	};
 
-	struct LightBufferType {
-		PointLights lights[MAX_LIGHTS];
-		int lightCount;
-		XMFLOAT3 padding;
+	struct LightBufferType 
+	{
+		PointLights		lights[MAX_LIGHTS];
+		int				lightCount;
+		XMFLOAT3		padding;
 	};
 
-	ID3D11InputLayout* m_inputLayout;
+	ID3D11InputLayout*	m_inputLayout;
 	ID3D11SamplerState* m_sampleState;
-	ID3D11Buffer* m_lightBuffer;
+	ID3D11Buffer*		m_lightBuffer;
 };
 

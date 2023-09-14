@@ -1,6 +1,9 @@
 #include "Texture2DShader.h"
 
-Texture2DShader::Texture2DShader(ID3D11Device* const device, HWND const hwnd) : Shader("Texture2DVertexShader", "Texture2DHullShader", "Texture2DDomainShader", "Texture2DPixelShader", device, hwnd), m_inputLayout(nullptr), m_sampleState(nullptr)
+Texture2DShader::Texture2DShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("Texture2DVertexShader", "Texture2DHullShader", "Texture2DDomainShader", "Texture2DPixelShader", device, hwnd), 
+	m_inputLayout(nullptr), 
+	m_sampleState(nullptr)
 {
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[6];
 
@@ -8,7 +11,6 @@ Texture2DShader::Texture2DShader(ID3D11Device* const device, HWND const hwnd) : 
 
 	//Setup layout of buffer data in the shader
 	//Setup of the layout needs to match the struct in our Model class and the struct in the shader
-
 	polygonLayout[0].SemanticName = "POSITION";
 	polygonLayout[0].SemanticIndex = 0;
 	polygonLayout[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
@@ -99,10 +101,6 @@ Texture2DShader::Texture2DShader(ID3D11Device* const device, HWND const hwnd) : 
 	}
 }
 
-Texture2DShader::Texture2DShader(const Texture2DShader& other) = default;
-
-Texture2DShader::Texture2DShader(Texture2DShader&& other) noexcept = default;
-
 Texture2DShader::~Texture2DShader()
 {
 	try
@@ -125,10 +123,6 @@ Texture2DShader::~Texture2DShader()
 		
 	}
 }
-
-Texture2DShader& Texture2DShader::operator=(const Texture2DShader& other) = default;
-
-Texture2DShader& Texture2DShader::operator=(Texture2DShader&& other) noexcept = default;
 
 bool Texture2DShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) {
 	
@@ -175,6 +169,5 @@ void Texture2DShader::RenderShader(ID3D11DeviceContext* const deviceContext, con
 	deviceContext->PSSetSamplers(0, 1, &m_sampleState);
 
 	//Render triangle
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }

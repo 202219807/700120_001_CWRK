@@ -12,13 +12,13 @@ using namespace std;
 class LightShader : public Shader
 {
 public:
-	LightShader(ID3D11Device* const device, HWND const hwnd); // Default Constructor
-	LightShader(const LightShader& other); // Copy Constructor
-	LightShader(LightShader&& other) noexcept; // Move Constructor
-	~LightShader() override; // Destructor
+	LightShader(ID3D11Device* const device, HWND const hwnd);
+	~LightShader() override;
 
-	LightShader& operator = (const LightShader& other); // Copy Assignment Operator
-	LightShader& operator = (LightShader&& other) noexcept; // Move Assignment Operator
+	LightShader(const LightShader& other) = default;
+	LightShader(LightShader&& other) noexcept = default;
+	LightShader& operator= (const LightShader& other) = default;
+	LightShader& operator= (LightShader&& other) noexcept = default;
 
 	bool Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) override;
 
@@ -28,18 +28,19 @@ private:
 
 	struct PointLights
 	{
-		XMFLOAT4 ambientColour;
-		XMFLOAT4 diffuseColour;
-		XMFLOAT4 lightPositions;
+		XMFLOAT4		ambientColour;
+		XMFLOAT4		diffuseColour;
+		XMFLOAT4		lightPositions;
 	};
 
-	struct LightBufferType {
-		PointLights lights[MAX_LIGHTS];
-		int lightCount;
-		XMFLOAT3 padding;
+	struct LightBufferType 
+	{
+		PointLights		lights[MAX_LIGHTS];
+		int				lightCount;
+		XMFLOAT3		padding;
 	};
 
-	ID3D11InputLayout* m_inputLayout;
+	ID3D11InputLayout*	m_inputLayout;
 	ID3D11SamplerState* m_sampleState;
-	ID3D11Buffer* m_lightBuffer;
+	ID3D11Buffer*		m_lightBuffer;
 };

@@ -13,12 +13,12 @@ class DepthShader : public Shader
 {
 public:
 	DepthShader(ID3D11Device* const device, HWND const hwnd);
-	DepthShader(const DepthShader& other); // Copy Constructor
-	DepthShader(DepthShader&& other) noexcept; // Move Constructor
-	~DepthShader() override; // Destructor
+	~DepthShader() override;
 
-	DepthShader& operator = (const DepthShader& other); // Copy Assignment Operator
-	DepthShader& operator = (DepthShader&& other) noexcept; //Move Assignment Operator
+	DepthShader(const DepthShader& other) = default;
+	DepthShader(DepthShader&& other) noexcept = default;
+	DepthShader& operator= (const DepthShader& other) = default;
+	DepthShader& operator= (DepthShader&& other) noexcept = default;
 
 	bool Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) override;
 

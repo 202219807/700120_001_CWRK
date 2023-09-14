@@ -1,6 +1,8 @@
 #include "DepthShader.h"
 
-DepthShader::DepthShader(ID3D11Device* const device, HWND const hwnd) : Shader("DepthVertexShader", "DepthHullShader", "DepthDomainShader", "DepthPixelShader", device, hwnd), m_inputLayout(nullptr)
+DepthShader::DepthShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("DepthVertexShader", "DepthHullShader", "DepthDomainShader", "DepthPixelShader", device, hwnd), 
+	m_inputLayout(nullptr)
 {
 	if (GetInitializationState())
 	{
@@ -109,10 +111,6 @@ DepthShader::DepthShader(ID3D11Device* const device, HWND const hwnd) : Shader("
 	}
 }
 
-DepthShader::DepthShader(const DepthShader& other) = default;
-
-DepthShader::DepthShader(DepthShader&& other) noexcept = default;
-
 DepthShader::~DepthShader()
 {
 	try
@@ -128,10 +126,6 @@ DepthShader::~DepthShader()
 		
 	}
 }
-
-DepthShader& DepthShader::operator=(const DepthShader& other) = default;
-
-DepthShader& DepthShader::operator=(DepthShader&& other) noexcept = default;
 
 bool DepthShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition)
 {
@@ -160,10 +154,6 @@ bool DepthShader::SetDepthShaderParameters(ID3D11DeviceContext* const deviceCont
 	{
 		deviceContext->DSSetShaderResources(0, 1, &textures.back());
 	}
-
-	////Need to clear the pixel shader resource as it won't draw to our shader resource view if it's bound to anything
-	//ID3D11ShaderResourceView* nullArray[] = { nullptr, nullptr, nullptr, nullptr, nullptr };
-	//deviceContext->PSSetShaderResources(0, 5, nullArray);
 
 	const auto cameraBuffer = GetCameraBuffer();
 

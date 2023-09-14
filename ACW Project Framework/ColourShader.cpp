@@ -1,6 +1,9 @@
 #include "ColourShader.h"
 
-ColourShader::ColourShader(ID3D11Device* const device, HWND const hwnd) : Shader("ColourVertexShader", "ColourHullShader", "ColourDomainShader", "ColourPixelShader", device, hwnd), m_inputLayout(nullptr) {
+ColourShader::ColourShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("ColourVertexShader", "ColourHullShader", "ColourDomainShader", "ColourPixelShader", device, hwnd), 
+	m_inputLayout(nullptr) 
+{
 	
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[6];
 
@@ -8,7 +11,6 @@ ColourShader::ColourShader(ID3D11Device* const device, HWND const hwnd) : Shader
 
 	//Setup layout of buffer data in the shader
 	//Setup of the layout needs to match the struct in our Model class and the struct in the shader
-
 	polygonLayout[0].SemanticName = "POSITION";
 	polygonLayout[0].SemanticIndex = 0;
 	polygonLayout[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
@@ -74,10 +76,6 @@ ColourShader::ColourShader(ID3D11Device* const device, HWND const hwnd) : Shader
 	}
 }
 
-ColourShader::ColourShader(const ColourShader& other) = default;
-
-ColourShader::ColourShader(ColourShader&& other) noexcept = default;
-
 ColourShader::~ColourShader()
 {
 	try
@@ -94,10 +92,6 @@ ColourShader::~ColourShader()
 		
 	}
 }
-
-ColourShader& ColourShader::operator=(const ColourShader& other) = default;
-
-ColourShader& ColourShader::operator=(ColourShader&& other) noexcept = default;
 
 bool ColourShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) {
 	
@@ -129,6 +123,5 @@ void ColourShader::RenderShader(ID3D11DeviceContext* const deviceContext, const 
 	SetShader(deviceContext);
 
 	//Render model
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }

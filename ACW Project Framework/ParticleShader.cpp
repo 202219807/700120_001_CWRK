@@ -1,6 +1,11 @@
 #include "ParticleShader.h"
 
-ParticleShader::ParticleShader(ID3D11Device* const device, HWND const hwnd) : Shader("ParticleVertexShader", "ParticleHullShader", "ParticleDomainShader", "ParticlePixelShader", device, hwnd), m_transparency(0.0f), m_colourTint(0.0f, 0.0f, 0.0f), m_inputLayout(nullptr), m_sampleState(nullptr)
+ParticleShader::ParticleShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("ParticleVertexShader", "ParticleHullShader", "ParticleDomainShader", "ParticlePixelShader", device, hwnd), 
+	m_transparency(0.0f), 
+	m_colourTint(0.0f, 0.0f, 0.0f), 
+	m_inputLayout(nullptr), 
+	m_sampleState(nullptr)
 {
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[6];
 
@@ -8,7 +13,6 @@ ParticleShader::ParticleShader(ID3D11Device* const device, HWND const hwnd) : Sh
 
 	//Setup layout of buffer data in the shader
 	//Setup of the layout needs to match the struct in our Model class and the struct in the shader
-
 	polygonLayout[0].SemanticName = "POSITION";
 	polygonLayout[0].SemanticIndex = 0;
 	polygonLayout[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
@@ -134,10 +138,6 @@ ParticleShader::ParticleShader(ID3D11Device* const device, HWND const hwnd) : Sh
 	}
 }
 
-ParticleShader::ParticleShader(const ParticleShader& other) = default;
-
-ParticleShader::ParticleShader(ParticleShader&& other) noexcept = default;
-
 ParticleShader::~ParticleShader()
 {
 	try
@@ -160,10 +160,6 @@ ParticleShader::~ParticleShader()
 
 	}
 }
-
-//ParticleShader& ParticleShader::operator=(const ParticleShader& other) = default;
-
-//ParticleShader& ParticleShader::operator=(ParticleShader&& other) noexcept = default;
 
 void ParticleShader::SetParticleParameters(const XMFLOAT3& colourTint, const float transparency)
 {
@@ -266,6 +262,5 @@ void ParticleShader::RenderShader(ID3D11DeviceContext* const deviceContext, cons
 	deviceContext->PSSetSamplers(0, 1, &m_sampleState);
 
 	//Render triangle
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }

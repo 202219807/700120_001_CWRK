@@ -1,8 +1,9 @@
 #include "TextureCubeShader.h"
 
-
-
-TextureCubeShader::TextureCubeShader(ID3D11Device* const device, HWND const hwnd) : Shader("TextureCubeVertexShader", "TextureCubeHullShader", "TextureCubeDomainShader", "TextureCubePixelShader", device, hwnd), m_inputLayout(nullptr), m_sampleState(nullptr)
+TextureCubeShader::TextureCubeShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("TextureCubeVertexShader", "TextureCubeHullShader", "TextureCubeDomainShader", "TextureCubePixelShader", device, hwnd), 
+	m_inputLayout(nullptr), 
+	m_sampleState(nullptr)
 {
 	D3D11_INPUT_ELEMENT_DESC polygonLayout[6];
 
@@ -10,7 +11,6 @@ TextureCubeShader::TextureCubeShader(ID3D11Device* const device, HWND const hwnd
 
 	//Setup layout of buffer data in the shader
 	//Setup of the layout needs to match the struct in our Model class and the struct in the shader
-
 	polygonLayout[0].SemanticName = "POSITION";
 	polygonLayout[0].SemanticIndex = 0;
 	polygonLayout[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
@@ -101,10 +101,6 @@ TextureCubeShader::TextureCubeShader(ID3D11Device* const device, HWND const hwnd
 	}
 }
 
-TextureCubeShader::TextureCubeShader(const TextureCubeShader& other) = default;
-
-TextureCubeShader::TextureCubeShader(TextureCubeShader&& other) noexcept = default;
-
 TextureCubeShader::~TextureCubeShader()
 {
 	try
@@ -127,10 +123,6 @@ TextureCubeShader::~TextureCubeShader()
 
 	}
 }
-
-TextureCubeShader& TextureCubeShader::operator=(const TextureCubeShader& other) = default;
-
-TextureCubeShader& TextureCubeShader::operator=(TextureCubeShader&& other) noexcept = default;
 
 bool TextureCubeShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition)
 {
@@ -178,6 +170,5 @@ void TextureCubeShader::RenderShader(ID3D11DeviceContext* const deviceContext, c
 	deviceContext->PSSetSamplers(0, 1, &m_sampleState);
 
 	//Render triangle
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }

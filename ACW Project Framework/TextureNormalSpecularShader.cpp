@@ -1,6 +1,12 @@
 #include "TextureNormalSpecularShader.h"
 
-TextureNormalSpecularShader::TextureNormalSpecularShader(ID3D11Device* const device, HWND const hwnd) : Shader("TextureNormalSpecularVS", "TextureNormalSpecularHS", "TextureNormalSpecularDS", "TextureNormalSpecularPS", device, hwnd), m_inputLayout(nullptr), m_sampleStateWrap(nullptr), m_sampleStateClamp(nullptr), m_lightMatrixBuffer(nullptr), m_lightBuffer(nullptr)
+TextureNormalSpecularShader::TextureNormalSpecularShader(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("TextureNormalSpecularVS", "TextureNormalSpecularHS", "TextureNormalSpecularDS", "TextureNormalSpecularPS", device, hwnd), 
+	m_inputLayout(nullptr), 
+	m_sampleStateWrap(nullptr), 
+	m_sampleStateClamp(nullptr), 
+	m_lightMatrixBuffer(nullptr), 
+	m_lightBuffer(nullptr)
 {
 	if (GetInitializationState())
 	{
@@ -185,10 +191,6 @@ TextureNormalSpecularShader::TextureNormalSpecularShader(ID3D11Device* const dev
 	}
 }
 
-TextureNormalSpecularShader::TextureNormalSpecularShader(const TextureNormalSpecularShader& other) = default;
-
-TextureNormalSpecularShader::TextureNormalSpecularShader(TextureNormalSpecularShader&& other) noexcept = default;
-
 TextureNormalSpecularShader::~TextureNormalSpecularShader()
 {
 	try
@@ -228,10 +230,6 @@ TextureNormalSpecularShader::~TextureNormalSpecularShader()
 
 	}
 }
-
-TextureNormalSpecularShader& TextureNormalSpecularShader::operator=(const TextureNormalSpecularShader& other) = default;
-
-TextureNormalSpecularShader& TextureNormalSpecularShader::operator=(TextureNormalSpecularShader&& other) noexcept = default;
 
 bool TextureNormalSpecularShader::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition)
 {
@@ -362,7 +360,6 @@ void TextureNormalSpecularShader::RenderShader(ID3D11DeviceContext* const device
 	deviceContext->PSSetSamplers(1, 1, &m_sampleStateClamp);
 
 	//Render model
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
 }
 

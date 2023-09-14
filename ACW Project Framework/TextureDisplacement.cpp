@@ -1,6 +1,11 @@
 #include "TextureDisplacement.h"
 
-TextureDisplacement::TextureDisplacement(ID3D11Device* const device, HWND const hwnd) : Shader("TextureDisplacementVS", "TextureDisplacementHS", "TextureDisplacementDS", "TextureDisplacementPS", device, hwnd), m_inputLayout(nullptr), m_sampleStateWrap(nullptr), m_sampleStateClamp(nullptr), m_lightBuffer(nullptr)
+TextureDisplacement::TextureDisplacement(ID3D11Device* const device, HWND const hwnd) : 
+	Shader("TextureDisplacementVS", "TextureDisplacementHS", "TextureDisplacementDS", "TextureDisplacementPS", device, hwnd), 
+	m_inputLayout(nullptr), 
+	m_sampleStateWrap(nullptr), 
+	m_sampleStateClamp(nullptr), 
+	m_lightBuffer(nullptr)
 {
 	if (GetInitializationState())
 	{
@@ -185,10 +190,6 @@ TextureDisplacement::TextureDisplacement(ID3D11Device* const device, HWND const 
 	}
 }
 
-TextureDisplacement::TextureDisplacement(const TextureDisplacement& other) = default;
-
-TextureDisplacement::TextureDisplacement(TextureDisplacement&& other) noexcept = default;
-
 TextureDisplacement::~TextureDisplacement()
 {
 	try
@@ -228,10 +229,6 @@ TextureDisplacement::~TextureDisplacement()
 
 	}
 }
-
-TextureDisplacement& TextureDisplacement::operator=(const TextureDisplacement& other) = default;
-
-TextureDisplacement& TextureDisplacement::operator=(TextureDisplacement&& other) noexcept = default;
 
 bool TextureDisplacement::Render(ID3D11DeviceContext* const deviceContext, const int indexCount, const int instanceCount, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& textures, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition)
 {
@@ -360,5 +357,4 @@ void TextureDisplacement::RenderShader(ID3D11DeviceContext* const deviceContext,
 	deviceContext->PSSetSamplers(1, 1, &m_sampleStateClamp);
 
 	deviceContext->DrawInstanced(indexCount, instanceCount, 0, 0);
-	//deviceContext->DrawIndexed(indexCount, 0, 0);
 }
