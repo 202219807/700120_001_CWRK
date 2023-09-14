@@ -1,6 +1,13 @@
 #include "Rocket.h"
 
-Rocket::Rocket(ID3D11Device* const device, const XMFLOAT3& position, const XMFLOAT3& rotation, const XMFLOAT3& scale, const shared_ptr<ShaderManager>& shaderManager, const shared_ptr<ResourceManager>& resourceManager) : 
+Rocket::Rocket(
+	ID3D11Device* const device, 
+	const XMFLOAT3& position, 
+	const XMFLOAT3& rotation, 
+	const XMFLOAT3& scale, 
+	const shared_ptr<ShaderManager>& shaderManager, 
+	const shared_ptr<ResourceManager>& resourceManager
+) : 
 	m_initializationFailed(false), 
 	m_rocketLaunched(false), 
 	m_changedParticleSystem(false), 
@@ -515,7 +522,7 @@ bool Rocket::RenderRocket(const shared_ptr<D3DContainer>& d3dContainer, const XM
 		d3dContainer->DisableDepthStencil();
 		d3dContainer->EnableAlphaBlending();
 
-		result = m_rocketEngine->RenderFireJetParticleSystem(d3dContainer->GetDeviceContext(), viewMatrix, projectionMatrix, cameraPosition);
+		result = m_rocketEngine->Render(d3dContainer->GetDeviceContext(), viewMatrix, projectionMatrix, cameraPosition);
 
 		d3dContainer->EnabledDepthStencil();
 		d3dContainer->DisableAlphaBlending();

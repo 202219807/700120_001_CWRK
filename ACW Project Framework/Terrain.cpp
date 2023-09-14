@@ -1,6 +1,13 @@
 #include "Terrain.h"
 
-Terrain::Terrain(ID3D11Device* const device, const XMFLOAT3& voxelArea, const XMFLOAT3& cubeScale, const shared_ptr<Shader>& shader, const shared_ptr<ResourceManager>& resourceManager) : m_initializationFailed(false)
+Terrain::Terrain(
+	ID3D11Device* const device, 
+	const XMFLOAT3& voxelArea, 
+	const XMFLOAT3& cubeScale, 
+	const shared_ptr<Shader>& shader, 
+	const shared_ptr<ResourceManager>& resourceManager
+) : 
+	m_initializationFailed(false)
 {
 	const auto x = static_cast<int>(voxelArea.x / 2);
 	const auto y = static_cast<int>(voxelArea.y);
@@ -69,7 +76,14 @@ void Terrain::UpdateTerrain()
 	Update();
 }
 
-bool Terrain::RenderTerrain(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) const
+bool Terrain::RenderTerrain(
+	ID3D11DeviceContext* const deviceContext, 
+	const XMMATRIX& viewMatrix, 
+	const XMMATRIX& projectionMatrix, 
+	const vector<ID3D11ShaderResourceView*>& depthTextures, 
+	const vector<shared_ptr<Light>>& pointLightList, 
+	const XMFLOAT3& cameraPosition
+) const
 {
 	return Render(deviceContext, viewMatrix, projectionMatrix, depthTextures, pointLightList, cameraPosition);
 }

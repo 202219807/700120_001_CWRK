@@ -1,6 +1,10 @@
 #include "D3DApplication.h"
 
-D3DApplication::D3DApplication(int screenWidth, int screenHeight, HWND const hwnd) : 
+D3DApplication::D3DApplication(
+	int screenWidth, 
+	int screenHeight, 
+	HWND const hwnd
+) : 
 	m_initializationFailed(false), 
 	m_d3D(nullptr), 
 	m_antTweakBarStatistics(nullptr), 

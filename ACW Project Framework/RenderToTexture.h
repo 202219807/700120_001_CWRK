@@ -12,12 +12,12 @@ class RenderToTexture
 {
 public:
 	RenderToTexture(ID3D11Device* const device, const int textureWidth, const int textureHeight);
-	RenderToTexture(const RenderToTexture& other); // Copy Constructor
-	RenderToTexture(RenderToTexture&& other) noexcept; // Move Constructor
 	~RenderToTexture(); 
 
-	RenderToTexture& operator = (const RenderToTexture& other); // Copy Assignment Operator
-	RenderToTexture& operator = (RenderToTexture&& other) noexcept; // Move Assignment Operator
+	RenderToTexture(const RenderToTexture& other) = default;
+	RenderToTexture(RenderToTexture&& other) noexcept = default;
+	RenderToTexture& operator= (const RenderToTexture& other) = default;
+	RenderToTexture& operator= (RenderToTexture&& other) noexcept = default;
 
 	void SetShader(const shared_ptr<Shader>& shader);
 	bool RenderObjectsToTexture(ID3D11DeviceContext* const deviceContext, ID3D11DepthStencilView* const depthStencilView, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<shared_ptr<Light>>& pointLightList, const vector<shared_ptr<GameObject>>& gameObjects, const XMFLOAT3& cameraPosition) const;

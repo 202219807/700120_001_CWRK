@@ -1,6 +1,15 @@
 #include "RenderToTexture.h"
 
-RenderToTexture::RenderToTexture(ID3D11Device* const device, const int textureWidth, const int textureHeight) : m_initializationFailed(false), m_renderTargetTexture(nullptr), m_renderTargetView(nullptr), m_shaderResourceView(nullptr), m_shader(nullptr)
+RenderToTexture::RenderToTexture(
+	ID3D11Device* const device, 
+	const int textureWidth, 
+	const int textureHeight
+) : 
+	m_initializationFailed(false), 
+	m_renderTargetTexture(nullptr), 
+	m_renderTargetView(nullptr), 
+	m_shaderResourceView(nullptr),
+	m_shader(nullptr)
 {
 	//Create texture description
 	D3D11_TEXTURE2D_DESC textureDescription;
@@ -62,10 +71,6 @@ RenderToTexture::RenderToTexture(ID3D11Device* const device, const int textureWi
 	}
 }
 
-RenderToTexture::RenderToTexture(const RenderToTexture& other) = default;
-
-RenderToTexture::RenderToTexture(RenderToTexture&& other) noexcept = default;
-
 RenderToTexture::~RenderToTexture()
 {
 	try
@@ -94,10 +99,6 @@ RenderToTexture::~RenderToTexture()
 	}
 }
 
-RenderToTexture& RenderToTexture::operator=(const RenderToTexture& other) = default;
-
-RenderToTexture& RenderToTexture::operator=(RenderToTexture&& other) noexcept = default;
-
 void RenderToTexture::SetShader(const shared_ptr<Shader>& shader)
 {
 	m_shader = shader;
@@ -108,14 +109,6 @@ bool RenderToTexture::RenderObjectsToTexture(ID3D11DeviceContext* const deviceCo
 	SetRenderTarget(deviceContext, depthStencilView);
 
 	ClearRenderTarget(deviceContext, depthStencilView, XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f));
-
-	////Swap viewports to texture sized one
-	//UINT numberOfViewports = 1;
-	//D3D11_VIEWPORT viewport;
-
-	//deviceContext->RSGetViewports(&numberOfViewports, &viewport);
-
-	//deviceContext->RSSetViewports(1, &m_viewport);
 
 	//For each gameobject we want to swap the shader to the shader given and then swap it back
 	for (const auto& gameObject : gameObjects)
@@ -149,13 +142,11 @@ bool RenderToTexture::RenderObjectsToTexture(ID3D11DeviceContext* const deviceCo
 		}
 	}
 
-	//deviceContext->RSSetViewports(1, &viewport);
-
 	return true;
 }
 
-void RenderToTexture::SetRenderTarget(ID3D11DeviceContext* const deviceContext, ID3D11DepthStencilView* const depthStencilView) const {
-
+void RenderToTexture::SetRenderTarget(ID3D11DeviceContext* const deviceContext, ID3D11DepthStencilView* const depthStencilView) const 
+{
 	deviceContext->OMSetRenderTargets(1, &m_renderTargetView, depthStencilView);
 }
 
@@ -168,10 +159,12 @@ void RenderToTexture::ClearRenderTarget(ID3D11DeviceContext* const deviceContext
 	deviceContext->ClearDepthStencilView(depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 }
 
-ID3D11ShaderResourceView* RenderToTexture::GetShaderResourceView() const {
+ID3D11ShaderResourceView* RenderToTexture::GetShaderResourceView() const 
+{
 	return m_shaderResourceView;
 }
 
-bool RenderToTexture::GetInitializationState() const {
+bool RenderToTexture::GetInitializationState() const 
+{
 	return m_initializationFailed;
 }

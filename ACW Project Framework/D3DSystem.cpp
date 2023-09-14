@@ -1,43 +1,14 @@
 #include "D3DSystem.h"
 
-//This is the main application loop where we do all the application processing through the frame function until we quit. The frame function is called each loop.
-void D3DSystem::Run() {
-	
-	MSG message;
-	auto done = false;
 
-	//Initialize message structure by filling a block of memory with zeros
-	ZeroMemory(&message, sizeof(message));
-
-	//Loop until we get a quit message from the window or the user
-	while (!done)
-	{
-		//Handle windows messages
-		if (PeekMessage(&message, nullptr, 0, 0, PM_REMOVE))
-		{
-			TranslateMessage(&message);
-			DispatchMessage(&message);
-		}
-
-		//If windows ends the application then we exit out
-		if (message.message == WM_QUIT)
-		{
-			done = true;
-		}
-		else
-		{
-			//Else we do the frame processing
-			auto const result = Frame();
-
-			if (!result)
-			{
-				done = true;
-			}
-		}
-	}
-}
-
-D3DSystem::D3DSystem() : m_initializationFailed(false), m_applicationName(nullptr), m_hInstance(nullptr), m_hwnd(nullptr), m_input(nullptr), m_graphics(nullptr) {
+D3DSystem::D3DSystem() : 
+	m_initializationFailed(false), 
+	m_applicationName(nullptr), 
+	m_hInstance(nullptr), 
+	m_hwnd(nullptr), 
+	m_input(nullptr), 
+	m_graphics(nullptr) 
+{
 	auto screenWidth = 0;
 	auto screenHeight = 0;
 
@@ -86,6 +57,43 @@ D3DSystem::~D3DSystem()
 	catch (exception& e)
 	{
 		ShutdownWindows();
+	}
+}
+
+//This is the main application loop where we do all the application processing through the frame function until we quit. The frame function is called each loop.
+void D3DSystem::Run() {
+	
+	MSG message;
+	auto done = false;
+
+	//Initialize message structure by filling a block of memory with zeros
+	ZeroMemory(&message, sizeof(message));
+
+	//Loop until we get a quit message from the window or the user
+	while (!done)
+	{
+		//Handle windows messages
+		if (PeekMessage(&message, nullptr, 0, 0, PM_REMOVE))
+		{
+			TranslateMessage(&message);
+			DispatchMessage(&message);
+		}
+
+		//If windows ends the application then we exit out
+		if (message.message == WM_QUIT)
+		{
+			done = true;
+		}
+		else
+		{
+			//Else we do the frame processing
+			auto const result = Frame();
+
+			if (!result)
+			{
+				done = true;
+			}
+		}
 	}
 }
 

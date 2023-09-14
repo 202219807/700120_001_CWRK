@@ -12,7 +12,7 @@ public:
 	Smoke& operator = (const Smoke& other) = default;
 	Smoke& operator = (Smoke&& other) noexcept = default;
 
-	void UpdateSmokeParticleSystem(const float dt);
-	bool RenderSmokeParticleSystem(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const XMFLOAT3& cameraPosition) const;
+	void Update(const float dt);
+	bool Render(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const XMFLOAT3& cameraPosition) const;
 };
 

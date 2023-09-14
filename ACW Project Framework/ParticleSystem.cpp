@@ -1,6 +1,30 @@
 #include "ParticleSystem.h"
 
-ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, const ModelType modelType, const XMFLOAT3& initialPosition, const XMFLOAT3& initialScale, const XMFLOAT3& finalScale, const XMFLOAT3& colourTint, const WCHAR* const textureName, const float transparency, const float lifeCycle, const float velocity, const int particleDensity, const shared_ptr<ResourceManager>& resourceManager) : m_initialPosition(initialPosition), m_initialScale(initialScale), m_scaleReduction(XMFLOAT3()), m_killScale(XMFLOAT3()), m_emitterType(false), m_spawnRate(0.0f), m_elapsedTime(0.0f), m_lifeCycle(lifeCycle), m_velocity(velocity), m_particleSpread(lifeCycle / particleDensity)
+ParticleSystem::ParticleSystem(
+	ID3D11Device* const device, 
+	HWND const hwnd, 
+	const ModelType modelType, 
+	const XMFLOAT3& initialPosition, 
+	const XMFLOAT3& initialScale, 
+	const XMFLOAT3& finalScale, 
+	const XMFLOAT3& colourTint, 
+	const WCHAR* const textureName, 
+	const float transparency, 
+	const float lifeCycle, 
+	const float velocity, 
+	const int particleDensity, 
+	const shared_ptr<ResourceManager>& resourceManager
+) : 
+	m_initialPosition(initialPosition), 
+	m_initialScale(initialScale), 
+	m_scaleReduction(XMFLOAT3()), 
+	m_killScale(XMFLOAT3()), 
+	m_emitterType(false), 
+	m_spawnRate(0.0f), 
+	m_elapsedTime(0.0f), 
+	m_lifeCycle(lifeCycle), 
+	m_velocity(velocity), 
+	m_particleSpread(lifeCycle / particleDensity)
 {
 	auto positions = vector<XMFLOAT3>();
 	auto scales = vector<XMFLOAT3>();
@@ -32,7 +56,30 @@ ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, cons
 	AddShaderComponent(particleShader);
 }
 
-ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, const XMFLOAT3& initialPosition, const XMFLOAT3& initialScale, const XMFLOAT3& scaleReduction, const XMFLOAT3& killScale, const XMFLOAT3& colourTint, const WCHAR* const textureName, const float transparency, const float spawnRate, const float velocity, const shared_ptr<ResourceManager>& resourceManager) : m_initialPosition(initialPosition), m_initialScale(initialScale), m_scaleReduction(scaleReduction), m_killScale(killScale), m_emitterType(true), m_spawnRate(spawnRate), m_elapsedTime(0.0f), m_lifeCycle(0.0f), m_velocity(velocity), m_particleSpread(0.0f)
+ParticleSystem::ParticleSystem(
+	ID3D11Device* const device, 
+	HWND const hwnd, 
+	const XMFLOAT3& initialPosition, 
+	const XMFLOAT3& initialScale, 
+	const XMFLOAT3& scaleReduction, 
+	const XMFLOAT3& killScale, 
+	const XMFLOAT3& colourTint, 
+	const WCHAR* const textureName, 
+	const float transparency, 
+	const float spawnRate, 
+	const float velocity, 
+	const shared_ptr<ResourceManager>& resourceManager
+) : 
+	m_initialPosition(initialPosition), 
+	m_initialScale(initialScale), 
+	m_scaleReduction(scaleReduction), 
+	m_killScale(killScale), 
+	m_emitterType(true), 
+	m_spawnRate(spawnRate), 
+	m_elapsedTime(0.0f), 
+	m_lifeCycle(0.0f), 
+	m_velocity(velocity), 
+	m_particleSpread(0.0f)
 {
 	AddPositionComponent(m_initialPosition);
 	AddScaleComponent(m_initialScale);
@@ -45,7 +92,6 @@ ParticleSystem::ParticleSystem(ID3D11Device* const device, HWND const hwnd, cons
 	AddTextureComponent(device, textureNames, resourceManager);
 
 	const auto particleShader = make_shared<ParticleShader>(device, hwnd);
-
 	particleShader->SetParticleParameters(colourTint, transparency);
 
 	AddShaderComponent(particleShader);

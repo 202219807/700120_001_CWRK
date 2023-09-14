@@ -9,12 +9,12 @@ class ParticleSystemManager
 {
 public:
 	ParticleSystemManager();
-	ParticleSystemManager(const ParticleSystemManager& other); //Copy Constructor
-	ParticleSystemManager(ParticleSystemManager&& other) noexcept; // Move Constructor
 	~ParticleSystemManager();
 
-	ParticleSystemManager& operator = (const ParticleSystemManager& other); // Copy Assignment Operator
-	ParticleSystemManager& operator = (ParticleSystemManager&& other) noexcept; // Move Assignment Operator
+	ParticleSystemManager(const ParticleSystemManager& other) = default;
+	ParticleSystemManager(ParticleSystemManager&& other) noexcept = default;
+	ParticleSystemManager& operator= (const ParticleSystemManager& other) = default;
+	ParticleSystemManager& operator= (ParticleSystemManager&& other) noexcept = default;
 
 	const bool ExplosionExists() const;
 	const vector<shared_ptr<Light>>& GetLights() const;

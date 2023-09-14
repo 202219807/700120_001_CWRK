@@ -1,20 +1,19 @@
 #include "ParticleSystemManager.h"
 
-ParticleSystemManager::ParticleSystemManager() : m_explosion(false), m_smokeRenderCount(0), m_explosionRenderCount(0), m_timeSinceExplosion(0.0f), m_smokeParticleSystems(), m_fireJetParticleSystems(), m_explosionLights()
+ParticleSystemManager::ParticleSystemManager() : 
+	m_explosion(false), 
+	m_smokeRenderCount(0), 
+	m_explosionRenderCount(0), 
+	m_timeSinceExplosion(0.0f), 
+	m_smokeParticleSystems(), 
+	m_fireJetParticleSystems(), 
+	m_explosionLights()
 {
 }
-
-ParticleSystemManager::ParticleSystemManager(const ParticleSystemManager& other) = default;
-
-ParticleSystemManager::ParticleSystemManager(ParticleSystemManager&& other) noexcept = default;
 
 ParticleSystemManager::~ParticleSystemManager()
 {
 }
-
-ParticleSystemManager& ParticleSystemManager::operator=(const ParticleSystemManager& other) = default;
-
-ParticleSystemManager& ParticleSystemManager::operator=(ParticleSystemManager&& other) noexcept = default;
 
 const bool ParticleSystemManager::ExplosionExists() const
 {
@@ -31,7 +30,12 @@ void ParticleSystemManager::ResetParticleSystems()
 	m_smokeRenderCount = 0;
 }
 
-void ParticleSystemManager::GenerateExplosion(ID3D11Device* const device, const XMFLOAT3& explosionPosition, const float blastRadius, const shared_ptr<ResourceManager>& resourceManager)
+void ParticleSystemManager::GenerateExplosion(
+	ID3D11Device* const device, 
+	const XMFLOAT3& explosionPosition, 
+	const float blastRadius, 
+	const shared_ptr<ResourceManager>& resourceManager
+)
 {
 	if (blastRadius > 0.0f)
 	{
@@ -64,11 +68,6 @@ void ParticleSystemManager::Update(const float dt)
 
 		if (m_timeSinceExplosion > 1.0f)
 		{
-			//Destroy firejetparticle at
-			//m_fireJetParticleSystems.erase(m_fireJetParticleSystems.begin());
-			//m_explosionLights.erase(m_explosionLights.begin());
-
-			//m_fireJetParticleSystems.pop_back();
 			m_explosionRenderCount--;
 			m_explosionLights.pop_back();
 
@@ -83,16 +82,21 @@ void ParticleSystemManager::Update(const float dt)
 
 	for (unsigned int i = 0; i < m_smokeRenderCount; i++)
 	{
-		m_smokeParticleSystems[i]->UpdateSmokeParticleSystem(dt);
+		m_smokeParticleSystems[i]->Update(dt);
 	}
 
 	for (unsigned int i = 0; i < m_explosionRenderCount; i++)
 	{
-		m_fireJetParticleSystems[i]->UpdateFireJetParticleSystem(dt); 
+		m_fireJetParticleSystems[i]->Update(dt); 
 	}
 }
 
-bool ParticleSystemManager::Render(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const XMFLOAT3& cameraPosition) const
+bool ParticleSystemManager::Render(
+	ID3D11DeviceContext* const deviceContext, 
+	const XMMATRIX& viewMatrix, 
+	const XMMATRIX& projectionMatrix, 
+	const XMFLOAT3& cameraPosition
+) const
 {
 	auto result = true;
 
@@ -103,7 +107,7 @@ bool ParticleSystemManager::Render(ID3D11DeviceContext* const deviceContext, con
 
 	for (unsigned int i = 0; i < m_smokeRenderCount; i++)
 	{
-		result = m_smokeParticleSystems[i]->RenderSmokeParticleSystem(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
+		result = m_smokeParticleSystems[i]->Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
 
 		if (!result)
 		{
@@ -113,7 +117,7 @@ bool ParticleSystemManager::Render(ID3D11DeviceContext* const deviceContext, con
 
 	for (unsigned int i = 0; i < m_explosionRenderCount; i++)
 	{
-		result = m_fireJetParticleSystems[i]->RenderFireJetParticleSystem(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
+		result = m_fireJetParticleSystems[i]->Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
 
 		if (!result)
 		{

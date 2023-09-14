@@ -9,13 +9,13 @@ using namespace std;
 class Light
 {
 public:
-	Light(); // Default Constructor
-	//Light(const Light& other); // Copy Constructor
-	//Light(Light&& other) noexcept; // Move Constructor
-	virtual ~Light(); // Destructor
+	Light();
+	virtual ~Light();
 
-	//Light& operator = (const Light& other); // Copy Assignment Operator
-	//Light& operator = (Light&& other) noexcept; // Move Assignment Operator
+	Light(const Light& other) = default;
+	Light(Light&& other) noexcept = default;
+	Light& operator = (const Light& other) = default;
+	Light& operator = (Light&& other) noexcept = default;
 
 	void SetLightOrbit(const bool orbit);
 	void SetDirectionalLight(const bool directionalLight);
@@ -39,8 +39,6 @@ public:
 	const bool GetIsDirectionalLight() const;
 
 	const XMFLOAT3& GetLightPosition() const;
-	//const XMFLOAT3& GetLightDirection() const;
-
 	const XMFLOAT4& GetAmbientColour() const;
 	const XMFLOAT4& GetDiffuseColour() const;
 	const XMFLOAT4& GetSpecularColour() const;
