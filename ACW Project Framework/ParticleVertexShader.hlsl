@@ -15,7 +15,7 @@ cbuffer TessellationBuffer : register(b1)
 cbuffer CameraBuffer : register(b2)
 {
 	float3 cameraPosition;
-	float padding;
+	float  padding;
 };
 
 cbuffer InverseViewBuffer : register(b3)

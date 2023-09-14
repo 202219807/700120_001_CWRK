@@ -1,5 +1,3 @@
-
-//Globals
 TextureCube shaderTexture;
 SamplerState sampleType;
 
@@ -15,8 +13,8 @@ float4 TextureCubePixelShader(PixelInput input) : SV_TARGET
 {
 	float4 textureColour;
 
-//Receive pixel sample from the texture2D using the samplerstate and receive the colours needed
-textureColour = shaderTexture.Sample(sampleType, input.tex);
+	//Receive pixel sample from the texture2D using the samplerstate and receive the colours needed
+	textureColour = shaderTexture.Sample(sampleType, input.tex);
 
-return textureColour;
+	return textureColour;
 }

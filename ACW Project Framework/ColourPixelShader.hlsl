@@ -1,4 +1,3 @@
-
 //Type definitions
 struct PixelInput
 {

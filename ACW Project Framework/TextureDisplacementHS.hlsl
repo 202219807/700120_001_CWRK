@@ -6,7 +6,7 @@ struct HullInput
 	float3 normal : NORMAL;
 	float3 tangent : TANGENT;
 	float3 binormal : BINORMAL;
-	float tessellationFactor : TESS;
+	float  tessellationFactor : TESS;
 };
 
 struct PatchConstantOutput

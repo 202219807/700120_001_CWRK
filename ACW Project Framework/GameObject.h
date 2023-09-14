@@ -27,16 +27,20 @@ enum class ModelType {
 class GameObject
 {
 public:
-
 	GameObject();
-	//GameObject(ID3D11Device* device, const ModelType modelType, ResourceManager* resourceManager); //GameObject with model
-	//GameObject(ID3D11Device* device, const ModelType modelType, const WCHAR* textureFileName, ResourceManager* resourceManager); //GameObject with model/ texture
-	virtual ~GameObject();
 
+	//GameObject with model
+	//GameObject(ID3D11Device* device, const ModelType modelType, ResourceManager* resourceManager); 
+	
+	//GameObject with model and texture
+	//GameObject(ID3D11Device* device, const ModelType modelType, const WCHAR* textureFileName, ResourceManager* resourceManager);
+	
 	GameObject(const GameObject& other) = default;
 	GameObject(GameObject&& other) noexcept = default;
 	GameObject& operator= (const GameObject& other) = default;
 	GameObject& operator= (GameObject&& other) noexcept = default;
+	
+	virtual ~GameObject();
 
 	void AddParentGameObject(const shared_ptr<GameObject>& parentObject);
 	void AddModelComponent(ID3D11Device* const device, const ModelType modelType, const shared_ptr<ResourceManager>& resourceManager);
@@ -83,14 +87,14 @@ public:
 
 	const vector<ID3D11ShaderResourceView*>&	GetTextureList()			const;
 
-	void UpdateInstanceData();
-	bool GetInitializationState() const;
-	bool Update();
 	bool Render(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<ID3D11ShaderResourceView*>& depthTextures, const vector<shared_ptr<Light>>& pointLightList, const XMFLOAT3& cameraPosition) const;	
+	bool Update();
+	void UpdateInstanceData();
+
 	int  GetIndexCount() const;
+	bool GetInitializationState() const;
 
 private:
-
 	shared_ptr<GameObject>	m_parentObject;
 	shared_ptr<Model>		m_model;
 	shared_ptr<Position>	m_position;
@@ -100,19 +104,16 @@ private:
 	shared_ptr<Texture>		m_texture;
 	shared_ptr<Physics>		m_physics;
 
-	bool					m_initializationFailed;
-	bool					m_updateInstanceData;
-
-	//Tessellation variables
 	float					m_maxTessellationDistance;
 	float					m_minTessellationDistance;
 	float					m_maxTessellationFactor;
 	float					m_minTessellationFactor;
-
-	//Displacement variables
 	float					m_mipInterval;
 	float					m_mipClampMinimum;
 	float					m_mipClampMaximum;
 	float					m_displacementPower;
+
+	bool					m_initializationFailed;
+	bool					m_updateInstanceData;
 };
 

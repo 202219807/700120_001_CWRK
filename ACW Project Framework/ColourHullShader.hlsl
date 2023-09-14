@@ -3,7 +3,7 @@ struct HullInput
 {
 	float3 position : POSITION;
 	float4 colour : COLOR;
-	float tessellationFactor : TESS;
+	float  tessellationFactor : TESS;
 };
 
 struct PatchConstantOutput
@@ -21,11 +21,7 @@ struct DomainInput
 PatchConstantOutput PatchConstantFunction(InputPatch<HullInput, 3> inputPatch, uint patchId : SV_PrimitiveID)
 {
 	PatchConstantOutput output;
-
-	/*output.edges[0] = tessellationFactor;
-	output.edges[1] = tessellationFactor;
-	output.edges[2] = tessellationFactor;*/
-
+	
 	output.edges[0] = 0.5f * (inputPatch[1].tessellationFactor + inputPatch[2].tessellationFactor);
 	output.edges[1] = 0.5f * (inputPatch[2].tessellationFactor + inputPatch[0].tessellationFactor);
 	output.edges[2] = 0.5f * (inputPatch[0].tessellationFactor + inputPatch[1].tessellationFactor);

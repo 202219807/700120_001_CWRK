@@ -1,4 +1,3 @@
-//Global
 cbuffer MatrixBuffer : register(b0)
 {
 	matrix worldInverseMatrix;
@@ -16,7 +15,7 @@ cbuffer TessellationBuffer : register(b1)
 cbuffer CameraBuffer : register(b2)
 {
 	float3 cameraPosition;
-	float padding;
+	float  padding;
 };
 
 //Type definitions
@@ -41,18 +40,11 @@ HullInput LightVertexShader(VertexInput input)
 	HullInput output;
 
 	output.position = mul(float4(input.position, 1.0f), input.instanceWorldMatrix).xyz;
-
-	//Pass texture coords to pixel shader
 	output.tex = input.tex;
-	//output.tex = mul(float4(input.tex, 0.0f, 1.0f), texTransform).xy;
-
-	//Calculate normal vector against world matrix
 	output.normal = normalize(mul(input.normal, (float3x3)input.instanceWorldMatrix));
 
 	float distanceToCamera = distance(output.position, cameraPosition);
-
 	float tess = saturate((minTessellationDistance - distanceToCamera) / (minTessellationDistance - maxTessellationDistance));
-
 	output.tessellationFactor = minTessellationFactor + tess * (maxTessellationFactor - minTessellationFactor);
 
 	return output;

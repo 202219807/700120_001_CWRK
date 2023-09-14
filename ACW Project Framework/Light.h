@@ -14,8 +14,8 @@ public:
 
 	Light(const Light& other) = default;
 	Light(Light&& other) noexcept = default;
-	Light& operator = (const Light& other) = default;
-	Light& operator = (Light&& other) noexcept = default;
+	Light& operator= (const Light& other) = default;
+	Light& operator= (Light&& other) noexcept = default;
 
 	void SetLightOrbit(const bool orbit);
 	void SetDirectionalLight(const bool directionalLight);
@@ -55,21 +55,20 @@ private:
 	void UpdateLightDirection();
 	void UpdateLightViewMatrix(const float dt);
 
-	bool m_orbit;
-	bool m_directionalLight;
+	XMFLOAT4X4	m_lightViewMatrix;
+	XMFLOAT4X4	m_lightProjectionMatrix;
 
-	XMFLOAT3 m_lightPosition;
-	XMFLOAT3 m_lightRotation;
-	XMFLOAT3 m_lightPointPosition;
-	XMFLOAT3 m_lightOrbitDirection;
-	XMFLOAT3 m_lightDirection;
+	XMFLOAT4	m_ambientColour;
+	XMFLOAT4	m_diffuseColour;
+	XMFLOAT4	m_specularColour;
+	
+	XMFLOAT3	m_lightPosition;
+	XMFLOAT3	m_lightRotation;
+	XMFLOAT3	m_lightPointPosition;
+	XMFLOAT3	m_lightOrbitDirection;
+	XMFLOAT3	m_lightDirection;
 
-	XMFLOAT4 m_ambientColour;
-	XMFLOAT4 m_diffuseColour;
-	XMFLOAT4 m_specularColour;
-
-	float m_specularPower;
-
-	XMFLOAT4X4 m_lightViewMatrix;
-	XMFLOAT4X4 m_lightProjectionMatrix;
+	float		m_specularPower;
+	bool		m_orbit;
+	bool		m_directionalLight;
 };

@@ -15,7 +15,7 @@ cbuffer TessellationBuffer : register(b1)
 cbuffer CameraBuffer : register(b2)
 {
 	float3 cameraPosition;
-	float padding;
+	float  padding;
 };
 
 //Type definitions
@@ -32,7 +32,7 @@ struct HullInput
 	float3 position : POSITION;
 	float3 posWorld : TEXCOORD1;
 	float3 normal : NORMAL;
-	float tessellationFactor : TESS;
+	float  tessellationFactor : TESS;
 };
 
 HullInput ReflectionVertexShader(VertexInput input)
@@ -40,15 +40,11 @@ HullInput ReflectionVertexShader(VertexInput input)
 	HullInput output;
 
 	output.posWorld = input.position;
-
 	output.position = mul(float4(input.position, 1.0f), input.instanceWorldMatrix).xyz;
-
 	output.normal = mul(float4(input.normal, 1.0f), input.instanceWorldMatrix).xyz;
 
 	float distanceToCamera = distance(output.position, cameraPosition);
-
 	float tess = saturate((minTessellationDistance - distanceToCamera) / (minTessellationDistance - maxTessellationDistance));
-
 	output.tessellationFactor = minTessellationFactor + tess * (maxTessellationFactor - minTessellationFactor);
 
 	return output;

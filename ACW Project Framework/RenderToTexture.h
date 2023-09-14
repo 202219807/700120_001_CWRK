@@ -20,6 +20,7 @@ public:
 	RenderToTexture& operator= (RenderToTexture&& other) noexcept = default;
 
 	ID3D11ShaderResourceView* GetShaderResourceView() const;
+
 	bool GetInitializationState() const;
 	bool RenderObjectsToTexture(ID3D11DeviceContext* const deviceContext, ID3D11DepthStencilView* const depthStencilView, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<shared_ptr<Light>>& pointLightList, const vector<shared_ptr<GameObject>>& gameObjects, const XMFLOAT3& cameraPosition) const;
 	

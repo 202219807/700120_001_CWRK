@@ -89,12 +89,7 @@ PixelInput TextureDisplacementDS(in PatchConstantOutput input, in const float3 u
 
 	//Sample height map
 	float height = displacementTexture.SampleLevel(sampleType, output.tex, mipLevel).r;
-
-	//float3 test = normalize((bumpMap.x * input.tangent) + (bumpMap.y * input.binormal) + (bumpMap.z * input.normal))
-
-
-	//output.tex = normal
-
+	
 	if (!displacementEnabled)
 	{
 		output.positionW += (displacementPower * (height - 1.0f)) * output.normal;

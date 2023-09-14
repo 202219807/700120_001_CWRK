@@ -1,6 +1,13 @@
 #include "Model.h"
 
-Model::Model(ID3D11Device* const device, const char* const modelFileName, const shared_ptr<ResourceManager>& resourceManager) : 
+Model::Model()
+{
+}
+
+Model::Model(ID3D11Device* const device, 
+	const char* const modelFileName, 
+	const shared_ptr<ResourceManager>&resourceManager
+) :
 	m_initializationFailed(false), 
 	m_bufferDescriptionSizeChange(false), 
 	m_updateInstanceBuffer(false), 
@@ -26,7 +33,13 @@ Model::Model(ID3D11Device* const device, const char* const modelFileName, const 
 	m_indexCount = resourceManager->GetIndexCount(modelFileName);
 }
 
-Model::Model(ID3D11Device* const device, const char* const modelFileName, const shared_ptr<ResourceManager>& resourceManager, const vector<XMFLOAT3> &scales, const vector<XMFLOAT3> &rotations, const vector<XMFLOAT3> &positions) : 
+Model::Model(ID3D11Device* const device, 
+	const char* const modelFileName, 
+	const shared_ptr<ResourceManager>& resourceManager, 
+	const vector<XMFLOAT3> &scales, 
+	const vector<XMFLOAT3> &rotations, 
+	const vector<XMFLOAT3> &positions
+) : 
 	Model(device, modelFileName, resourceManager)
 {
 	//Set the number of instances we have
@@ -84,10 +97,6 @@ Model::Model(ID3D11Device* const device, const char* const modelFileName, const 
 	}
 }
 
-Model::Model(const Model& other) = default;
-
-Model::Model(Model&& other) noexcept = default;
-
 Model::~Model()
 {
 	try
@@ -125,10 +134,6 @@ Model::~Model()
 	}
 }
 
-Model& Model::operator=(const Model& other) = default;
-
-Model& Model::operator=(Model&& other) noexcept = default;
-
 void Model::Update(const vector<XMFLOAT3> &scales, const vector<XMFLOAT3> &rotations, const vector<XMFLOAT3> &positions, const XMMATRIX& parentMatrix)
 {
 	if (m_instanceCount != positions.size())
@@ -163,7 +168,6 @@ void Model::Update(const vector<XMFLOAT3> &scales, const vector<XMFLOAT3> &rotat
 
 	m_updateInstanceBuffer = true;
 }
-
 
 bool Model::Render(ID3D11DeviceContext* const deviceContext) {
 
@@ -207,8 +211,6 @@ bool Model::Render(ID3D11DeviceContext* const deviceContext) {
 		m_updateInstanceBuffer = false;
 	}
 
-	//Render buffers
-
 	//Set vertex buffer stride and offset
 	unsigned int strides[2];
 	unsigned int offsets[2];
@@ -230,22 +232,22 @@ bool Model::Render(ID3D11DeviceContext* const deviceContext) {
 	deviceContext->IASetIndexBuffer(m_indexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
 	//Set the type of primitive render style for the vertex buffer
-	//deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_3_CONTROL_POINT_PATCHLIST);
 
 	return true;
 }
 
-int Model::GetIndexCount() const {
-	return m_indexCount;
-}
-
-int Model::GetInstanceCount() const
+bool Model::GetInitializationState() const 
 {
-	return m_instanceCount;
-}
-
-bool Model::GetInitializationState() const {
 	return m_initializationFailed;
 }
 
+int  Model::GetIndexCount() const 
+{
+	return m_indexCount;
+}
+
+int  Model::GetInstanceCount() const
+{
+	return m_instanceCount;
+}

@@ -308,7 +308,7 @@ bool GameObject::Update()
 		if (m_model)
 		{
 			auto parentObjectMatrix = XMMatrixIdentity();
-
+			
 			if (m_parentObject)
 			{
 				const auto scale = m_parentObject->GetScaleComponent()->GetScaleAt(0);
@@ -319,7 +319,7 @@ bool GameObject::Update()
 				parentObjectMatrix = XMMatrixMultiply(parentObjectMatrix, XMMatrixRotationQuaternion(XMQuaternionRotationRollPitchYaw(rotation.x, rotation.y, rotation.z)));
 				parentObjectMatrix = XMMatrixMultiply(parentObjectMatrix, XMMatrixTranslation(position.x, position.y, position.z));
 			}
-
+			
 			m_model->Update(m_scale->GetScales(), m_rotation->GetRotations(), m_position->GetPositions(), parentObjectMatrix);
 		}
 

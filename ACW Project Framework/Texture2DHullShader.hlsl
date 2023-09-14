@@ -3,7 +3,7 @@ struct HullInput
 {
 	float3 position : POSITION;
 	float2 tex : TEXCOORD0;
-	float tessellationFactor : TESS;
+	float  tessellationFactor : TESS;
 };
 
 struct PatchConstantOutput

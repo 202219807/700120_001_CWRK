@@ -1,7 +1,5 @@
-
 #define MAX_LIGHTS 16
 
-//Globals
 Texture2D textures[2];
 SamplerState sampleType;
 

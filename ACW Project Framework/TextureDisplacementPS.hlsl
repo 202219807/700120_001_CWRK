@@ -1,7 +1,5 @@
-
 #define MAX_LIGHTS 16
 
-//Globals
 Texture2D textures[3] : register(t0);
 Texture2D depthMapTexture[MAX_LIGHTS] : register(t3);
 
@@ -101,70 +99,6 @@ float CalculateShadow(Texture2D depthMap, float4 position, float nDotL)
 
 float4 TextureDisplacementPS(PixelInput input) : SV_TARGET
 {
-	/*float3 lightPosWorld;
-	float4 textureColour;
-	float4 bumpMap;
-	float3 bumpNormal;
-	float lightIntensity;
-	float4 colour = float4(0.0f, 0.0f, 0.0f, 0.0f);
-	float4 specularIntensity;
-	float3 reflection;
-	float4 specular;
-	float4 totalSpecular = float4(0.0f, 0.0f, 0.0f, 0.0f);*/
-
-	//input.normal = normalize(input.normal);
-
-	////Receive pixel sample from normal texture using the samplerstate
-	//bumpMap = textures[1].Sample(sampleType, input.tex);
-
-	////Range is held in [0,1], need to expand that to [-1.1]
-	//bumpMap = (bumpMap * 2.0f) - 1.0f;
-
-	////bumpNormal = NormalSampleToWorldSpace(bumpMap, input.normal, input.tangent);
-
-	////Calculate our normal
-	//bumpNormal = normalize((bumpMap.x * input.tangent) + (bumpMap.y * input.binormal) + (bumpMap.z * input.normal));
-
-	//for (int i = 0; i < lightCount; i++)
-	//{
-	//	lightPosWorld = normalize(lights[i].lightPositions - input.positionW);
-
-	//	lightIntensity = saturate(dot(bumpNormal, lightPosWorld));
-
-	//	colour += lights[i].diffuseColour * lightIntensity;
-
-	//	//If there is a light intensity we need to do a specular calculation on our colour
-	//	if (lightIntensity > 0.0f)
-	//	{
-	//		//Receive pixel sample from specular texture using the samplerstate
-	//		specularIntensity = textures[2].Sample(sampleType, input.tex);
-
-	//		//Calculate the reflection with the bumpmap normal
-	//		//reflection = normalize(2 * lightIntensity * bumpNormal - (-lightDirection));
-	//		reflection = normalize(((2.0f * lightIntensity) * dot(bumpNormal, lightPosWorld)) - lightPosWorld);
-
-	//		//Calculate the specular colour
-	//		//specular = pow(saturate(dot(reflection, input.viewDirection)), specularPower[i]);
-
-	//		specular = lights[i].specularColour * (pow(max(0.0f, dot(reflection, input.viewDirection)), lights[i].specularPower));
-
-	//		//Multiply specular colour by intensity
-	//		specular = specular * specularIntensity;
-
-	//		//Add to our colour
-	//		totalSpecular += specular;
-	//	}
-	//}
-
-	////Receive pixel sample from colour texture using the samplerstate
-	//textureColour = textures[0].Sample(sampleType, input.tex);
-
-	//colour = saturate(colour) * textureColour;
-
-	//return colour;
-
-	//Bias value for the depth map
-
 	float3 viewDirection = input.viewDirection;
 
 	float4 baseColour = textures[0].Sample(sampleTypeWrap, input.tex);

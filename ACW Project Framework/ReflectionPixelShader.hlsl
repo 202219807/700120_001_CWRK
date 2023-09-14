@@ -1,8 +1,5 @@
-//Globals
 TextureCube textureCube : register(t0);
-
 SamplerState sampleTypeWrap : register(s0);
-
 
 //Type definitions
 struct PixelInput

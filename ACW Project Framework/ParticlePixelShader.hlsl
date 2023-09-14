@@ -1,5 +1,3 @@
-
-//Globals
 Texture2D shaderTexture;
 SamplerState sampleType;
 
