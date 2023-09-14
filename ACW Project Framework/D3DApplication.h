@@ -69,6 +69,7 @@ private:
 	LARGE_INTEGER						m_start;
 	LARGE_INTEGER						m_end;
 	LARGE_INTEGER						m_frequency;
+
 	float								m_windowWidth;
 	float								m_windowHeight;
 	float								m_dt;
@@ -93,9 +94,10 @@ public:
 	void ChangeCameraMode(const int cameraMode);
 	void UpdateCameraPosition() const;
 	
+	// Timescale
+	void UpdateTimeScale(const int number);
+
 	// Rendering
 	void ToggleRenderOption();
 
-	// Adjust Timescale
-	void AddTimeScale(const int number);
 };

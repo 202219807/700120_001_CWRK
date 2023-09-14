@@ -73,10 +73,6 @@ public:
 
 	void SetTessellationVariables(const float& maxTessellationDistance, const float& minTessellationDistance, const float& maxTessellationFactor, const float& minTessellationFactor);
 	void SetDisplacementVariables(const float &mipInterval, const float &mipClampMinimum, const float &mipClampMaximum, const float &displacementPower);
-	
-	//const XMFLOAT3&								GetPosition()				const;
-	//const XMFLOAT4&								GetRotation()				const;
-	//const XMFLOAT3&								GetScale()					const;
 
 	const shared_ptr<Model>&					GetModelComponent()			const;
 	const shared_ptr<Position>&					GetPositionComponent()		const;

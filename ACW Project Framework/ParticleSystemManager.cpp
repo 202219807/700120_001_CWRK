@@ -5,8 +5,8 @@ ParticleSystemManager::ParticleSystemManager() :
 	m_smokeRenderCount(0), 
 	m_explosionRenderCount(0), 
 	m_timeSinceExplosion(0.0f), 
-	m_smokeParticleSystems(), 
-	m_fireJetParticleSystems(), 
+	m_smokeEffect(), 
+	m_fireEffect(), 
 	m_explosionLights()
 {
 }
@@ -25,7 +25,7 @@ const vector<shared_ptr<Light>>& ParticleSystemManager::GetLights() const
 	return m_explosionLights;
 }
 
-void ParticleSystemManager::ResetParticleSystems()
+void ParticleSystemManager::Reset()
 {
 	m_smokeRenderCount = 0;
 }
@@ -53,9 +53,9 @@ void ParticleSystemManager::GenerateExplosion(
 		m_explosionLights.back()->GenerateLightProjectionMatrix(45.0f, 45.0f, 1.0f, 1000.0f);
 		m_explosionLights.back()->UpdateLightVariables(0.0f);
 
-		m_fireJetParticleSystems.insert(m_fireJetParticleSystems.begin(), make_shared<Fire>(device, nullptr, ModelType::Quad, explosionPosition, XMFLOAT3(blastRadius * 4, blastRadius * 4, blastRadius * 4), XMFLOAT3(0.2f, 0.2f, 0.2f), 0.5f, 4.0f, 5.6f, 40.0f, resourceManager));
-		
-		m_smokeParticleSystems.insert(m_smokeParticleSystems.begin(), make_shared<Smoke>(device, nullptr, explosionPosition, XMFLOAT3(1.0f, 1.0f, 1.0f), XMFLOAT3(-0.8f, -0.8f, -0.8f), XMFLOAT3(14.0f, 14.0f, 14.0f), 0.2f, 1.0f, 1.5f, resourceManager));
+		m_fireEffect.insert(m_fireEffect.begin(), make_shared<Fire>(device, nullptr, ModelType::Quad, explosionPosition, XMFLOAT3(blastRadius * 4, blastRadius * 4, blastRadius * 4), XMFLOAT3(0.2f, 0.2f, 0.2f), 0.5f, 4.0f, 5.6f, 40.0f, resourceManager));
+		m_smokeEffect.insert(m_smokeEffect.begin(), make_shared<Smoke>(device, nullptr, explosionPosition, XMFLOAT3(1.0f, 1.0f, 1.0f), XMFLOAT3(-0.8f, -0.8f, -0.8f), XMFLOAT3(14.0f, 14.0f, 14.0f), 0.2f, 1.0f, 1.5f, resourceManager));
+
 		m_smokeRenderCount++;
 	}
 }
@@ -71,7 +71,7 @@ void ParticleSystemManager::Update(const float dt)
 			m_explosionRenderCount--;
 			m_explosionLights.pop_back();
 
-			if (m_fireJetParticleSystems.size() > m_explosionRenderCount)
+			if (m_fireEffect.size() > m_explosionRenderCount)
 			{
 				m_explosion = false;
 			}
@@ -80,15 +80,16 @@ void ParticleSystemManager::Update(const float dt)
 		}
 	}
 
-	for (unsigned int i = 0; i < m_smokeRenderCount; i++)
-	{
-		m_smokeParticleSystems[i]->Update(dt);
-	}
-
 	for (unsigned int i = 0; i < m_explosionRenderCount; i++)
 	{
-		m_fireJetParticleSystems[i]->Update(dt); 
+		m_fireEffect[i]->Update(dt); 
 	}
+
+	for (unsigned int i = 0; i < m_smokeRenderCount; i++)
+	{
+		m_smokeEffect[i]->Update(dt);
+	}
+
 }
 
 bool ParticleSystemManager::Render(
@@ -107,7 +108,7 @@ bool ParticleSystemManager::Render(
 
 	for (unsigned int i = 0; i < m_smokeRenderCount; i++)
 	{
-		result = m_smokeParticleSystems[i]->Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
+		result = m_smokeEffect[i]->Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
 
 		if (!result)
 		{
@@ -117,7 +118,7 @@ bool ParticleSystemManager::Render(
 
 	for (unsigned int i = 0; i < m_explosionRenderCount; i++)
 	{
-		result = m_fireJetParticleSystems[i]->Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
+		result = m_fireEffect[i]->Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
 
 		if (!result)
 		{
@@ -127,7 +128,3 @@ bool ParticleSystemManager::Render(
 
 	return result;
 }
-
-
-
-

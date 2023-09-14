@@ -29,7 +29,7 @@ Smoke::Smoke(
 
 void Smoke::Update(const float dt)
 {
-	UpdateParticles(dt);
+	ParticleSystem::Update(dt);
 }
 
 bool Smoke::Render(
@@ -39,5 +39,5 @@ bool Smoke::Render(
 	const XMFLOAT3& cameraPosition
 ) const
 {
-	return RenderParticles(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
+	return ParticleSystem::Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
 }

@@ -9,8 +9,8 @@ public:
 
 	Fire(const Fire& other) = default;
 	Fire(Fire&& other) noexcept = default;
-	Fire& operator = (const Fire& other) = default;
-	Fire& operator = (Fire&& other) noexcept = default;
+	Fire& operator= (const Fire& other) = default;
+	Fire& operator= (Fire&& other) noexcept = default;
 
 	void Update(const float dt);
 	bool Render(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const XMFLOAT3& cameraPosition) const;

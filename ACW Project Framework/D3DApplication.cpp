@@ -48,7 +48,7 @@ D3DApplication::D3DApplication(
 	TwDefine(" Statistics label='Statistics' position='20 20' size='300 180' alpha=0 valueswidth=fit");
 
 	TwAddVarRW(m_antTweakBarStatistics, "Video Card: ",				TW_TYPE_STDSTRING,	m_d3D->m_videoCardDescription, "");
-	TwAddVarRW(m_antTweakBarStatistics, "Memory: ",					TW_TYPE_INT32,		&m_d3D->m_videoCardMemory, "");
+	TwAddVarRW(m_antTweakBarStatistics, "Memory (in MB): ",			TW_TYPE_INT32,		&m_d3D->m_videoCardMemory, "");
 	TwAddVarRW(m_antTweakBarStatistics, "Screen Width: ",			TW_TYPE_FLOAT,		&m_windowWidth, "");
 	TwAddVarRW(m_antTweakBarStatistics, "Screen Height: ",			TW_TYPE_FLOAT,		&m_windowHeight, "");
 	TwAddVarRW(m_antTweakBarStatistics, "DeltaTime: ",				TW_TYPE_FLOAT,		&m_dt, "");
@@ -208,8 +208,8 @@ bool D3DApplication::UpdateFrame() {
 	
 	m_displacedFloor->Update();
 	m_skyBox->Update();
-	m_terrain->UpdateTerrain();
-	m_rocket->UpdateRocket(m_dt);
+	m_terrain->Update();
+	m_rocket->Update(m_dt);
 	m_particleSystemManager->Update(m_dt);
 	for (const auto& light : m_lightManager->GetLightList())
 	{
@@ -236,7 +236,6 @@ bool D3DApplication::RenderFrame()
 	gameObjects.emplace_back(m_skyBox);
 	gameObjects.emplace_back(m_rocket->GetRocketBody());
 	gameObjects.emplace_back(m_rocket->GetRocketCone());
-	gameObjects.emplace_back(m_rocket->GetRocketCap());
 	gameObjects.emplace_back(m_rocket->GetRocketLauncher());
 
 	//Generate shadow maps
@@ -274,10 +273,10 @@ bool D3DApplication::RenderFrame()
 	result = m_skyBox->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
 	if (!result) return false;
 
-	result = m_terrain->RenderTerrain(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
+	result = m_terrain->Render(m_d3D->GetDeviceContext(), viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
 	if (!result) return false;
 
-	result = m_rocket->RenderRocket(m_d3D, viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
+	result = m_rocket->Render(m_d3D, viewMatrix, projectionMatrix, m_shadowMapManager->GetShadowMapResources(), lightList, m_camera->GetPosition());
 	if (!result) return false;
 
 	m_d3D->DisableDepthStencil();
@@ -298,9 +297,9 @@ bool D3DApplication::RenderFrame()
 
 void D3DApplication::ResetToInitialState() const
 {
-	m_rocket->ResetRocketState();
-	m_terrain->ResetTerrainState();
-	m_particleSystemManager->ResetParticleSystems();
+	m_particleSystemManager->Reset();
+	m_rocket->Reset();
+	m_terrain->Reset();
 }
 
 void D3DApplication::LaunchRocket() const
@@ -376,6 +375,12 @@ void D3DApplication::UpdateCameraPosition() const
 	}
 }
 
+void D3DApplication::UpdateTimeScale(const int number)
+{
+	m_timeScale += number;
+	if (m_timeScale < 1) m_timeScale = 1;
+}
+
 void D3DApplication::ToggleRenderOption()
 {
 	m_renderToggle++;
@@ -402,10 +407,4 @@ void D3DApplication::ToggleRenderOption()
 			break;
 		default: return;
 	}
-}
-
-void D3DApplication::AddTimeScale(const int number)
-{
-	m_timeScale += number;
-	if (m_timeScale < 1) m_timeScale = 1;
 }

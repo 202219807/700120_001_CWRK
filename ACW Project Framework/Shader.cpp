@@ -1,16 +1,46 @@
 #include "Shader.h"
 
-Shader::Shader(const string& vertexShaderFileName, const string& hullShaderFileName, const string& domainShaderFileName, const string& pixelShaderFileName, ID3D11Device* const device, HWND const hwnd) : m_initializationFailed(false), m_vertexBufferResourceCount(0), m_hullBufferResourceCount(0), m_domainBufferResourceCount(0), m_pixelBufferResourceCount(0), m_nonTextureRenderMode(0), m_textureDiffuseRenderMode(0), m_displacementRenderMode(0), m_maxTessellationDistance(1.0f), m_minTessellationDistance(1.0f), m_maxTessellationFactor(0.0f), m_minTessellationFactor(0.0f), m_mipInterval(0.0f), m_mipClampMinimum(0.0f), m_mipClampMaximum(0.0f), m_displacementPower(0.0f), m_vertexShaderBuffer(nullptr), m_vertexShader(nullptr), m_hullShader(nullptr), m_domainShader(nullptr), m_pixelShader(nullptr), m_matrixBuffer(nullptr), m_tessellationBuffer(nullptr), m_cameraBuffer(nullptr), m_renderModeBuffer(nullptr)
+Shader::Shader(
+	const string& vertexShaderFileName, 
+	const string& hullShaderFileName, 
+	const string& domainShaderFileName, 
+	const string& pixelShaderFileName, 
+	ID3D11Device* const device, HWND const hwnd
+) : 
+	m_initializationFailed(false), 
+	m_vertexBufferResourceCount(0), 
+	m_hullBufferResourceCount(0), 
+	m_domainBufferResourceCount(0), 
+	m_pixelBufferResourceCount(0), 
+	m_nonTextureRenderMode(0), 
+	m_textureDiffuseRenderMode(0), 
+	m_displacementRenderMode(0), 
+	m_maxTessellationDistance(1.0f), 
+	m_minTessellationDistance(1.0f), 
+	m_maxTessellationFactor(0.0f), 
+	m_minTessellationFactor(0.0f), 
+	m_mipInterval(0.0f), 
+	m_mipClampMinimum(0.0f), 
+	m_mipClampMaximum(0.0f), 
+	m_displacementPower(0.0f), 
+	m_vertexShaderBuffer(nullptr), 
+	m_vertexShader(nullptr), 
+	m_hullShader(nullptr), 
+	m_domainShader(nullptr), 
+	m_pixelShader(nullptr), 
+	m_matrixBuffer(nullptr), 
+	m_tessellationBuffer(nullptr), 
+	m_cameraBuffer(nullptr), 
+	m_renderModeBuffer(nullptr)
 {
 	ID3D10Blob* errorMessage = nullptr;
 
 	const unsigned int numberOfElements = 0;
 
-	//Load our Vertex and Pixel Shader
-
+	//Load our shader
 	const auto hlslVertexFileName = vertexShaderFileName + ".hlsl";
-
-	auto result = D3DCompileFromFile(CA2W(hlslVertexFileName.c_str()), nullptr, nullptr, vertexShaderFileName.c_str(), "vs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, /*D3DCOMPILE_DEBUG*/ 0, &m_vertexShaderBuffer, &errorMessage);
+	
+	auto result = D3DCompileFromFile(CA2W(hlslVertexFileName.c_str()), nullptr, nullptr, vertexShaderFileName.c_str(), "vs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, &m_vertexShaderBuffer, &errorMessage);
 
 	if (FAILED(result))
 	{
@@ -28,11 +58,12 @@ Shader::Shader(const string& vertexShaderFileName, const string& hullShaderFileN
 		return;
 	}
 
+
 	const auto hlslHullFileName = hullShaderFileName + ".hlsl";
 
 	ID3D10Blob* hullShaderBuffer = nullptr;
 
-	 result = D3DCompileFromFile(CA2W(hlslHullFileName.c_str()), nullptr, nullptr, hullShaderFileName.c_str(), "hs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, &hullShaderBuffer, &errorMessage);
+	result = D3DCompileFromFile(CA2W(hlslHullFileName.c_str()), nullptr, nullptr, hullShaderFileName.c_str(), "hs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, &hullShaderBuffer, &errorMessage);
 
 	if (FAILED(result))
 	{
@@ -49,6 +80,7 @@ Shader::Shader(const string& vertexShaderFileName, const string& hullShaderFileN
 
 		return;
 	}
+
 
 	const auto hlslDomainFileName = domainShaderFileName + ".hlsl";
 
@@ -72,6 +104,7 @@ Shader::Shader(const string& vertexShaderFileName, const string& hullShaderFileN
 		return;
 	}
 
+	
 	const auto hlslPixelFileName = pixelShaderFileName + ".hlsl";
 
 	ID3D10Blob* pixelShaderBuffer = nullptr;
@@ -176,7 +209,7 @@ Shader::Shader(const string& vertexShaderFileName, const string& hullShaderFileN
 	D3D11_BUFFER_DESC cameraBufferDescription;
 
 	cameraBufferDescription.Usage = D3D11_USAGE_DYNAMIC;
-	cameraBufferDescription.ByteWidth = sizeof(CameraBufferType); // Is a multiple of 16 because our extra float is inside
+	cameraBufferDescription.ByteWidth = sizeof(CameraBufferType);
 	cameraBufferDescription.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	cameraBufferDescription.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 	cameraBufferDescription.MiscFlags = 0;
@@ -224,10 +257,6 @@ Shader::Shader(const string& vertexShaderFileName, const string& hullShaderFileN
 		return;
 	}
 }
-
-Shader::Shader(const Shader& other) = default;
-
-Shader::Shader(Shader&& other) noexcept = default;
 
 Shader::~Shader() {
 
@@ -293,44 +322,48 @@ Shader::~Shader() {
 	}
 }
 
-Shader& Shader::operator=(const Shader& other) = default;
-
-Shader& Shader::operator=(Shader&& other) noexcept = default;
-
-
-bool Shader::GetInitializationState() const {
+bool Shader::GetInitializationState() const 
+{
 	return m_initializationFailed;
 }
 
-int Shader::GetVertexBufferResourceCount() const {
+int Shader::GetVertexBufferResourceCount() const 
+{
 	return m_vertexBufferResourceCount;
 }
 
-int Shader::GetHullBufferResourceCount() const {
+int Shader::GetHullBufferResourceCount() const 
+{
 	return m_hullBufferResourceCount;
 }
 
-int Shader::GetDomainBufferResourceCount() const {
+int Shader::GetDomainBufferResourceCount() const 
+{
 	return m_domainBufferResourceCount;
 }
 
-int Shader::GetPixelBufferResourceCount() const {
+int Shader::GetPixelBufferResourceCount() const 
+{
 	return m_pixelBufferResourceCount;
 }
 
-void Shader::IncrementVertexBufferResourceCount() {
+void Shader::IncrementVertexBufferResourceCount() 
+{
 	m_vertexBufferResourceCount++;
 }
 
-void Shader::IncrementHullBufferResourceCount() {
+void Shader::IncrementHullBufferResourceCount() 
+{
 	m_hullBufferResourceCount++;
 }
 
-void Shader::IncrementDomainBufferResourceCount() {
+void Shader::IncrementDomainBufferResourceCount() 
+{
 	m_domainBufferResourceCount++;
 }
 
-void Shader::IncrementPixelBufferResourceCount() {
+void Shader::IncrementPixelBufferResourceCount() 
+{
 	m_pixelBufferResourceCount++;
 }
 
@@ -344,7 +377,8 @@ ID3D11Buffer* Shader::GetMatrixBuffer() const
 	return m_matrixBuffer;
 }
 
-ID3D11Buffer* Shader::GetCameraBuffer() const {
+ID3D11Buffer* Shader::GetCameraBuffer() const 
+{
 	return m_cameraBuffer;
 }
 

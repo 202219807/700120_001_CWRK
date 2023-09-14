@@ -1,6 +1,5 @@
 #include "D3DSystem.h"
 
-
 D3DSystem::D3DSystem() : 
 	m_initializationFailed(false), 
 	m_applicationName(nullptr), 
@@ -60,43 +59,6 @@ D3DSystem::~D3DSystem()
 	}
 }
 
-//This is the main application loop where we do all the application processing through the frame function until we quit. The frame function is called each loop.
-void D3DSystem::Run() {
-	
-	MSG message;
-	auto done = false;
-
-	//Initialize message structure by filling a block of memory with zeros
-	ZeroMemory(&message, sizeof(message));
-
-	//Loop until we get a quit message from the window or the user
-	while (!done)
-	{
-		//Handle windows messages
-		if (PeekMessage(&message, nullptr, 0, 0, PM_REMOVE))
-		{
-			TranslateMessage(&message);
-			DispatchMessage(&message);
-		}
-
-		//If windows ends the application then we exit out
-		if (message.message == WM_QUIT)
-		{
-			done = true;
-		}
-		else
-		{
-			//Else we do the frame processing
-			auto const result = Frame();
-
-			if (!result)
-			{
-				done = true;
-			}
-		}
-	}
-}
-
 bool D3DSystem::GetInitializationState() const
 {
 	return m_initializationFailed;
@@ -125,13 +87,6 @@ bool D3DSystem::Frame() {
 		m_input->ToggleDoOnce(false);
 	}
 
-	//Pause Simulation
-	if (m_input->IsKeyDown(0x50) && m_input->DoOnce())
-	{
-		//m_graphics->TogglePauseSimulation();
-		m_input->ToggleDoOnce(false);
-	}
-
 	//Launch Rocket
 	if (m_input->IsKeyDown(VK_F11) && m_input->DoOnce())
 	{
@@ -144,7 +99,7 @@ bool D3DSystem::Frame() {
 	{
 		if (m_input->IsKeyDown(0x54) && m_input->DoOnce())
 		{
-			m_graphics->AddTimeScale(1);
+			m_graphics->UpdateTimeScale(1);
 			m_input->ToggleDoOnce(false);
 		}
 
@@ -162,7 +117,7 @@ bool D3DSystem::Frame() {
 	{
 		if (m_input->IsKeyDown(0x54) && m_input->DoOnce())
 		{
-			m_graphics->AddTimeScale(-1);
+			m_graphics->UpdateTimeScale(-1);
 			m_input->ToggleDoOnce(false);
 		}
 	}
@@ -271,36 +226,6 @@ bool D3DSystem::Frame() {
 	return result;
 }
 
-//Our MessageHandler where we direct the windows system messages into. With this we can listen for certain information.
-//For now we just read key presses and key releases and notifiy our input object, all other information we just pass back to the default windows message handler.
-LRESULT CALLBACK D3DSystem::MessageHandler(HWND const hwnd, UINT const umsg, WPARAM const wparam, LPARAM const lparam) {
-	
-	switch(umsg)
-	{
-		//Check if a key has been pressed
-		case WM_KEYDOWN:
-		{
-			// If a key is pressed then send it to our input object
-			m_input->KeyDown(static_cast<unsigned int>(wparam));
-			return 0;
-		}
-
-		//Check if a key has been released
-		case WM_KEYUP:
-		{
-			//If a key is released then send it to our input object
-			m_input->KeyUp(static_cast<unsigned int>(wparam));
-			return 0;
-		}
-
-		//Send any other messages back to the default windows message handler
-		default:
-		{
-			return DefWindowProc(hwnd, umsg, wparam, lparam);
-		}
-	}
-}
-
 //This is where we build the window we are rendering to. We start by initializing a default window which can be full screen or a set size, depending on the global variable FULL_SCREEN in the GraphicsClass.h
 void D3DSystem::InitializeWindows(int& screenWidth, int& screenHeight) {
 	
@@ -386,6 +311,43 @@ void D3DSystem::InitializeWindows(int& screenWidth, int& screenHeight) {
 	ShowCursor(true);
 }
 
+//This is the main application loop where we do all the application processing through the frame function until we quit. The frame function is called each loop.
+void D3DSystem::Run() {
+	
+	MSG message;
+	auto done = false;
+
+	//Initialize message structure by filling a block of memory with zeros
+	ZeroMemory(&message, sizeof(message));
+
+	//Loop until we get a quit message from the window or the user
+	while (!done)
+	{
+		//Handle windows messages
+		if (PeekMessage(&message, nullptr, 0, 0, PM_REMOVE))
+		{
+			TranslateMessage(&message);
+			DispatchMessage(&message);
+		}
+
+		//If windows ends the application then we exit out
+		if (message.message == WM_QUIT)
+		{
+			done = true;
+		}
+		else
+		{
+			//Else we do the frame processing
+			auto const result = Frame();
+
+			if (!result)
+			{
+				done = true;
+			}
+		}
+	}
+}
+
 //Reverts the screen settings and releases the window class and any handles associated with it
 void D3DSystem::ShutdownWindows() {
 	
@@ -408,6 +370,36 @@ void D3DSystem::ShutdownWindows() {
 
 	//Release the pointer to this object
 	applicationHandle = nullptr;
+}
+
+//Our MessageHandler where we direct the windows system messages into. With this we can listen for certain information.
+//For now we just read key presses and key releases and notifiy our input object, all other information we just pass back to the default windows message handler.
+LRESULT CALLBACK D3DSystem::MessageHandler(HWND const hwnd, UINT const umsg, WPARAM const wparam, LPARAM const lparam) {
+	
+	switch(umsg)
+	{
+		//Check if a key has been pressed
+		case WM_KEYDOWN:
+		{
+			// If a key is pressed then send it to our input object
+			m_input->KeyDown(static_cast<unsigned int>(wparam));
+			return 0;
+		}
+
+		//Check if a key has been released
+		case WM_KEYUP:
+		{
+			//If a key is released then send it to our input object
+			m_input->KeyUp(static_cast<unsigned int>(wparam));
+			return 0;
+		}
+
+		//Send any other messages back to the default windows message handler
+		default:
+		{
+			return DefWindowProc(hwnd, umsg, wparam, lparam);
+		}
+	}
 }
 
 //This is where windows will sends its message to for us to intercept and use with our message handler, if we can't use it then we just return it back to the main windows message handler inside the MessageHandler function

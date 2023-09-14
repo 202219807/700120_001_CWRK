@@ -31,7 +31,7 @@ Fire::Fire(
 
 void Fire::Update(const float dt)
 {
-	UpdateParticles(dt);
+	ParticleSystem::Update(dt);
 }
 
 bool Fire::Render(
@@ -41,5 +41,5 @@ bool Fire::Render(
 	const XMFLOAT3& cameraPosition
 ) const
 {
-	return RenderParticles(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
+	return ParticleSystem::Render(deviceContext, viewMatrix, projectionMatrix, cameraPosition);
 }

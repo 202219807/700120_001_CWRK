@@ -35,7 +35,6 @@ ParticleSystem::ParticleSystem(
 		positions.emplace_back(XMFLOAT3(m_initialPosition.x, m_initialPosition.y - (i * m_particleSpread), m_initialPosition.z));
 
 		auto particleScale = XMFLOAT3(initialScale.x - ((initialScale.x - finalScale.x) / particleDensity) * i, initialScale.y - ((initialScale.y - finalScale.y) / particleDensity) * i, initialScale.z - ((initialScale.z - finalScale.z) / particleDensity) * i);
-
 		scales.emplace_back(particleScale);
 	}
 
@@ -50,7 +49,6 @@ ParticleSystem::ParticleSystem(
 	AddTextureComponent(device, textureNames, resourceManager);
 
 	const auto particleShader = make_shared<ParticleShader>(device, hwnd);
-
 	particleShader->SetParticleParameters(colourTint, transparency);
 
 	AddShaderComponent(particleShader);
@@ -97,11 +95,7 @@ ParticleSystem::ParticleSystem(
 	AddShaderComponent(particleShader);
 }
 
-ParticleSystem::~ParticleSystem()
-{
-}
-
-void ParticleSystem::UpdateParticles(const float dt)
+void ParticleSystem::Update(const float dt)
 {
 	if (m_emitterType)
 	{
@@ -148,7 +142,7 @@ void ParticleSystem::UpdateParticles(const float dt)
 		{
 			position = XMFLOAT3(position.x + 0.0f * m_velocity * dt, position.y + -1.0f * m_velocity * dt, position.z + 0.0f * m_velocity * dt);
 
-			//If the new updated position has reached the end of its lifecycle then we 
+			//If the new updated position has reached the end of its lifecycle then remove it 
 			if (position.y < m_initialPosition.y - m_lifeCycle)
 			{
 				positions.pop_back();
@@ -159,10 +153,10 @@ void ParticleSystem::UpdateParticles(const float dt)
 		SetPosition(positions);
 	}
 
-	Update();
+	GameObject::Update();
 }
 
-bool ParticleSystem::RenderParticles(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const XMFLOAT3& cameraPosition) const
+bool ParticleSystem::Render(ID3D11DeviceContext* const deviceContext, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const XMFLOAT3& cameraPosition) const
 {
-	return Render(deviceContext, viewMatrix, projectionMatrix, {}, {}, cameraPosition);
+	return GameObject::Render(deviceContext, viewMatrix, projectionMatrix, {}, {}, cameraPosition);
 }

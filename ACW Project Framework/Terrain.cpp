@@ -57,7 +57,7 @@ Terrain::~Terrain()
 {
 }
 
-void Terrain::ResetTerrainState()
+void Terrain::Reset()
 {
 	const auto terrainPositions = GetPositionComponent()->GetPositions();
 
@@ -71,19 +71,19 @@ void Terrain::ResetTerrainState()
 	}
 }
 
-void Terrain::UpdateTerrain()
+void Terrain::Update()
 {
-	Update();
+	GameObject::Update();
 }
 
-bool Terrain::RenderTerrain(
+bool Terrain::Render(
 	ID3D11DeviceContext* const deviceContext, 
 	const XMMATRIX& viewMatrix, 
 	const XMMATRIX& projectionMatrix, 
 	const vector<ID3D11ShaderResourceView*>& depthTextures, 
-	const vector<shared_ptr<Light>>& pointLightList, 
+	const vector<shared_ptr<Light>>& pointLightList,
 	const XMFLOAT3& cameraPosition
 ) const
 {
-	return Render(deviceContext, viewMatrix, projectionMatrix, depthTextures, pointLightList, cameraPosition);
+	return GameObject::Render(deviceContext, viewMatrix, projectionMatrix, depthTextures, pointLightList, cameraPosition);
 }
