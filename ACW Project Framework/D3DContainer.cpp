@@ -588,7 +588,7 @@ void D3DContainer::BeginScene(float const red, float const green, float const bl
 	colour[3] = alpha;
 
 	//Clear back buffer
-	m_deviceContext->ClearRenderTargetView(m_renderTargetView, colour);
+	m_deviceContext->ClearRenderTargetView(m_renderTargetView, Colors::MidnightBlue);
 
 	//Clear depth buffer
 	m_deviceContext->ClearDepthStencilView(m_depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);

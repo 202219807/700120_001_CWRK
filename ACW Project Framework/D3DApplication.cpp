@@ -385,7 +385,7 @@ void D3DApplication::ToggleRenderOption()
 {
 	m_renderToggle++;
 
-	if (m_renderToggle == 5) m_renderToggle = 0;
+	if (m_renderToggle == 4) m_renderToggle = 0;
 
 	switch (m_renderToggle)
 	{
@@ -401,9 +401,6 @@ void D3DApplication::ToggleRenderOption()
 			break;
 		case 3:
 			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 1, 1);
-			break;
-		case 4:
-			m_shaderManager->GetTextureDisplacementShader()->SetRenderModeStates(0, 1, 0);
 			break;
 		default: return;
 	}

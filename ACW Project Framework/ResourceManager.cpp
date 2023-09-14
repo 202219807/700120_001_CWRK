@@ -2,12 +2,7 @@
 
 ResourceManager::ResourceManager()
 {
-
 }
-
-ResourceManager::ResourceManager(const ResourceManager& other) = default;
-
-//ResourceManager::ResourceManager(ResourceManager&& other) noexcept = default;
 
 ResourceManager::~ResourceManager()
 {
@@ -36,10 +31,6 @@ ResourceManager::~ResourceManager()
 		
 	}
 }
-
-ResourceManager& ResourceManager::operator=(const ResourceManager& other) = default;
-
-ResourceManager& ResourceManager::operator=(ResourceManager&& other) noexcept = default;
 
 bool ResourceManager::GetModel(ID3D11Device* const device, const char* const modelFileName, ID3D11Buffer* &vertexBuffer, ID3D11Buffer* &indexBuffer)
 {
@@ -76,11 +67,13 @@ bool ResourceManager::GetTexture(ID3D11Device* const device, const WCHAR* const 
 	return true;
 }
 
-int ResourceManager::GetSizeOfVertexType() const {
+int  ResourceManager::GetSizeOfVertexType() const 
+{
 	return sizeof(VertexType);
 }
 
-int ResourceManager::GetIndexCount(const char* const modelFileName) const {
+int  ResourceManager::GetIndexCount(const char* const modelFileName) const 
+{
 	return m_indexCount.at(modelFileName);
 }
 
@@ -187,12 +180,10 @@ bool ResourceManager::LoadModel(ID3D11Device* const device, const char* const mo
 				}
 
 				//Calculate the tangent and binormal
-
 				auto positionOne = XMFLOAT3();
 				auto positionTwo = XMFLOAT3();
 				auto textureOne = XMFLOAT2();
 				auto textureTwo = XMFLOAT2();
-
 				auto tangent = XMFLOAT3();
 				auto binormal = XMFLOAT3();
 
@@ -323,7 +314,6 @@ bool ResourceManager::LoadModel(ID3D11Device* const device, const char* const mo
 	}
 
 	m_indexCount.insert(pair<const char*, int>(modelFileName, indexCount));
-
 	m_vertexBuffers.insert(pair<const char*, ID3D11Buffer*>(modelFileName, vertexBuffer));
 	m_indexBuffers.insert(pair<const char*, ID3D11Buffer*>(modelFileName, indexBuffer));
 

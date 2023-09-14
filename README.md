@@ -1,4 +1,4 @@
-# 700120-2223-lab-final
+# Rocket Launch Simulation
 
 This final lab exercise forms a substantive part of the assessment for both 700106 Real-Time Graphics and 700120 C++ Programming and Design.
 

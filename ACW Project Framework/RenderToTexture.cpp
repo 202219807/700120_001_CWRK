@@ -99,9 +99,14 @@ RenderToTexture::~RenderToTexture()
 	}
 }
 
-void RenderToTexture::SetShader(const shared_ptr<Shader>& shader)
+ID3D11ShaderResourceView* RenderToTexture::GetShaderResourceView() const 
 {
-	m_shader = shader;
+	return m_shaderResourceView;
+}
+
+bool RenderToTexture::GetInitializationState() const 
+{
+	return m_initializationFailed;
 }
 
 bool RenderToTexture::RenderObjectsToTexture(ID3D11DeviceContext* const deviceContext, ID3D11DepthStencilView* const depthStencilView, const XMMATRIX& viewMatrix, const XMMATRIX& projectionMatrix, const vector<shared_ptr<Light>>& pointLightList, const vector<shared_ptr<GameObject>>& gameObjects, const XMFLOAT3& cameraPosition) const
@@ -145,6 +150,11 @@ bool RenderToTexture::RenderObjectsToTexture(ID3D11DeviceContext* const deviceCo
 	return true;
 }
 
+void RenderToTexture::SetShader(const shared_ptr<Shader>& shader)
+{
+	m_shader = shader;
+}
+
 void RenderToTexture::SetRenderTarget(ID3D11DeviceContext* const deviceContext, ID3D11DepthStencilView* const depthStencilView) const 
 {
 	deviceContext->OMSetRenderTargets(1, &m_renderTargetView, depthStencilView);
@@ -153,18 +163,6 @@ void RenderToTexture::SetRenderTarget(ID3D11DeviceContext* const deviceContext, 
 void RenderToTexture::ClearRenderTarget(ID3D11DeviceContext* const deviceContext, ID3D11DepthStencilView* const depthStencilView, const XMFLOAT4& RGBA) const
 {
 	const float colour[4] {RGBA.x, RGBA.y, RGBA.z, RGBA.w};
-	
 	deviceContext->ClearRenderTargetView(m_renderTargetView, colour);
-
 	deviceContext->ClearDepthStencilView(depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
-}
-
-ID3D11ShaderResourceView* RenderToTexture::GetShaderResourceView() const 
-{
-	return m_shaderResourceView;
-}
-
-bool RenderToTexture::GetInitializationState() const 
-{
-	return m_initializationFailed;
 }

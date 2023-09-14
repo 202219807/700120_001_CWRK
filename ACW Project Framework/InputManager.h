@@ -3,13 +3,13 @@
 class InputManager
 {
 public:
-	InputManager(); // Default Constructor
-	InputManager(const InputManager& other); // Copy Constructor
-	InputManager(InputManager && other) noexcept; // Move Constructor
-	virtual ~InputManager(); // Destructor
+	InputManager();
+	virtual ~InputManager();
 
-	InputManager& operator = (const InputManager& other); // Copy Assignment Operator
-	InputManager& operator = (InputManager&& other) noexcept; // Move Assignment Operator
+	InputManager(const InputManager& other) = default;
+	InputManager(InputManager && other) noexcept = default;
+	InputManager& operator= (const InputManager& other) = default;
+	InputManager& operator= (InputManager&& other) noexcept = default;
 
 	void KeyDown(unsigned int key);
 	void KeyUp(unsigned int key);

@@ -18,10 +18,10 @@ class ShaderManager
 public:
 
 	ShaderManager(ID3D11Device* const device, HWND const hwnd);
-	ShaderManager(const ShaderManager& other) = default;
-	ShaderManager(ShaderManager&& other) noexcept = default;
 	~ShaderManager();
 
+	ShaderManager(const ShaderManager& other) = default;
+	ShaderManager(ShaderManager&& other) noexcept = default;
 	ShaderManager& operator= (const ShaderManager& other) = default;
 	ShaderManager& operator= (ShaderManager&& other) noexcept = default;
 
