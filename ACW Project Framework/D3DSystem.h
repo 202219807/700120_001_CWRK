@@ -4,8 +4,8 @@
 
 #include <Windows.h>
 
-#include "D3DApplication.h"
 #include "InputManager.h"
+#include "D3DApplication.h"
 
 class D3DSystem
 {
@@ -15,8 +15,8 @@ public:
 
 	D3DSystem(const D3DSystem& other) = default;
 	D3DSystem(D3DSystem&& other) noexcept = default;
-	D3DSystem& operator = (const D3DSystem& other) = default;
-	D3DSystem& operator = (D3DSystem&& other) noexcept = default;
+	D3DSystem& operator= (const D3DSystem& other) = default;
+	D3DSystem& operator= (D3DSystem&& other) noexcept = default;
 
 	LRESULT CALLBACK MessageHandler(HWND const hwnd, UINT umessage, WPARAM wparam, LPARAM lparam);
 	

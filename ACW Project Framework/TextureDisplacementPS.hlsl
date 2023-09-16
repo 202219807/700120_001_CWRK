@@ -69,7 +69,6 @@ float CalculateShadow(Texture2D depthMap, float4 position, float nDotL)
 	float lightDepthValue = position.z / position.w;
 
 	float bias = max(0.01f * (1.0f - nDotL), 0.012f);
-	//bias = 0.015f;
 
 	float shadow = 0.0f;
 

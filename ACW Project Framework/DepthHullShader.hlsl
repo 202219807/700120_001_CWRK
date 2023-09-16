@@ -23,11 +23,7 @@ struct DomainInput
 PatchConstantOutput PatchConstantFunction(InputPatch<HullInput, 3> inputPatch, uint patchId : SV_PrimitiveID)
 {
 	PatchConstantOutput output;
-
-	/*output.edges[0] = tessellationFactor;
-	output.edges[1] = tessellationFactor;
-	output.edges[2] = tessellationFactor;*/
-
+	
 	output.edges[0] = 0.5f * (inputPatch[1].tessellationFactor + inputPatch[2].tessellationFactor);
 	output.edges[1] = 0.5f * (inputPatch[2].tessellationFactor + inputPatch[0].tessellationFactor);
 	output.edges[2] = 0.5f * (inputPatch[0].tessellationFactor + inputPatch[1].tessellationFactor);
@@ -48,6 +44,7 @@ PatchConstantOutput PatchConstantFunction(InputPatch<HullInput, 3> inputPatch, u
 DomainInput DepthHullShader(InputPatch<HullInput, 3> inputPatch, uint outputControlPointID : SV_OutputControlPointID, uint patchId : SV_PrimitiveID)
 {
 	DomainInput output;
+	
 	output.position = inputPatch[outputControlPointID].position;
 	output.tex = inputPatch[outputControlPointID].tex;
 	output.normal = inputPatch[outputControlPointID].normal;

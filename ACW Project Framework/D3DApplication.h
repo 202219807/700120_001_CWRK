@@ -12,7 +12,6 @@
 #include "GameObject.h"
 #include "Terrain.h"
 #include "Rocket.h"
-#include "RenderToTexture.h"
 #include "ResourceManager.h"
 #include "LightManager.h"
 #include "ShaderManager.h"
@@ -21,9 +20,10 @@
 #include "ParticleSystem.h"
 #include "Fire.h"
 #include "Smoke.h"
+#include "RenderToTexture.h"
 
 auto const FULL_SCREEN			= false;
-auto const VSYNC_ENABLED		= false;
+auto const VSYNC_ENABLED		= true;
 auto const SCREEN_DEPTH			= 1000.0f;
 auto const SCREEN_NEAR			= 0.1f;
 

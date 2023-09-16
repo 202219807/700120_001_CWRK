@@ -1,4 +1,3 @@
-//Global
 Texture2D displacementTexture;
 SamplerState sampleType;
 
